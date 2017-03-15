@@ -15,7 +15,7 @@ $(document).ready(function(e)
         return formated;
     }
     
-    $.getJSON("stats/user_growth", function(json) {
+    $.getJSON(base_url + "/stats/user-growth", function(json) {
        //succes - data loaded, now use plot:
            var plotarea = $("#line-chart3");
            var dataBar = json.dataBar.map(function(arr) {

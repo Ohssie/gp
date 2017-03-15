@@ -32,6 +32,9 @@ class SettingsTableSeeder extends Seeder
             ],
             [
                 'name' => 'sms_url', 'value' => 'http://api.ebulksms.com/sendsms.json'
+            ],
+            [
+                'name' => 'delete_records_after', 'value' => '2'
             ]
         ]);
     }
