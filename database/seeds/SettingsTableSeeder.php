@@ -13,7 +13,7 @@ class SettingsTableSeeder extends Seeder
     {
         DB::table('settings')->insert([
             [
-                'name' => 'app_name', 'value' => 'MoneyMatrix'
+                'name' => 'app_name', 'value' => 'GrandPayer'
             ],
             [
                 'name' => 'logo_url', 'value' => 'assets/img/logo-xx.png'
