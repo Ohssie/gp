@@ -39,14 +39,14 @@
                       <div class="user-position online">Available</div>
                     </div>
                   </li>
-                  <li><a href="{{ url('profile') }}"><span class="icon mdi mdi-face"></span> Account</a></li>
-                  <li><a href="{{ url('settings') }}"><span class="icon mdi mdi-settings"></span> Settings</a></li>
+                  <li><a href="{{ url('account/profile') }}"><span class="icon mdi mdi-face"></span> Account</a></li>
+                  <!-- <li><a href="{{ url('settings') }}"><span class="icon mdi mdi-settings"></span> Settings</a></li> -->
                   <li><a href="{{ url('account/logout') }}"><span class="icon mdi mdi-power"></span> Logout</a></li>
                 </ul>
               </li>
             </ul>
             <div class="page-title"><span>@yield('title')</span></div>
-            <ul class="nav navbar-nav navbar-right be-icons-nav">
+            <!--<ul class="nav navbar-nav navbar-right be-icons-nav">
               <li class="dropdown"><a href="#" role="button" aria-expanded="false" class="be-toggle-right-sidebar"><span class="icon mdi mdi-settings"></span></a></li>
               <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-notifications"></span><span class="indicator"></span></a>
                 <ul class="dropdown-menu be-notifications">
@@ -66,8 +66,10 @@
                     <div class="footer"> <a href="#">View all notifications</a></div>
                   </li>
                 </ul>
+                
               </li>
             </ul>
+            -->
           </div>
         </div>
       </nav>

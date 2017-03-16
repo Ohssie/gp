@@ -11,10 +11,10 @@
             <ul class="sub-menu">
               <li><a href="{{ url('admin/people/manage') }}">Manage Accounts</a>
               </li>
-              <li><a href="{{ url('admin/people/import') }}">Account Import</a>
-              </li>
-              <li><a href="{{ url('admin/people/log') }}">Activity Log</a>
-              </li>
+              <!--<li><a href="{{ url('admin/people/import') }}">Account Import</a>
+              </li>-->
+              <!--<li><a href="{{ url('admin/people/log') }}">Activity Log</a>
+              </li>-->
             </ul>
           </li>
           <!--<li class="parent"><a href="genealogy"><i class="icon mdi mdi-face"></i><span>Genealogy</span></a>

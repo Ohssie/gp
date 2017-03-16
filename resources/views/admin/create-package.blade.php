@@ -21,7 +21,7 @@
           {!! flash_message('create_package_success') !!}
           </div>
         </div>
-          {{ Form::open(['url' => url('packages/create'), 'style' => 'border-radius: 0px;', 'class' => 'form-horizontal group-border-dashed', 'method' => 'post']) }}
+          {{ Form::open(['url' => url('/admin/packages/create'), 'style' => 'border-radius: 0px;', 'class' => 'form-horizontal group-border-dashed', 'method' => 'post']) }}
             <div class="form-group">
               <label class="col-sm-3 control-label">Name</label>
               <div class="col-sm-6">

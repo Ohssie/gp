@@ -95,7 +95,8 @@ if( !function_exists('generate_username'))
             $a = $last_name.substr($additional_symbols, 0, $i);
             $n = substr($first_name, 0, (strlen($a)  + strlen($n) > $max_size)?(strlen($n) + 1):1);
             $result = substr($n.$a, 0, $max_size);
-            if((\DB::table('users')->where('username',  '=', $result)->exists() or \DB::table('admin')->where('username', '=', $result)->exists()) && strlen($result) >= 5)
+            // if((\DB::table('users')->where('username',  '=', $result)->exists() or \DB::table('admin')->where('username', '=', $result)->exists()) && strlen($result) >= 5)
+            if((\DB::table('users')->where('username',  '=', $result)->exists() ) && strlen($result) >= 5)
             {
                 //This function check if the tentative username is available
                 $result = false;

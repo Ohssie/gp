@@ -71,7 +71,7 @@ class Front extends Controller
         if(!$upline)
         {
             $have_admin = $package->size + 1;
-            $upline = collect(\DB::select("SELECT COUNT(upline_username) as countUsers, username FROM package_subscription WHERE package_id = {$request->get('package_id')} AND status = 'ongoing' GROUP BY username HAVING countUsers < IF(upline_username IN (SELECT u.username FROM users u WHERE u.role = 'admin'), {$have_admin}, {$package->size})ORDER BY countUsers DESC"))->first();   
+            $upline = collect(\DB::select("SELECT COUNT(upline_username) as countUsers, upline_username, username FROM package_subscription ps WHERE package_id = {$request->get('package_id')} AND status = 'ongoing' GROUP BY username HAVING countUsers < IF(upline_username IN (SELECT u.username FROM users u WHERE u.role = 'admin'), {$have_admin}, {$package->size})ORDER BY countUsers DESC"))->first();   
         }
         $ps = new \App\PackageSub();
         $token = generate_token(10, true);
