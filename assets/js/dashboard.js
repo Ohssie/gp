@@ -207,7 +207,7 @@ $(document).ready(function(e)
         return formated;
     }
     var _colors = ["#4285f4", "#34a853", "#fbbc05", "#ea4335", "#262626"], colors = [], i = 1;
-    $.getJSON("stats/plan_stats", function(json) {
+    $.getJSON(base_url + "/stats/plan-growth", function(json) {
         //succes - data loaded, now use plot:
         var data_arr = [];
         for(var key in json) {
