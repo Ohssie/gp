@@ -38,7 +38,7 @@
       @endforeach
       @else
       <h2 class="text-center text-danger">No packages created</h2>
-      <div class="text-center"><a class="btn btn-primary" href="packages/create">Create package now</a></div>
+      <div class="text-center"><a class="btn btn-primary" href="/admin/packages/create">Create package now</a></div>
       @endif
       
   </div>

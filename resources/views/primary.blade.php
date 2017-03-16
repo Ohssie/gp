@@ -39,7 +39,7 @@
                       <div class="user-position online">Available</div>
                     </div>
                   </li>
-                  <li><a href="{{ url('profile') }}"><span class="icon mdi mdi-face"></span> Account</a></li>
+                  <li><a href="{{ url('account/profile') }}"><span class="icon mdi mdi-face"></span> Account</a></li>
                   <li><a href="{{ url('settings') }}"><span class="icon mdi mdi-settings"></span> Settings</a></li>
                   <li><a href="{{ url('account/logout') }}"><span class="icon mdi mdi-power"></span> Logout</a></li>
                 </ul>

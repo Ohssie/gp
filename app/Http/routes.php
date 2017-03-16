@@ -66,7 +66,7 @@ Route::get('/admin/packages/create', function ()
 	return view('admin.create-package', $data);
 })->middleware('admin', 'auth');
 
-Route::post('/admin/packages/create', 'AdminController@createPackage')->middleware('admin', 'auth');
+Route::post('/admin/packages/create', 'AdminController@createPackage')->middleware('admin');
 
 
 Route::get('/admin/packages/manage', function ()
@@ -121,7 +121,7 @@ Route::get('/payment/dispute/{sub_key}', 'Front@dispute')->middleware('auth');
 
 Route::get('/payment/complete/{sub_key}', 'Front@complete')->middleware('auth');
 
-Route::get('/profile', 'Front@profile')->middleware('auth');
+Route::get('/account/profile', 'Front@profile')->middleware('auth');
 
 Route::get('/admin/packages/subscription/{sub_key}', function($sub_key)
 {

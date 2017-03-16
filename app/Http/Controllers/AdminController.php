@@ -39,10 +39,11 @@ class AdminController extends Controller
         $package->size = $request->get('size');
         $package->depth = $request->get('depth');
         $package->color = $request->get('color');
+        $package->description = $request->get('description');
 
         if($package->save())
         {
-            $package_id = $package->id;
+            $package_id = $package->package_id;
             $ps = new \App\PackageSub();
 
             $ps->package_id = $package_id;
@@ -59,7 +60,7 @@ class AdminController extends Controller
                 if(send_sms($all_phone, $message_text, 0, config('settings.app_name')))
                 {
                     \Session::flash('create_package_success', 'Package created successfully');
-                    return \Redirect::intended('packages/create');
+                    return \Redirect::intended('/admin/packages/create');
                 }
             }
         }
@@ -106,7 +107,8 @@ class AdminController extends Controller
 
     	$username = generate_username($request->get('name'), '.');
     	$password = generate_token(6);
-    	$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . url();
+    	//$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . url();
+    	$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . $request->url();
     	
     	if (User::create([
             'name' => $request->get('name'),
