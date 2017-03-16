@@ -58,7 +58,7 @@ Route::get('/packages/choose', function ()
 	return view('users.choose-package', $data);
 })->middleware('auth');
 
-Route::post('/admin/packages/choose', 'Front@choosePackage')->middleware('auth');
+Route::post('/packages/choose', 'Front@choosePackage')->middleware('auth');
 
 Route::get('/admin/packages/create', function ()
 {
@@ -120,3 +120,15 @@ Route::get('/stats/plan-growth', 'AdminController@planStats')->middleware('admin
 Route::get('/payment/dispute/{sub_key}', 'Front@dispute')->middleware('auth');
 
 Route::get('/payment/complete/{sub_key}', 'Front@complete')->middleware('auth');
+
+Route::get('/profile', 'Front@profile')->middleware('auth');
+
+Route::get('/admin/packages/subscription/{sub_key}', function($sub_key)
+{
+	$sub = App\PackageSub::where('sub_key', $sub_key)->first();
+	$package = App\Package::find($sub->package_id);
+	$data['user'] = Auth::user();
+	$data['package'] = $package;
+	$data['sub'] = $sub;
+	return view('admin.subscription', $data);
+})->middleware('admin');

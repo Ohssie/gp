@@ -49,7 +49,7 @@ class AdminController extends Controller
             $ps->username = $request->get('package_head');
             $ps->upline_username = "";
             $ps->sub_key = generate_token(10, true);
-            $ps->status = "ongoing";
+            $ps->status = "completed";
 
             if($ps->save())
             {

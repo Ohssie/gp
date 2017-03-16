@@ -30,7 +30,7 @@
 	            {{ Form::open(['url' => url('packages/choose'), 'method' => 'post']) }}
 	            {{ Form::hidden('package_id', $package->package_id) }}
 	            <button type="submit" class="btn btn-{{ $package->color }}">Choose</button>
-	            </form>
+	            {{ Form::close() }}
 	          </div>
 	      </div>
 	    </div>

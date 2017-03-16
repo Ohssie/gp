@@ -60,7 +60,7 @@ class Front extends Controller
                 })
             ->exists())
         {
-            return redirect('packages/choose')->with('subscribe_error', 'You have already subscribed to this package and are yet to circle out.');
+            return redirect($user->isAdmin() ? 'admin/packages/manage' : 'packages/choose')->with('subscribe_error', 'You have already subscribed to this package and are yet to circle out.');
         }
 
         $package = \App\Package::find($request->get('package_id'));
@@ -70,7 +70,8 @@ class Front extends Controller
         $upline = collect(\DB::select("SELECT COUNT(ps.upline_username) as downlines, ps.username FROM package_subscription ps WHERE ps.username IN (SELECT u.username FROM users u WHERE u.role = 'admin') AND ps.package_id = {$request->get('package_id')} GROUP BY ps.username HAVING downlines < {$as} ORDER BY downlines DESC"))->first();
         if(!$upline)
         {
-            $upline = collect(\DB::select("SELECT COUNT(upline_username) as countUsers, username FROM package_subscription WHERE package_id = {$request->get('package_id')} AND status = 'ongoing' GROUP BY username HAVING countUsers < {$package->size} ORDER BY countUsers DESC"))->first();   
+            $have_admin = $package->size + 1;
+            $upline = collect(\DB::select("SELECT COUNT(upline_username) as countUsers, username FROM package_subscription WHERE package_id = {$request->get('package_id')} AND status = 'ongoing' GROUP BY username HAVING countUsers < IF(upline_username IN (SELECT u.username FROM users u WHERE u.role = 'admin'), {$have_admin}, {$package->size})ORDER BY countUsers DESC"))->first();   
         }
         $ps = new \App\PackageSub();
         $token = generate_token(10, true);
@@ -78,10 +79,12 @@ class Front extends Controller
         $ps->username = Auth::user()->username;
         $ps->upline_username = $upline->username;
         $ps->sub_key = $token;
-        $ps->status = "incomplete";
+        $ps->status = $user->isAdmin() ? "completed" : "incomplete";
 
         if($ps->save())
         {
+            if($user->isAdmin())
+                return redirect('admin/packages/subscription/' . $token)->with('message', 'You have been successfully paired up. The system will pair you up with priority!');
             return redirect('packages/subscription/' . $token)->with('message', 'You have successfully subscribed to ' . $package->name . ' package.');
         }
 
@@ -133,12 +136,14 @@ class Front extends Controller
     public function dispute($sub_key)
     {
         $p = \App\Payment::where('sub_key', $sub_key)->where('payee_username', Auth::user()->username);
-        if(!$p->exists())
+        $ps = \App\PackageSub::where('sub_key', $sub_key)->where('upline_username', Auth::user()->username);
+        if(!$p->exists() || !$ps->exists())
         {
             return \Redirect::away('account/login');
         }
 
-        $p->update(['status' => 'disputed']);
+        $p->update(['status' => 'waiting']);
+        $ps->update(['status' => 'waiting']);
 
         $payment = $p->first();
         $at = new DateTime($payment->created_at);
@@ -148,21 +153,30 @@ class Front extends Controller
     }
 
 
-    public function dispute($sub_key)
+    public function complete($sub_key)
     {
         $p = \App\Payment::where('sub_key', $sub_key)->where('payee_username', Auth::user()->username);
-        if(!$p->exists())
+        $ps = \App\PackageSub::where('sub_key', $sub_key)->where('upline_username', Auth::user()->username);
+        if(!$p->exists() || !$ps->exists())
         {
             return \Redirect::away('account/login');
         }
 
         $p->update(['status' => 'completed']);
         $payment = $p->first();
-        $ps = \App\PackageSub::where('sub_key', $sub_key)->update(['status' => 'completed']);
+        $ps->update(['status' => 'completed']);
         $at = new DateTime($payment->created_at);
-        $message = "{$payment->payee_username} disputed the payment you made on {$at->format('d, M')}. Please log on to " . url('/') . " to clarify this if it's a misunderstanding";
+        $message = "{$payment->payee_username} confirmed the payment you made on {$at->format('d, M')} and you've been put out for pairing. Keep your phone close!";
         send_sms(\App\User::where('username', $payment->payer_username)->first()->phone, $message, 0, config('settings.app_name'));
-        return redirect('payment/claim/' . $sub_key);
+        return redirect(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard');
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        $data['user'] = $user;
+        return view('users.profile', $data);
+
     }
 
 }

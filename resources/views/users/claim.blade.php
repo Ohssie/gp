@@ -74,7 +74,7 @@
                 </ul>
               </div>
               <div class="panel-footer">
-                <form class="" action="payment/send_message" method="post">
+                <form class="" action="{{ url('payment/send_message') }}" method="post">
                   <div class="input-group xs-mb-15">
                     <input type="hidden" name="reference" value="{{ $sub_key }}"/>
                     <input type="hidden" name="receiver" value="{{ $payment->payee_username }}"/>

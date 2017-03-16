@@ -22,13 +22,16 @@
             <li>{{ $package["description"] }}</li>
           </ul>
             <div class="btn-group btn-hspace">
-              <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Action <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
+              <?php /*<button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Action <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
               <ul role="menu" class="dropdown-menu">
                 <li><a href="{{ url('packages/edit/' . $package['package_id']) }}">Edit package</a></li>
-                <li><a href="{{ url('packages/manage/' . $package['package_id']) }}">Manage package</a></li>
                 <li class="divider"></li>
                 <li><a href="{{ url('packages/delete/' . $package['package_id']) }}">Delete package</a></li>
-              </ul>
+              </ul> */?>
+              {{ Form::open(['url' => url('packages/choose'), 'method' => 'post']) }}
+              {{ Form::hidden('package_id', $package->package_id) }}
+              <button type="submit" class="btn btn-{{ $package->color }}">Pair me</button>
+              {{ Form::close() }}
             </div>
         </div>
       </div>
