@@ -29,7 +29,7 @@
               </li>
             </ul>
           </li>-->
-          <li class="parent"><a href="{{ url('packages/manage') }}"><i class="icon mdi mdi-chart-donut"></i><span>Packages</span></a>
+          <li class="parent"><a href="{{ url('admin/packages/manage') }}"><i class="icon mdi mdi-chart-donut"></i><span>Packages</span></a>
             <ul class="sub-menu">
               <li><a href="{{ url('admin/packages/manage') }}">Manage Packages</a>
               </li>
