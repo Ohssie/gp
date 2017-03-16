@@ -28,5 +28,23 @@ class UsersTableSeeder extends Seeder
             'bank_name' => 'Diamon Bank Nigeria', 
             'account_name' => 'Daser Retnan', 
             'account_number' => '3085242156']);
+            
+        DB::table('users')->insert([
+            'name' => 'Demo User', 
+            'username' => 'duser', 
+            'password' => bcrypt('yahweh'), 
+            'phone' => '08161730128', 
+            'bank_name' => 'Demo Bank Nigeria', 
+            'account_name' => 'Demo User', 
+            'account_number' => '2868614816']);
+            
+        DB::table('users')->insert([
+            'name' => 'Demo User2', 
+            'username' => 'duser2', 
+            'password' => bcrypt('yahweh'), 
+            'phone' => '08161730138', 
+            'bank_name' => 'Demo2 Bank Nigeria', 
+            'account_name' => 'Demo User2', 
+            'account_number' => '2868614818']);
     }
 }
