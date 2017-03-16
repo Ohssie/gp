@@ -123,6 +123,7 @@
             <thead>
               <tr>
                 <th>User</th>
+                <th>Bank</th>
                 <th>Account Name</th>
                 <th>Account Number</th>
                 <th class="actions">Action</th>
@@ -134,6 +135,7 @@
               <tr>
                 <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ptm->upline_username }}</td>
                 <td>{{ $ptm->uplineUser()->bank_name }}</td>
+                <td>{{ $ptm->uplineUser()->account_name }}</td>
                 <td>{{ $ptm->uplineUser()->account_number }}</td>
                 <td class="actions">
                     @if($ptm->status == "incomplete")
