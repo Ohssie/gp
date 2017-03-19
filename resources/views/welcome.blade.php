@@ -17,16 +17,16 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
 		<!-- CORE CSS -->
-		<link href="{{ url('home/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ url('assets2/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- THEME CSS -->
-		<link href="{{ url('home/css/essentials.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ url('home/css/layout.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ url('assets2/css/essentials.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ url('assets2/css/layout.css') }}" rel="stylesheet" type="text/css" />
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="{{ url('home/css/header-1.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ url('home/css/layout-shop.css') }}" rel="stylesheet" type="text/css" />
-		<!--<link href="{{ url('home/css/color_scheme/green.css') }}" rel="stylesheet" type="text/css" id="color_scheme" />-->
+		<link href="{{ url('assets2/css/header-1.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ url('assets2/css/layout-shop.css') }}" rel="stylesheet" type="text/css" />
+		
 		<style>
 			img.img-responsive.radius-4{
 				height:335px!important
@@ -86,27 +86,18 @@
 					<ul class="top-links list-inline">
 						<li class="hidden-xs"><a href="page-faq-1.html">FAQ</a></li>
 						<li>
-							<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><img class="flag-lang') }}" src="{{ url('home/images/flags/us.png" width="16" height="11" alt="lang"> ENGLISH</a>
+							<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a>
 							<ul class="dropdown-langs dropdown-menu pull-right">
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('home/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a></li>
 								<li class="divider"></li>
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('home/images/flags/de.png') }}" width="16" height="11" alt="lang"> GERMAN</a></li>
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('home/images/flags/ru.png') }}" width="16" height="11" alt="lang"> RUSSIAN</a></li>
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('home/images/flags/it.png') }}" width="16" height="11" alt="lang"> ITALIAN</a></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/de.png') }}" width="16" height="11" alt="lang"> GERMAN</a></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/ru.png') }}" width="16" height="11" alt="lang"> RUSSIAN</a></li>
+								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/it.png') }}" width="16" height="11" alt="lang"> ITALIAN</a></li>
 							</ul>
 
 						</li>
 					</ul>
 				</div>
-
-
-				<!--<div class="border-top block clearfix">-->
-					<!--<div class="container">-->
-						<!--<a class="banner pull-right hidden-sm hidden-xs" href="#">-->
-							<!--<img src="{{ url('home/images/demo/720x90.png" alt="banner">-->
-						<!--</a>-->
-					<!--</div>-->
-				<!--</div>-->
 
 			</div>
 			<!-- /Top Bar -->
@@ -160,8 +151,9 @@
 						<!-- /BUTTONS -->
 
 						<!-- Logo -->
-						<a class="logo pull-left" href="index.html">
-							<img src="{{ url('home/a2aw.png') }}" alt="" />
+						<a class="logo pull-left" href="/">
+							<img src="{{ url('assets2/a2aw.png') }}" alt="" />
+							
 						</a>
 
 						<!--
@@ -252,7 +244,7 @@
 
 						<!-- SLIDE -->
 						<div class="ls-slide" data-ls="slidedelay:4500;transition2d:24,25,27,28,34,35,37,38,110,113;">
-							<img src="{{ url('home/images/1x1.png') }}" data-src="blur.jpg" class="ls-bg" alt="Slide background" />
+							<img src="{{ url('assets2/images/1x1.png') }}" data-src="{{ url('assets2/blur.jpg') }}" class="ls-bg" alt="Slide background" />
 
 							<h5 class="ls-l" style="top:257px;left:50%;text-align: center; background: black; background: rgba(0,0,0,.75); font-weight: normal;width:350px;height:100px;font-size:50px;line-height:100px;color:#eee;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:top;durationout:750;showuntil:500;fadeout:false;">Welcome to</h5>
 							<h5 class="ls-l" style="top:363px;left:50%;text-align: center; font-weight: normal; padding-left:10px; padding-right:10px; height:100px;font-size:50px;line-height:100px;color:#444;background:white;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:bottom;durationout:750;showuntil:500;fadeout:false;">GrandPayer</h5>
@@ -296,7 +288,7 @@
                             layersContainer: 	1280,
 
                             skin:				'borderlessdark',
-                            skinsPath: 			'{{ url('home/plugins/slider.layerslider/skins/'
+                            skinsPath: 			'{{ url('assets2/plugins/slider.layerslider/skins/') }}'
                         }
 					</script>
 
@@ -444,7 +436,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('home/guy.png') }}" alt="" />
+									<img class="rounded" src="{{ url('assets2/guy.png') }}" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -458,7 +450,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('home/girl.png') }}" alt="" />
+									<img class="rounded" src="{{ url('assets2/girl.png') }}" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -472,7 +464,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('home/girl.png') }}" alt="" />
+									<img class="rounded" src="{{ url('assets2/girl.png') }}" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -486,7 +478,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('home/guy.png') }}" alt="" />
+									<img class="rounded" src="{{ url('assets2/guy.png') }}" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -500,7 +492,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('home/guy.png') }}" alt="" />
+									<img class="rounded" src="{{ url('assets2/guy.png') }}" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -514,7 +506,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('home/girl.png') }}" alt="" />
+									<img class="rounded" src="{{ url('assets2/girl.png') }}" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -558,7 +550,7 @@
 						<div class="col-md-4 col-sm-4">
 
 							<!-- Footer Logo -->
-							<img class="footer-logo" src="{{ url('home/a2aw.png') }}" alt="" />
+							<img class="footer-logo" src="{{ url('assets2/a2aw.png') }}" alt="" />
 
 						</div>
 						<!-- /col #1 -->
@@ -663,16 +655,16 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-		<script type="text/javascript">var plugin_path = '{{ url('home/plugins/';</script>
-		<script type="text/javascript" src="{{ url('home/plugins/jquery/jquery-2.1.4.min.js') }}"></script>
+		<script type="text/javascript">var plugin_path = '{{ url('assets2/plugins/') }}';</script>
+		<script type="text/javascript" src="{{ url('assets2/plugins/jquery/jquery-2.1.4.min.js') }}"></script>
 
-		<script type="text/javascript" src="{{ url('home/js/scripts.js') }}"></script>
+		<script type="text/javascript" src="{{ url('assets2/js/scripts.js') }}"></script>
 
 		<!-- STYLESWITCHER - REMOVE -->
-		<!--<script async type="text/javascript" src="{{ url('home/plugins/styleswitcher/styleswitcher.js') }}"></script>-->
+		<!--<script async type="text/javascript" src="{{ url('assets2/plugins/styleswitcher/styleswitcher.js') }}"></script>-->
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<script type="text/javascript" src="{{ url('home/js/view/demo.shop.js') }}"></script>
+		<script type="text/javascript" src="{{ url('assets2/js/view/demo.shop.js') }}"></script>
 		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -758,7 +750,7 @@
 
 
 
-		<script src="{{ url('home/layerslider_pack.j') }}"></script>
-		<script src="{{ url('home/demo.layerslider_slider.js') }}"></script>
+		<script src="{{ url('assets2/layerslider_pack.j') }}"></script>
+		<script src="{{ url('assets2/demo.layerslider_slider.js') }}"></script>
 	</body>
 </html>
