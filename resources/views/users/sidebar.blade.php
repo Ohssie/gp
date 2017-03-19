@@ -13,6 +13,7 @@
               </li>
             </ul>
           </li>
+          <!--
           <li class="parent"><a href="network/"><i class="icon mdi mdi-globe"></i><span>Network</span></a>
             <ul class="sub-menu">
               <li><a href="{{ url('network/tree') }}">Tree</a>
@@ -21,6 +22,7 @@
               </li>
             </ul>
           </li>
+          -->
           <li class="parent"><a href="{{ url('packages/choose') }}"><i class="icon mdi mdi-dot-circle"></i><span>Packages</span></a>
             <ul class="sub-menu">
               <li><a href="{{ url('/packages/choose') }}">Avaliable packages</a>

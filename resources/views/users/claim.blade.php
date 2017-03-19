@@ -6,7 +6,12 @@
 <div class="main-content container-fluid">
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-          {{ flash_message() }}
+          <?php
+          $flashes = flash_message();
+          ?>
+          @if (strlen($flashes) > 2)
+            {!! $flashes !!}
+          @endif
         </div>
     </div>
     <div class="row">
