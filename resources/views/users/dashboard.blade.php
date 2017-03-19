@@ -103,7 +103,9 @@
                 </td>
               @endforeach
               @else
-                <td colspan="5" align="center"><div class="alert alert-warning"><p>You have not selected any package yet</p> <a href="packages/choose" class="btn btn-default">Pick one</a></div></td>
+                <!-- <td colspan="5" align="center"><div class="alert alert-warning"><p>You have not selected any package yet</p> <a href="packages/choose" class="btn btn-default">Pick one</a></div></td> -->
+                <td colspan="5" align="center"><div class="alert alert-warning"><p>Please check back again later. </p><p>if you have not selected any package yet kindly <a href="packages/choose" class="btn btn-default">Pick one</a></p></div></td>
+                
               @endif
               </tr>
               
