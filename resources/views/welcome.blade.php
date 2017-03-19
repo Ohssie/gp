@@ -52,7 +52,7 @@
                 background: linear-gradient(to bottom, #555555 0%,#21191b 100%);
             }
 		</style>
-		<link rel="stylesheet" href="layerslider.css') }}">
+		<link rel="stylesheet" href="{{ url('assets2/layerslider.css') }}">
 	</head>
 	<body class="smoothscroll enable-animation">
 		<!-- wrapper -->
@@ -750,7 +750,7 @@
 
 
 
-		<script src="{{ url('assets2/layerslider_pack.j') }}"></script>
+		<script src="{{ url('assets2/layerslider_pack.js') }}"></script>
 		<script src="{{ url('assets2/demo.layerslider_slider.js') }}"></script>
 	</body>
 </html>

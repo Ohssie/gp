@@ -41,7 +41,7 @@
 		jQuery.browserDetect();
 
 		// Load Bootstrap JS
-		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		loadScript(plugin_path + '/bootstrap/js/bootstrap.min.js', function() {
 
 			Init(false);
 
@@ -50,7 +50,7 @@
 
 		/* --- */
 		if(jQuery("html").hasClass("chrome") && jQuery("body").hasClass("smoothscroll")) {
-			loadScript(plugin_path + 'smoothscroll.js', function() {
+			loadScript(plugin_path + '/smoothscroll.js', function() {
 				jQuery.smoothScroll();
 			});
 		}
