@@ -82,7 +82,7 @@ class Account extends Controller
         {
             \Session::flash('signup_success', 'Account created successfully! We have sent your login details to ' . $request->get('phone'));
         }
-        return Redirect::away('account/login');
+        return Redirect::away('/account/login');
     }
 
     public function logout()
