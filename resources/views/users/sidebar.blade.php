@@ -45,9 +45,9 @@
     </div>
   </div>
   <div class="progress-widget">
-    <div class="progress-data"><span class="progress-value">60%</span><span class="name">Current Project</span></div>
-    <div class="progress">
-      <div style="width: 60%;" class="progress-bar progress-bar-primary"></div>
-    </div>
+    <!--<div class="progress-data"><span class="progress-value">60%</span><span class="name">Current Project</span></div>-->
+    <!--<div class="progress">-->
+    <!--  <div style="width: 60%;" class="progress-bar progress-bar-primary"></div>-->
+    <!--</div>-->
   </div>
 </div>
