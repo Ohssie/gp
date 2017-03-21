@@ -68,19 +68,41 @@ class Front extends Controller
         $as = $package->size - 1;
         
         // Find the package head
-        $upline = collect(\DB::select("SELECT username FROM package_subscription WHERE package_id = {$request->get('package_id')} AND upline_username = '0' LIMIT 1"))->first();
+        $upline = collect(\DB::select("SELECT username, sub_key FROM package_subscription WHERE package_id = {$request->get('package_id')} AND upline_username = '0' LIMIT 1"))->first();
         
         // Find the admin
         if($upline)
         {
-            $upline = collect(\DB::select("SELECT COUNT(ps.upline_username) as downlines, ps.username FROM package_subscription ps WHERE ps.username IN (SELECT u.username FROM users u WHERE u.role = 'admin') AND ps.package_id = {$request->get('package_id')} GROUP BY ps.username HAVING downlines < {$as} ORDER BY downlines DESC"))->first();
+            $upline = collect(\DB::select("SELECT ps.username, ps.sub_key FROM package_subscription ps WHERE
+                ps.username IN
+                    (SELECT us.username FROM users us WHERE us.role = 'admin')
+                AND ps.package_id = 1 AND 
+                    (SELECT COUNT(px.upline_username) FROM package_subscription px WHERE px.upline_username = ps.username AND px.up_sub_key = ps.sub_key AND px.package_id = ps.package_id)
+                < IF((
+                    (SELECT py.upline_username FROM package_subscription py WHERE py.username = ps.username AND py.package_id = ps.package_id ORDER BY py.sub_id DESC LIMIT 1)
+                    IN
+                    (SELECT us.username FROM users us WHERE us.role = 'admin')
+                ), {$package->size()}, {$as})
+                ORDER BY sub_id LIMIT 1"))->first();
         }
         
         // Find the person due
         if(!$upline)
         {
             $have_admin = $package->size + 1;
-            $upline = collect(\DB::select("SELECT COUNT(upline_username) as countUsers, upline_username, username FROM package_subscription ps WHERE package_id = {$request->get('package_id')} AND status = 'ongoing' AND username NOT IN (SELECT u.username FROM users u WHERE u.role = 'admin') GROUP BY username HAVING countUsers < IF((upline_username IN (SELECT u.username FROM users u WHERE u.role = 'admin')), {$have_admin}, {$package->size})ORDER BY countUsers DESC"))->first();   
+            $upline = collect(\DB::select("SELECT ps.username, ps.sub_key FROM package_subscription ps
+            WHERE ps.package_id = {$request->get('package_id')} 
+            AND (
+                SELECT COUNT(px.upline_username) FROM package_subscription px 
+                WHERE px.upline_username = ps.username AND px.up_sub_key = ps.sub_key AND px.package_id = ps.package_id
+            ) < IF(
+                (SELECT py.upline_username FROM package_subscription py 
+                WHERE py.username = ps.username AND py.package_id = ps.package_id 
+                ORDER BY py.sub_id DESC LIMIT 1) 
+                IN 
+                (SELECT us.username FROM users us WHERE us.role = 'admin')
+                , {$have_admin}, {$package->size}
+            ) ORDER BY sub_id LIMIT 1"))->first();
         }
         $ps = new \App\PackageSub();
         $token = generate_token(10, true);
@@ -88,6 +110,7 @@ class Front extends Controller
         $ps->username = Auth::user()->username;
         $ps->upline_username = $upline->username;
         $ps->sub_key = $token;
+        $ps->up_sub_key = $upline->sub_key;
         $ps->status = $user->isAdmin() ? "completed" : "incomplete";
 
         if($ps->save())
