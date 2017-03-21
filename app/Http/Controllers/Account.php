@@ -43,7 +43,7 @@ class Account extends Controller
             
             
             else {
-                return Redirect::away('account/login?');
+                return Redirect::away('/account/login?');
             }
         }
     }

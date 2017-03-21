@@ -9,19 +9,19 @@
 @section('content')
 <div class="main-content container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-        <div class="widget widget-fullwidth  panel-border-color panel-border-color-primary">
-          <div class="widget-head">
-            <div class="tools"><span class="icon mdi mdi-chevron-down"></span><span class="icon mdi mdi-refresh-sync"></span><span class="icon mdi mdi-close"></span></div>
-            <span class="title">Signup Chart</span><span class="description">This chart shows the signups per month</span>
-          </div>
-          <div class="widget-chart-container">
-            <div id="line-chart3" style="height: 320px; padding: 0px; position: relative;"></div>
-            <div class="chart-table xs-pt-15">
-            </div>
-          </div>
-        </div>
-    </div>
+    <!--<div class="col-sm-4">-->
+    <!--    <div class="widget widget-fullwidth  panel-border-color panel-border-color-primary">-->
+    <!--      <div class="widget-head">-->
+    <!--        <div class="tools"><span class="icon mdi mdi-chevron-down"></span><span class="icon mdi mdi-refresh-sync"></span><span class="icon mdi mdi-close"></span></div>-->
+    <!--        <span class="title">Signup Chart</span><span class="description">This chart shows the signups per month</span>-->
+    <!--      </div>-->
+    <!--      <div class="widget-chart-container">-->
+    <!--        <div id="line-chart3" style="height: 320px; padding: 0px; position: relative;"></div>-->
+    <!--        <div class="chart-table xs-pt-15">-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--</div>-->
     <div class="col-sm-8">
         <div class="panel panel-default panel-border-color panel-border-color-primary">
         <div class="panel-heading panel-heading-divider">Create Account</div>

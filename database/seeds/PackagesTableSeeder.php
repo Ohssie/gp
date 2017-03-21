@@ -13,37 +13,52 @@ class PackagesTableSeeder extends Seeder
     {
         DB::table('packages')->insert([
             'package_id' => '1',
-            'package_name' => 'CLASSIC', 
+            'package_name' => 'CLASSIC',
+            'depth' => 1,
+            'size' => 3,
             'color' => 'primary', 
-            'cost' => '5000'
+            'cost' => '5000',
+            'description' => 'Classic Package (Five thousand Naira)'
         ]);
         
         DB::table('packages')->insert([
             'package_id' => '2',
-            'package_name' => 'PROFESSIONAL', 
+            'package_name' => 'PROFESSIONAL',
+            'depth' => 1,
+            'size' => 3,
             'color' => 'warning', 
-            'cost' => '10000'
+            'cost' => '10000',
+            'description' => 'Professional Package (Ten thousand Naira)'
         ]);
         
         DB::table('packages')->insert([
             'package_id' => '3',
-            'package_name' => 'PREMIUM', 
+            'package_name' => 'PREMIUM',
+            'depth' => 1,
+            'size' => 3,
             'color' => 'success', 
-            'cost' => '20000'
+            'cost' => '20000',
+            'description' => 'Premium Package (Twenty thousand Naira)'
         ]);
         
         DB::table('packages')->insert([
             'package_id' => '4',
-            'package_name' => 'ULTIMATE', 
+            'package_name' => 'ULTIMATE',
+            'depth' => 1,
+            'size' => 3,
             'color' => 'danger', 
-            'cost' => '50000'
+            'cost' => '50000',
+            'description' => 'Ultimate Package (Fifty thousand Naira)'
         ]);
         
         DB::table('packages')->insert([
             'package_id' => '5',
-            'package_name' => 'BOSS', 
+            'package_name' => 'BOSS',
+            'depth' => 1,
+            'size' => 3,
             'color' => 'primary', 
-            'cost' => '100000'
+            'cost' => '100000',
+            'description' => 'Boss Package (Hundred thousand Naira)'
         ]);
     }
 }

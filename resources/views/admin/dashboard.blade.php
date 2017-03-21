@@ -9,7 +9,7 @@
 @section('content')
 <div class="main-content container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-3">
+    <div class="col-xs-12 col-md-6 col-lg-6">
       <div class="widget widget-tile">
         <div id="spark1" class="chart sparkline"></div>
         <div class="data-info">
@@ -19,37 +19,37 @@
         </div>
       </div>
   </div>
-  <div class="col-xs-12 col-md-6 col-lg-3">
-      <div class="widget widget-tile">
-        <div id="spark2" class="chart sparkline"></div>
-        <div class="data-info">
-          <div class="desc">Monthly growth</div>
-          <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="80" data-suffix="%" class="number">0</span>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="col-xs-12 col-md-6 col-lg-3">
-      <div class="widget widget-tile">
-        <div id="spark3" class="chart sparkline"></div>
-        <div class="data-info">
-          <div class="desc">Impressions</div>
-          <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="532" class="number">0</span>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="col-xs-12 col-md-6 col-lg-3">
-      <div class="widget widget-tile">
-        <div id="spark4" class="chart sparkline"></div>
-        <div class="data-info">
-          <div class="desc">Downloads</div>
-          <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span data-toggle="counter" data-end="113" class="number">0</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--<div class="col-xs-12 col-md-6 col-lg-3">-->
+  <!--    <div class="widget widget-tile">-->
+  <!--      <div id="spark2" class="chart sparkline"></div>-->
+  <!--      <div class="data-info">-->
+  <!--        <div class="desc">Monthly growth</div>-->
+  <!--        <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="80" data-suffix="%" class="number">0</span>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--</div>-->
+  <!--<div class="col-xs-12 col-md-6 col-lg-3">-->
+  <!--    <div class="widget widget-tile">-->
+  <!--      <div id="spark3" class="chart sparkline"></div>-->
+  <!--      <div class="data-info">-->
+  <!--        <div class="desc">Impressions</div>-->
+  <!--        <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="532" class="number">0</span>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--</div>-->
+  <!--<div class="col-xs-12 col-md-6 col-lg-3">-->
+  <!--    <div class="widget widget-tile">-->
+  <!--      <div id="spark4" class="chart sparkline"></div>-->
+  <!--      <div class="data-info">-->
+  <!--        <div class="desc">Downloads</div>-->
+  <!--        <div class="value"><span class="indicator indicator-negative mdi mdi-chevron-down"></span><span data-toggle="counter" data-end="113" class="number">0</span>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
   <div class="row">
     <div class="col-md-12">
       <div class="widget widget-fullwidth be-loading">

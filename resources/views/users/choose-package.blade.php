@@ -27,7 +27,7 @@
 	          <li>Downlinks: {{ $package->size }}</li>
 	        </ul>
 	          <div class="btn-group btn-hspace">
-	            {{ Form::open(['url' => url('packages/choose'), 'method' => 'post']) }}
+	            {{ Form::open(['url' => url('/packages/choose'), 'method' => 'post']) }}
 	            {{ Form::hidden('package_id', $package->package_id) }}
 	            <button type="submit" class="btn btn-{{ $package->color }}">Choose</button>
 	            {{ Form::close() }}

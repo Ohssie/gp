@@ -27,7 +27,7 @@
             <form id="my-dropzone" action="payment/upload/{{ $sub_key }}" class="dropzone">
             <div class="dz-message">
               <div class="icon"><span class="mdi mdi-cloud-upload"></span></div>
-              <h2>Drag and Drop files here</h2><span class="note">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+              <h2>Drag and Drop files here</h2>
             </div>
           </form>
         </div>

@@ -150,7 +150,7 @@
 
 						<!-- Logo -->
 						<a class="logo pull-left" href="/">
-							<img src="{{ url('assets2/a2aw.png') }}" alt="" />
+							<img src="{{ url('/assets2/grandpayer.png') }}" alt="" />
 							
 						</a>
 
