@@ -42,7 +42,7 @@
         @endif
       </div>
       <div class="panel-body">
-        {{ Form::open(array('url' => url('account/signup'), 'class' => 'form', 'method' => 'POST')) }}
+        {{ Form::open(array('url' => url('/account/signup'), 'class' => 'form', 'method' => 'POST')) }}
           <div class="login-form">
             <div class="form-group">
               {{ Form::text('name', old ('name'), ['placeholder' => 'Full name', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}

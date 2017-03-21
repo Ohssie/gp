@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<title>GrandPayer</title>
@@ -65,38 +63,38 @@
 
 					<!-- right -->
 					<ul class="top-links list-inline pull-right">
-						<li class="text-welcome hidden-xs">Welcome to GrandPayer, <strong>John Doe</strong></li>
-						<li>
-							<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#">MY ACCOUNT</a>
-							<ul class="dropdown-menu pull-right">
-								<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>
-								<li class="divider"></li>
-								<li><a tabindex="-1" href="#"><i class="fa fa-bookmark"></i> WISHLIST</a></li>
-								<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> SETTINGS</a></li>
-								<li class="divider"></li>
-								<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>
-							</ul>
+						<!--<li class="text-welcome hidden-xs">Welcome to GrandPayer, <strong>John Doe</strong></li>-->
+						<!--<li>-->
+						<!--	<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#">MY ACCOUNT</a>-->
+						<!--	<ul class="dropdown-menu pull-right">-->
+						<!--		<li><a tabindex="-1" href="#"><i class="fa fa-history"></i> ORDER HISTORY</a></li>-->
+						<!--		<li class="divider"></li>-->
+						<!--		<li><a tabindex="-1" href="#"><i class="fa fa-bookmark"></i> WISHLIST</a></li>-->
+						<!--		<li><a tabindex="-1" href="#"><i class="fa fa-cog"></i> SETTINGS</a></li>-->
+						<!--		<li class="divider"></li>-->
+						<!--		<li><a tabindex="-1" href="#"><i class="glyphicon glyphicon-off"></i> LOGOUT</a></li>-->
+						<!--	</ul>-->
 
-						</li>
-						<li class="hidden-xs"><a href="page-login-1.html">LOGIN</a></li>
-						<li class="hidden-xs"><a href="page-register-1.html">REGISTER</a></li>
+						<!--</li>-->
+						<li class="hidden-xs"><a href="/login">LOGIN</a></li>
+						<li class="hidden-xs"><a href="/account/signup">REGISTER</a></li>
 					</ul>
 
 					<!-- left -->
-					<ul class="top-links list-inline">
-						<li class="hidden-xs"><a href="page-faq-1.html">FAQ</a></li>
-						<li>
-							<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a>
-							<ul class="dropdown-langs dropdown-menu pull-right">
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a></li>
-								<li class="divider"></li>
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/de.png') }}" width="16" height="11" alt="lang"> GERMAN</a></li>
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/ru.png') }}" width="16" height="11" alt="lang"> RUSSIAN</a></li>
-								<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/it.png') }}" width="16" height="11" alt="lang"> ITALIAN</a></li>
-							</ul>
+					<!--<ul class="top-links list-inline">-->
+					<!--	<li class="hidden-xs"><a href="page-faq-1.html">FAQ</a></li>-->
+					<!--	<li>-->
+					<!--		<a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a>-->
+					<!--		<ul class="dropdown-langs dropdown-menu pull-right">-->
+					<!--			<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/us.png') }}" width="16" height="11" alt="lang"> ENGLISH</a></li>-->
+					<!--			<li class="divider"></li>-->
+					<!--			<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/de.png') }}" width="16" height="11" alt="lang"> GERMAN</a></li>-->
+					<!--			<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/ru.png') }}" width="16" height="11" alt="lang"> RUSSIAN</a></li>-->
+					<!--			<li><a tabindex="-1" href="#"><img class="flag-lang" src="{{ url('assets2/images/flags/it.png') }}" width="16" height="11" alt="lang"> ITALIAN</a></li>-->
+					<!--		</ul>-->
 
-						</li>
-					</ul>
+					<!--	</li>-->
+					<!--</ul>-->
 				</div>
 
 			</div>
@@ -131,13 +129,13 @@
 			<div id="header" class="sticky clearfix">
 
 				<!-- SEARCH HEADER -->
-				<div class="search-box over-header">
-					<a id="closeSearch" href="#" class="glyphicon glyphicon-remove"></a>
+				<!--<div class="search-box over-header">-->
+				<!--	<a id="closeSearch" href="#" class="glyphicon glyphicon-remove"></a>-->
 
-					<form action="page-search-result-1.html" method="get">
-						<input style="text-align: center" type="text" class="form-control" placeholder="WHAT DO YOU NEED?" />
-					</form>
-				</div>
+				<!--	<form action="page-search-result-1.html" method="get">-->
+				<!--		<input style="text-align: center" type="text" class="form-control" placeholder="WHAT DO YOU NEED?" />-->
+				<!--	</form>-->
+				<!--</div>-->
 				<!-- /SEARCH HEADER -->
 
 
@@ -181,16 +179,16 @@
                                             HOME
                                         </a>
                                     </li>
-                                    <li class=""><!-- HOME -->
-                                        <a class="" href="products.html">
-                                            CONTACT
-                                        </a>
-                                    </li>
-									<li class=""><!-- HOME -->
-										<a class="" href="products.html">
-											FAQ
-										</a>
-									</li>
+         <!--                           <li class=""><!-- HOME -->
+         <!--                               <a class="" href="products.html">-->
+         <!--                                   CONTACT-->
+         <!--                               </a>-->
+         <!--                           </li>-->
+									<!--<li class=""><!-- HOME -->
+									<!--	<a class="" href="products.html">-->
+									<!--		FAQ-->
+									<!--	</a>-->
+									<!--</li>-->
                                 </ul>
 
 							</nav>
@@ -288,7 +286,7 @@
                             layersContainer: 	1280,
 
                             skin:				'borderlessdark',
-                            skinsPath: 			'{{ url('assets2/plugins/slider.layerslider/skins/') }}'
+                            skinsPath: 			"{{ url('assets2/plugins/slider.layerslider/skins/') }}"
                         }
 					</script>
 
@@ -334,7 +332,7 @@
 						<div class="row"><h3 class="text-center border-black border-bottom-3 col-md-4 col-md-offset-4">Packages For You</h3></div>
 
 
-						<div class="col-md-5th price-table">
+						<div class="col-md-5th price-table popular">
 							<h3>CLASSIC</h3>
 							<p>
 								N5,000
@@ -353,7 +351,7 @@
 							<a href="#" class="btn btn-primary">SIGN UP</a>
 						</div>
 
-						<div class="col-md-5th price-table popular">
+						<div class="col-md-5th price-table">
 							<h3>PROFESSIONAL</h3>
 							<p>
 								N10,000
@@ -371,7 +369,7 @@
 							<a href="#" class="btn btn-default">SIGN UP</a>
 						</div>
 
-						<div class="col-md-5th price-table">
+						<div class="col-md-5th price-table popular">
 							<h3>PREMIUM</h3>
 							<p>
 								N20,000
@@ -407,20 +405,20 @@
 							<a href="#" class="btn btn-primary">SIGN UP</a>
 						</div>
 
-						<div class="col-md-5th price-table">
+						<div class="col-md-5th price-table popular">
 							<h3>BOSS</h3>
 							<p>
 								N100,000
 								<span>Per month</span>
 							</p>
 							<ul>
-								<li><i class="fa fa-check"></i>2:1 Matrix</li>
+								<li><i class="fa fa-check"></i>3:1 Matrix</li>
 								<li><i class="fa fa-check"></i>Auto Assign</li>
 								<li><i class="fa fa-check"></i>Pay Out/In Option</li>
 								<li><i class="fa fa-check"></i>Referral Wallet </li>
 								<li><i class="fa fa-check"></i>Cash Out </li>
 								<li><i class="fa fa-check"></i>WildCard Auto Recycle </li>
-								<li><i class="fa fa-check"></i>N200,000 Return Investment</li>
+								<li><i class="fa fa-check"></i>N300,000 Return Investment</li>
 							</ul>
 							<a href="#" class="btn btn-primary">SIGN UP</a>
 						</div>
@@ -533,7 +531,7 @@
 						<div class="margin-top-30">
 							<a href="#" class="btn btn-bordered btn-lg wow fadeInUp btn-teal animated" data-wow-delay="0.7" style="visibility: visible; animation-name: fadeInUp;"><i class="glyphicon glyphicon-th-large"></i>HOW IT WORKS</a>
 							<span class="size-17 hidden-xs wow fadeInUp animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">&nbsp; &amp; &nbsp;</span>
-							<a href="#" class="btn btn-bordered btn-lg wow fadeInUp btn-red animated" data-wow-delay="0.59" style="visibility: visible; animation-name: fadeInUp;"><i class="glyphicon glyphicon-user"></i>SUBSCRIBE FOR A PACKAGE</a>
+							<a href="/account/signup" class="btn btn-bordered btn-lg wow fadeInUp btn-red animated" data-wow-delay="0.59" style="visibility: visible; animation-name: fadeInUp;"><i class="glyphicon glyphicon-user"></i>SUBSCRIBE FOR A PACKAGE</a>
 						</div>
 					</div>
 
@@ -561,13 +559,13 @@
 							<div class="row">
 
 								<div class="col-md-5 hidden-sm hidden-xs">
-									<h4 class="letter-spacing-1">RECENT NEWS</h4>
-									<ul class="list-unstyled footer-list half-paddings">
-										<li>
-											<a class="block" href="#">We Shall be going on a 2-day mantenance break in 3days</a>
-											<small>Feb 29, 2017</small>
-										</li>
-									</ul>
+									<!--<h4 class="letter-spacing-1">RECENT NEWS</h4>-->
+									<!--<ul class="list-unstyled footer-list half-paddings">-->
+									<!--	<li>-->
+									<!--		<a class="block" href="#">We Shall be going on a 2-day mantenance break in 3days</a>-->
+									<!--		<small>Feb 29, 2017</small>-->
+									<!--	</li>-->
+									<!--</ul>-->
 								</div>
 
 								<div class="col-md-3 hidden-sm hidden-xs">
@@ -609,7 +607,7 @@
 										</a>
 
 									</div>
-									<h4>+2348197564896</h4>
+									<h4>+2348112345678</h4>
 									<!-- /Social Icons -->
 
 								</div>
@@ -625,13 +623,13 @@
 
 				<div class="copyright">
 					<div class="container">
-						<ul class="pull-right nomargin list-inline mobile-block">
-							<li><a href="#">Terms &amp; Conditions</a></li>
-							<li>&bull;</li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
+						<!--<ul class="pull-right nomargin list-inline mobile-block">-->
+						<!--	<li><a href="#">Terms &amp; Conditions</a></li>-->
+						<!--	<li>&bull;</li>-->
+						<!--	<li><a href="#">Privacy</a></li>-->
+						<!--</ul>-->
 
-						&copy; All Rights Reserved, A2AW LTD
+						&copy;2017 All Rights Reserved, GrandPayer
 					</div>
 				</div>
 
@@ -655,7 +653,7 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-		<script type="text/javascript">var plugin_path = '{{ url('assets2/plugins/') }}';</script>
+		<script type="text/javascript">var plugin_path = "{{ url('assets2/plugins/') }}";</script>
 		<script type="text/javascript" src="{{ url('assets2/plugins/jquery/jquery-2.1.4.min.js') }}"></script>
 
 		<script type="text/javascript" src="{{ url('assets2/js/scripts.js') }}"></script>
