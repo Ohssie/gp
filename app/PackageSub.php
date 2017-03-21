@@ -8,7 +8,7 @@ class PackageSub extends Model
 {
     protected $table = 'package_subscription';
     protected $fillable = [
-    	'package_id', 'username', 'upline_username', 'sub_key', 'status'
+    	'package_id', 'username', 'upline_username', 'sub_key', 'status', 'up_sub_key'
     ];
     protected $primaryKey = 'sub_id';
 
