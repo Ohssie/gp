@@ -30,7 +30,7 @@ Route::post('/account/login', 'Account@login');
 
 Route::get('/signup', function ()
 {
-    return \Redirect('account/login');
+    return \Redirect::away('account/login');
 });
 
 Route::get('/account/signup', function ()
