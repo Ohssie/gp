@@ -529,8 +529,8 @@
 						<p class="lead font-lato size-30 wow fadeInUp margin-bottom-60 animated" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">why Not Study</p>
 
 						<div class="margin-top-30">
-							<a href="#" class="btn btn-bordered btn-lg wow fadeInUp btn-teal animated" data-wow-delay="0.7" style="visibility: visible; animation-name: fadeInUp;"><i class="glyphicon glyphicon-th-large"></i>HOW IT WORKS</a>
-							<span class="size-17 hidden-xs wow fadeInUp animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">&nbsp; &amp; &nbsp;</span>
+							<!--<a href="#" class="btn btn-bordered btn-lg wow fadeInUp btn-teal animated" data-wow-delay="0.7" style="visibility: visible; animation-name: fadeInUp;"><i class="glyphicon glyphicon-th-large"></i>HOW IT WORKS</a>
+							<span class="size-17 hidden-xs wow fadeInUp animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">&nbsp; &amp; &nbsp;</span>-->
 							<a href="/account/signup" class="btn btn-bordered btn-lg wow fadeInUp btn-red animated" data-wow-delay="0.59" style="visibility: visible; animation-name: fadeInUp;"><i class="glyphicon glyphicon-user"></i>SUBSCRIBE FOR A PACKAGE</a>
 						</div>
 					</div>
