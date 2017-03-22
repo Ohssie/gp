@@ -122,6 +122,7 @@
         </div>
       </div>
     </div>
+    
     <div class="col-md-6">
       <div class="panel panel-default panel-table">
         <div class="panel-heading">
