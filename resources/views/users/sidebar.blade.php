@@ -31,15 +31,15 @@
               </li>
             </ul>
           </li>
-          <li class="divider">Extra</li>
-          <li class="parent"><a href="{{ url('messages/admin') }}"><i class="icon mdi mdi-inbox"></i><span>Support</span></a>
-            <ul class="sub-menu">
-              <li><a href="{{ url('support/faq') }}">FAQ</a>
-              </li>
-              <li><a href="{{ url('support/contact_support') }}">Contact Support</a>
-              </li>
-            </ul>
-          </li>
+          <!--<li class="divider">Extra</li>-->
+          <!--<li class="parent"><a href="{{ url('messages/admin') }}"><i class="icon mdi mdi-inbox"></i><span>Support</span></a>-->
+          <!--  <ul class="sub-menu">-->
+          <!--    <li><a href="{{ url('support/faq') }}">FAQ</a>-->
+          <!--    </li>-->
+          <!--    <li><a href="{{ url('support/contact_support') }}">Contact Support</a>-->
+          <!--    </li>-->
+          <!--  </ul>-->
+          <!--</li>-->
         </ul>
       </div>
     </div>

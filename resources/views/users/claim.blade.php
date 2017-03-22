@@ -63,31 +63,31 @@
               </div></p>
             </div>
           </div>
-            <div class="panel panel-default panel-contrast">
-              <div class="panel-heading">
-                Chat
-              </div>
-              <div class="panel-body panel-body-contrast">
-                <ul class="chat-message">
+            <!--<div class="panel panel-default panel-contrast">-->
+            <!--  <div class="panel-heading">-->
+            <!--    Chat-->
+            <!--  </div>-->
+            <!--  <div class="panel-body panel-body-contrast">-->
+            <!--    <ul class="chat-message">-->
                   
-                  <?php foreach($messages as $msg): ?>
+                  <!--<?php foreach($messages as $msg): ?>-->
                   
-                  <li class="<?php if ($msg->sender_username == $this->user->username()) { ?>self<?php } elseif ($msg->sender_username == $this->user->admin_username()) { ?>admin<?php } else {?>friend<?php } ?>"><span><?php echo $msg->message; ?></span></li>
+                  <!--<li class="<?php if ($msg->sender_username == $this->user->username()) { ?>self<?php } elseif ($msg->sender_username == $this->user->admin_username()) { ?>admin<?php } else {?>friend<?php } ?>"><span><?php echo $msg->message; ?></span></li>-->
                   
-                  <?php endforeach; ?>
+                  <!--<?php endforeach; ?>-->
                   
-                </ul>
-              </div>
-              <div class="panel-footer">
-                <form class="" action="{{ url('payment/send_message') }}" method="post">
-                  <div class="input-group xs-mb-15">
-                    <input type="hidden" name="reference" value="{{ $sub_key }}"/>
-                    <input type="hidden" name="receiver" value="{{ $payment->payee_username }}"/>
-                    <input type="text" class="form-control" name="chat"><span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">send</button></span>
-                  </div>
-                </form>
-              </div>
+            <!--    </ul>-->
+            <!--  </div>-->
+            <!--  <div class="panel-footer">-->
+            <!--    <form class="" action="{{ url('payment/send_message') }}" method="post">-->
+            <!--      <div class="input-group xs-mb-15">-->
+            <!--        <input type="hidden" name="reference" value="{{ $sub_key }}"/>-->
+            <!--        <input type="hidden" name="receiver" value="{{ $payment->payee_username }}"/>-->
+            <!--        <input type="text" class="form-control" name="chat"><span class="input-group-btn">-->
+            <!--          <button type="submit" class="btn btn-primary">send</button></span>-->
+            <!--      </div>-->
+            <!--    </form>-->
+            <!--  </div>-->
             </div>
         </div>
     </div>

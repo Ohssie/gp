@@ -150,7 +150,7 @@
 
 						<!-- Logo -->
 						<a class="logo pull-left" href="/">
-							<img src="{{ url('/assets2/grandpayer.png') }}" alt="" />
+							<img src="{{ url('/assets/grandpayer-admin.png') }}" alt="GrandPayer Logo" />
 							
 						</a>
 
@@ -175,7 +175,7 @@
 								-->
                                 <ul id="topMain" class="nav nav-pills nav-main">
                                     <li class=""><!-- HOME -->
-                                        <a class="" href="index.html">
+                                        <a class="" href="/">
                                             HOME
                                         </a>
                                     </li>
@@ -348,7 +348,7 @@
 								<li><i class="fa fa-check"></i>WildCard Auto Recycle </li>
 								<li><i class="fa fa-check"></i>N15,000 Return Investment</li>
 							</ul>
-							<a href="#" class="btn btn-primary">SIGN UP</a>
+							<a href="/account/signup" class="btn btn-primary">SIGN UP</a>
 						</div>
 
 						<div class="col-md-5th price-table">
@@ -366,7 +366,7 @@
 								<li><i class="fa fa-check"></i>WildCard Auto Recycle </li>
 								<li><i class="fa fa-check"></i>N30,000 Return Investment</li>
 							</ul>
-							<a href="#" class="btn btn-default">SIGN UP</a>
+							<a href="/account/signup" class="btn btn-default">SIGN UP</a>
 						</div>
 
 						<div class="col-md-5th price-table popular">
@@ -384,7 +384,7 @@
 								<li><i class="fa fa-check"></i>WildCard Auto Recycle </li>
 								<li><i class="fa fa-check"></i>N60,000 Return Investment</li>
 							</ul>
-							<a href="#" class="btn btn-primary">SIGN UP</a>
+							<a href="/account/signup" class="btn btn-primary">SIGN UP</a>
 						</div>
 
 						<div class="col-md-5th price-table">
@@ -402,7 +402,7 @@
 								<li><i class="fa fa-check"></i>WildCard Auto Recycle </li>
 								<li><i class="fa fa-check"></i>N150,000 Return Investment</li>
 							</ul>
-							<a href="#" class="btn btn-primary">SIGN UP</a>
+							<a href="/account/signup" class="btn btn-primary">SIGN UP</a>
 						</div>
 
 						<div class="col-md-5th price-table popular">
@@ -420,7 +420,7 @@
 								<li><i class="fa fa-check"></i>WildCard Auto Recycle </li>
 								<li><i class="fa fa-check"></i>N300,000 Return Investment</li>
 							</ul>
-							<a href="#" class="btn btn-primary">SIGN UP</a>
+							<a href="/account/signup" class="btn btn-primary">SIGN UP</a>
 						</div>
 
 					</div>
@@ -548,7 +548,7 @@
 						<div class="col-md-4 col-sm-4">
 
 							<!-- Footer Logo -->
-							<img class="footer-logo" src="{{ url('assets2/a2aw.png') }}" alt="" />
+							<!--<img class="footer-logo" src="{{ url('/assets/grandpayer-admin.png') }}" alt="" />-->
 
 						</div>
 						<!-- /col #1 -->
