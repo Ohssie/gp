@@ -150,7 +150,7 @@
 
 						<!-- Logo -->
 						<a class="logo pull-left" href="/">
-							<img src="/assets/grandpayer-admin.png" alt="GrandPayer Logo" />
+							<img src="assets/grandpayer-admin.png" alt="GrandPayer Logo" />
 							
 						</a>
 
