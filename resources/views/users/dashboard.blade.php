@@ -98,7 +98,7 @@
                 </td>
                 <td class="actions">
                   @if($link->status == 'waiting')
-                  <a href="{{ url('payment/claim/' . $link->sub_key) }}" class="btn btn-primary">Mark as complete</a>
+                  <a href="'payment/claim/' . $link->sub_key" class="btn btn-primary">Mark as complete</a>
                   @endif
                 </td>
               @endforeach
@@ -143,7 +143,7 @@
                 <td>{{ $ptm->uplineUser()->account_number }}</td>
                 <td class="actions">
                     @if($ptm->status == "incomplete")
-                    <a href="{{ url('packages/subscription/' . $ptm->sub_key) }}" class="btn btn-primary">I Paid</a>@else
+                    <a href="'packages/subscription/' . $ptm->sub_key" class="btn btn-primary">I Paid</a>@else
                     <button class="btn btn-default" disabled="disabled">Cleared</button>
                     @endif
                 </td>

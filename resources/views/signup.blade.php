@@ -7,7 +7,7 @@
   <div class="splash-container">
     <div class="panel panel-default panel-border-color panel-border-color-primary">
       <div class="panel-heading">
-        <img src="{{ url('assets/img/grandpayer-admin.png') }}" alt="{{ config('settings.app_name') }}" width="160" height="70" class="logo-img">
+        <img src="assets/img/grandpayer-admin.png" alt="{{ config('settings.app_name') }}" width="160" height="70" class="logo-img">
         <span class="splash-description">Please enter your user information.</span>
        
         @if (count($errors))
@@ -68,7 +68,7 @@
         {{ Form::close() }}
       </div>
     </div>
-    <div class="splash-footer"><span>Already have an account? <a href="{{ url('account/login') }}">Login here</a></span></div>
+    <div class="splash-footer"><span>Already have an account? <a href="/account/login">Login here</a></span></div>
   </div>
 </div>
 @endsection

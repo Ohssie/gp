@@ -125,5 +125,5 @@
 @endsection
 
 @section('scripts')
-<script type="text/javascript" src="{{ url('assets/js/manage.js') }}"></script>
+<script type="text/javascript" src="/assets/js/manage.js"></script>
 @endsection

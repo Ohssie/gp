@@ -5,11 +5,11 @@
       <div class="left-sidebar-content">
         <ul class="sidebar-elements">
           <li class="divider">Menu</li>
-          <li class="active"><a href="{{ url('/dashboard') }}"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
+          <li class="active"><a href="/dashboard"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
           </li>
-          <li class="parent"><a href="{{ url('account/profile') }}"><i class="icon mdi mdi-face"></i><span>Account</span></a>
+          <li class="parent"><a href="/account/profile"><i class="icon mdi mdi-face"></i><span>Account</span></a>
             <ul class="sub-menu">
-              <li><a href="{{ url('account/profile') }}">Profile</a>
+              <li><a href="/account/profile">Profile</a>
               </li>
             </ul>
           </li>
@@ -23,11 +23,11 @@
             </ul>
           </li>
           -->
-          <li class="parent"><a href="{{ url('packages/choose') }}"><i class="icon mdi mdi-dot-circle"></i><span>Packages</span></a>
+          <li class="parent"><a href="/packages/choose"><i class="icon mdi mdi-dot-circle"></i><span>Packages</span></a>
             <ul class="sub-menu">
-              <li><a href="{{ url('/packages/choose') }}">Avaliable packages</a>
+              <li><a href="/packages/choose">Avaliable packages</a>
               </li>
-              <li><a href="{{ url('/packages/subscribed') }}">Subscribed packages</a>
+              <li><a href="/packages/subscribed">Subscribed packages</a>
               </li>
             </ul>
           </li>

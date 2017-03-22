@@ -1,15 +1,15 @@
 
-<div class="left-sidebar-wrapper"><a href="{{ url('admin/dashboard/') }}" class="left-sidebar-toggle">Dashboard</a>
+<div class="left-sidebar-wrapper"><a href="/admin/dashboard/" class="left-sidebar-toggle">Dashboard</a>
   <div class="left-sidebar-spacer">
     <div class="left-sidebar-scroll">
       <div class="left-sidebar-content">
         <ul class="sidebar-elements">
           <li class="divider">Menu</li>
-          <li class="active"><a href="{{ url('admin/dashboard') }}"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
+          <li class="active"><a href="/admin/dashboard"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
           </li>
-          <li class="parent"><a href="{{ url('admin/people') }}"><i class="icon mdi mdi-accounts-alt"></i><span>People</span></a>
+          <li class="parent"><a href="/admin/people"><i class="icon mdi mdi-accounts-alt"></i><span>People</span></a>
             <ul class="sub-menu">
-              <li><a href="{{ url('admin/people/manage') }}">Manage Accounts</a>
+              <li><a href="/admin/people/manage'">Manage Accounts</a>
               </li>
               <!--<li><a href="{{ url('admin/people/import') }}">Account Import</a>
               </li>-->
@@ -29,11 +29,11 @@
               </li>
             </ul>
           </li>-->
-          <li class="parent"><a href="{{ url('admin/packages/manage') }}"><i class="icon mdi mdi-chart-donut"></i><span>Packages</span></a>
+          <li class="parent"><a href="/admin/packages/manage"><i class="icon mdi mdi-chart-donut"></i><span>Packages</span></a>
             <ul class="sub-menu">
-              <li><a href="{{ url('admin/packages/manage') }}">Manage Packages</a>
+              <li><a href="/admin/packages/manage">Manage Packages</a>
               </li>
-              <li><a href="{{ url('admin/packages/create') }}">Create Package</a>
+              <li><a href="/admin/packages/create">Create Package</a>
               </li>
               </li>
             </ul>
@@ -47,7 +47,7 @@
               </li>
             </ul>
           </li>-->
-          <li><a href="{{ url('admin/settings/') }}"><i class="icon mdi mdi-settings"></i><span>Settings</span></a></li>
+          <li><a href="/admin/settings/}"><i class="icon mdi mdi-settings"></i><span>Settings</span></a></li>
         </ul>
       </div>
     </div>
