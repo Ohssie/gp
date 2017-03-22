@@ -15,15 +15,15 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
 		<!-- CORE CSS -->
-		<link href="{{ url('assets2/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+		<link href="assets2/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 		<!-- THEME CSS -->
-		<link href="{{ url('assets2/css/essentials.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ url('assets2/css/layout.css') }}" rel="stylesheet" type="text/css" />
+		<link href="assets2/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets2/css/layout.css" rel="stylesheet" type="text/css" />
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="{{ url('assets2/css/header-1.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ url('assets2/css/layout-shop.css') }}" rel="stylesheet" type="text/css" />
+		<link href="assets2/css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="assets2/css/layout-shop.css" rel="stylesheet" type="text/css" />
 		
 		<style>
 			img.img-responsive.radius-4{
@@ -50,7 +50,7 @@
                 background: linear-gradient(to bottom, #555555 0%,#21191b 100%);
             }
 		</style>
-		<link rel="stylesheet" href="{{ url('assets2/layerslider.css') }}">
+		<link rel="stylesheet" href="assets2/layerslider.css">
 	</head>
 	<body class="smoothscroll enable-animation">
 		<!-- wrapper -->
@@ -150,7 +150,7 @@
 
 						<!-- Logo -->
 						<a class="logo pull-left" href="/">
-							<img src="{{ url('/assets/grandpayer-admin.png') }}" alt="GrandPayer Logo" />
+							<img src="/assets/grandpayer-admin.png" alt="GrandPayer Logo" />
 							
 						</a>
 
@@ -242,7 +242,7 @@
 
 						<!-- SLIDE -->
 						<div class="ls-slide" data-ls="slidedelay:4500;transition2d:24,25,27,28,34,35,37,38,110,113;">
-							<img src="{{ url('assets2/images/1x1.png') }}" data-src="{{ url('assets2/blur.jpg') }}" class="ls-bg" alt="Slide background" />
+							<img src="/assets2/images/1x1.png" data-src="/assets2/blur.jpg" class="ls-bg" alt="Slide background" />
 
 							<h5 class="ls-l" style="top:257px;left:50%;text-align: center; background: black; background: rgba(0,0,0,.75); font-weight: normal;width:350px;height:100px;font-size:50px;line-height:100px;color:#eee;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:top;durationout:750;showuntil:500;fadeout:false;">Welcome to</h5>
 							<h5 class="ls-l" style="top:363px;left:50%;text-align: center; font-weight: normal; padding-left:10px; padding-right:10px; height:100px;font-size:50px;line-height:100px;color:#444;background:white;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:bottom;durationout:750;showuntil:500;fadeout:false;">GrandPayer</h5>
@@ -286,7 +286,7 @@
                             layersContainer: 	1280,
 
                             skin:				'borderlessdark',
-                            skinsPath: 			"{{ url('assets2/plugins/slider.layerslider/skins/') }}"
+                            skinsPath: 			"assets2/plugins/slider.layerslider/skins/"
                         }
 					</script>
 
@@ -434,7 +434,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('assets2/guy.png') }}" alt="" />
+									<img class="rounded" src="/assets2/guy.png" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -448,7 +448,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('assets2/girl.png') }}" alt="" />
+									<img class="rounded" src="assets2/girl.png" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -462,7 +462,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('assets2/girl.png') }}" alt="" />
+									<img class="rounded" src="assets2/girl.png" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -476,7 +476,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('assets2/guy.png') }}" alt="" />
+									<img class="rounded" src="/assets2/guy.png" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -490,7 +490,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('assets2/guy.png') }}" alt="" />
+									<img class="rounded" src="/assets2/guy.png" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -504,7 +504,7 @@
 						<li class="col-md-4">
 							<div class="testimonial">
 								<figure class="pull-left">
-									<img class="rounded" src="{{ url('assets2/girl.png') }}" alt="" />
+									<img class="rounded" src="assets2/girl.png" alt="" />
 								</figure>
 								<div class="testimonial-content">
 									<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
@@ -653,16 +653,16 @@
 
 
 		<!-- JAVASCRIPT FILES -->
-		<script type="text/javascript">var plugin_path = "{{ url('assets2/plugins/') }}";</script>
-		<script type="text/javascript" src="{{ url('assets2/plugins/jquery/jquery-2.1.4.min.js') }}"></script>
+		<script type="text/javascript">var plugin_path = "assets2/plugins/";</script>
+		<script type="text/javascript" src="assets2/plugins/jquery/jquery-2.1.4.min.js"></script>
 
-		<script type="text/javascript" src="{{ url('assets2/js/scripts.js') }}"></script>
+		<script type="text/javascript" src="assets2/js/scripts.js"></script>
 
 		<!-- STYLESWITCHER - REMOVE -->
 		<!--<script async type="text/javascript" src="{{ url('assets2/plugins/styleswitcher/styleswitcher.js') }}"></script>-->
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<script type="text/javascript" src="{{ url('assets2/js/view/demo.shop.js') }}"></script>
+		<script type="text/javascript" src="assets2/js/view/demo.shop.js"></script>
 		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -748,7 +748,7 @@
 
 
 
-		<script src="{{ url('assets2/layerslider_pack.js') }}"></script>
-		<script src="{{ url('assets2/demo.layerslider_slider.js') }}"></script>
+		<script src="assets2/layerslider_pack.js"></script>
+		<script src="assets2/demo.layerslider_slider.js"></script>
 	</body>
 </html>
