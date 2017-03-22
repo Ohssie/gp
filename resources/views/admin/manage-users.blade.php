@@ -88,8 +88,8 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Phone</th>
-                <th>Package(s)</th>
-                <th>Action</th>
+                <!--<th>Package(s)</th>
+                <th>Action</th>-->
               </tr>
             </thead>
             <tbody>
@@ -100,7 +100,7 @@
                 <td>{{ $person->name }}</td>
                 <td>{{ $person->username }}</td>
                 <td>{{ $person->phone }}</td>
-                <td>{{ $person->packages }}</td>
+                <!--<td>{{ $person->packages }}</td>
                 <td class="center">
                   <div class="btn-group btn-hspace">
                     <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
@@ -111,7 +111,7 @@
                       <li><a href="people/delete/{{ $person->username }}" class="delete">Delete user</a></li>
                     </ul>
                   </div>
-                </td>
+                </td>-->
               </tr>
               @endforeach
               
