@@ -21,10 +21,9 @@ Route::get('/login', function ()
     return \Redirect::away('account/login');
 });
 
-Route::get('/account/login', function ()
-{
+Route::get('/account/login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::post('/account/login', 'Account@login');
 
