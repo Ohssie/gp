@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        \URL::forceSchema('https');
+        if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' && $_SERVER['SERVER_PORT'] == 443) {
+           \URL::forceSchema('https');
+       }
         \View::composer('primary', function($view)
         {
             $clean = "DELETE FROM package_subscription WHERE status = 'incomplete' AND username NOT IN(SELECT username FROM users WHERE role = 'admin') AND created_at <";

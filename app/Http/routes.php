@@ -25,11 +25,6 @@ Route::get('/about-us', function(){
 	return view('about');
 })->name('about-us');
 
-Route::get('/account/login', function ()
-{
-    return view('login');
-});
-
 Route::post('/account/login', 'Account@login');
 
 Route::get('/signup', function ()
