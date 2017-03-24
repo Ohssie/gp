@@ -21,6 +21,10 @@ Route::get('/login', function ()
     return \Redirect::away('account/login');
 });
 
+Route::get('/about-us', function(){
+	return view('about');
+})->name('about-us');
+
 Route::get('/account/login', function ()
 {
     return view('login');

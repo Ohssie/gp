@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="/assets/img/grandpayer.png">
+    <link rel="shortcut icon" href="/assets/standardgoal-logo.png">
     <title>@yield('title') - {{ config('settings.app_name')}}</title>
     <link rel="stylesheet" type="text/css" href="/assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/lib/material-design-icons/css/material-design-iconic-font.min.css"/><!--[if lt IE 9]>
@@ -27,7 +27,7 @@
     <div class="be-wrapper be-fixed-sidebar">
       <nav class="navbar navbar-default navbar-fixed-top be-top-header">
         <div class="container-fluid">
-          <div class="navbar-header"><a href="/"><img src="/assets/img/grandpayer-admin.png" width="180px" height="70px"></img></a>
+          <div class="navbar-header"><a href="/"><img src="/assets/goals.png" width="140px" height="40px" style="margin:10px"></img></a>
           </div>
           <div class="be-right-navbar">
             <ul class="nav navbar-nav navbar-right be-user-nav">

@@ -9,7 +9,7 @@
           </li>
           <li class="parent"><a href="/admin/people"><i class="icon mdi mdi-accounts-alt"></i><span>People</span></a>
             <ul class="sub-menu">
-              <li><a href="/admin/people/manage'">Manage Accounts</a>
+              <li><a href="/admin/people/manage">Manage Accounts</a>
               </li>
               <!--<li><a href="{{ url('admin/people/import') }}">Account Import</a>
               </li>-->
@@ -47,7 +47,7 @@
               </li>
             </ul>
           </li>-->
-          <li><a href="/admin/settings/}"><i class="icon mdi mdi-settings"></i><span>Settings</span></a></li>
+          <li><a href="/admin/settings/"><i class="icon mdi mdi-settings"></i><span>Settings</span></a></li>
         </ul>
       </div>
     </div>

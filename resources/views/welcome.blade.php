@@ -2,13 +2,14 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>GrandPayer</title>
+		<title>StandardGoals</title>
 		<meta name="keywords" content="HTML5,CSS3,Template" />
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<link rel="shortcut icon" href="/assets/standardgoal-logo.png">
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
 		<!-- WEB FONTS : use %7C instead of | (pipe) -->
@@ -150,7 +151,7 @@
 
 						<!-- Logo -->
 						<a class="logo pull-left" href="/">
-							<img src="assets/grandpayer-admin.png" alt="GrandPayer Logo" />
+							<img src="assets/goals.png" alt="Standard Goals Logo" width="190px" height="10px"  />
 							
 						</a>
 
@@ -245,7 +246,7 @@
 							<img src="/assets2/images/1x1.png" data-src="/assets2/blur.jpg" class="ls-bg" alt="Slide background" />
 
 							<h5 class="ls-l" style="top:257px;left:50%;text-align: center; background: black; background: rgba(0,0,0,.75); font-weight: normal;width:350px;height:100px;font-size:50px;line-height:100px;color:#eee;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:top;durationout:750;showuntil:500;fadeout:false;">Welcome to</h5>
-							<h5 class="ls-l" style="top:363px;left:50%;text-align: center; font-weight: normal; padding-left:10px; padding-right:10px; height:100px;font-size:50px;line-height:100px;color:#444;background:white;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:bottom;durationout:750;showuntil:500;fadeout:false;">GrandPayer</h5>
+							<h5 class="ls-l" style="top:363px;left:50%;text-align: center; font-weight: normal; padding-left:10px; padding-right:10px; height:100px;font-size:50px;line-height:100px;color:#444;background:white;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:bottom;durationout:750;showuntil:500;fadeout:false;">StandardGoals</h5>
 
 							<h5 class="ls-l" style="top:249px;left:384px;text-align: center; font-weight: normal;width:100px;height:70px;font-size:40px;line-height:70px;color:white;background:#cf431d;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;rotatein:-90;scalexin:2.5;scaleyin:2.5;offsetxout:0;durationout:1000;rotateout:-90;scalexout:0;scaleyout:0;">The</h5>
 							<h5 class="ls-l" style="top:249px;left:490px;text-align: center; font-weight: normal;width:285px;height:70px;font-size:40px;line-height:70px;color:white;background:#cf431d;border-radius:5px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:1500;delayin:1600;easingin:easeInOutQuart;fadein:false;scalexin:5;scaleyin:5;offsetxout:0;offsetyout:top;durationout:1000;fadeout:false;">Solution To All</h5>
@@ -571,14 +572,13 @@
 								<div class="col-md-3 hidden-sm hidden-xs">
 									<h4 class="letter-spacing-1">EXPLORE US</h4>
 									<ul class="list-unstyled footer-list half-paddings noborder">
-										<li><a class="block" href="#"><i class="fa fa-angle-right"></i> About Us</a></li>
+										<li><a class="block" href="{{route('about-us')}}"><i class="fa fa-angle-right"></i> About Us</a></li>
 									</ul>
 								</div>
 
 								<div class="col-md-4">
-									<h4 class="letter-spacing-1">FOLLOW US</h4>
+									<!--<h4 class="letter-spacing-1">FOLLOW US</h4>
 
-									<!-- Social Icons -->
 									<div class="clearfix">
 
 										<a href="#" class="social-icon social-icon-sm social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
@@ -607,7 +607,7 @@
 										</a>
 
 									</div>
-									<h4>+2348112345678</h4>
+									<h4>+2348112345678</h4>-->
 									<!-- /Social Icons -->
 
 								</div>
@@ -629,7 +629,7 @@
 						<!--	<li><a href="#">Privacy</a></li>-->
 						<!--</ul>-->
 
-						&copy;2017 All Rights Reserved, GrandPayer
+						&copy; <?php echo date('Y') ?> All Rights Reserved, StandardGoals LTD
 					</div>
 				</div>
 

@@ -9,7 +9,7 @@
 @section('content')
 <div class="main-content container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-4">
+    <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="widget widget-tile">
           <div id="spark1" class="chart sparkline"></div>
           <div class="data-info">
@@ -19,7 +19,7 @@
           </div>
         </div>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
+    <!--<div class="col-xs-12 col-md-6 col-lg-4">
       <div class="widget widget-tile">
         <div id="spark2" class="chart sparkline"></div>
         <div class="data-info">
@@ -28,8 +28,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-md-6 col-lg-4">
+    </div>-->
+    <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="widget widget-tile">
           <div id="spark3" class="chart sparkline"></div>
           <div class="data-info">
@@ -66,7 +66,7 @@
     <div class="col-md-6">
       <div class="panel panel-default panel-table">
         <div class="panel-heading"> 
-          <div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>
+          <!--<div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>-->
           <div class="title">Receiving</div>
         </div>
         <div class="panel-body table-responsive">
@@ -83,7 +83,7 @@
             <tbody class="no-border-x">
               <tr>
                 @if(count($down_payments))
-                @foreach($down_payments as $link): ?>
+                @foreach($down_payments as $link) &nbsp; &nbsp;
                 <?php $time = new DateTime($link->created_at); ?>
                 <td>{{ $link->payer_username }}</td>
                 <td>&#8358;{{ $link->amount }}</td>
@@ -93,7 +93,7 @@
                 @elseif($link->status == "disputed")
                 <td class="text-danger">Disputed
                 @elseif($link->status == "waiting")
-                Attention required<td class="text-danger">
+                   Attention required<td class="text-danger">
                   @endif
                 </td>
                 <td class="actions">
@@ -119,7 +119,7 @@
     <div class="col-md-6">
       <div class="panel panel-default panel-table">
         <div class="panel-heading">
-          <div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>
+          <!--<div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>-->
           <div class="title">Giving</div>
         </div>
         <div class="panel-body table-responsive">
@@ -143,7 +143,7 @@
                 <td>{{ $ptm->uplineUser()->account_number }}</td>
                 <td class="actions">
                     @if($ptm->status == "incomplete")
-                    <a href="'packages/subscription/' . $ptm->sub_key" class="btn btn-primary">I Paid</a>@else
+                    <a href="packages/subscription/{{$ptm->sub_key}}" class="btn btn-primary">I Paid</a>@else
                     <button class="btn btn-default" disabled="disabled">Cleared</button>
                     @endif
                 </td>
