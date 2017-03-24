@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'development'),
+    // 'env' => env('APP_ENV', 'development'),
+    'env' => 'development',
 
     /*
     |--------------------------------------------------------------------------

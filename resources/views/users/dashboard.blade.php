@@ -9,7 +9,7 @@
 @section('content')
 <div class="main-content container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-3">
+    <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="widget widget-tile">
           <div id="spark1" class="chart sparkline"></div>
           <div class="data-info">
@@ -19,7 +19,7 @@
           </div>
         </div>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-3">
+    <div class="col-xs-12 col-md-6 col-lg-4">
       <div class="widget widget-tile">
         <div id="spark2" class="chart sparkline"></div>
         <div class="data-info">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-3">
+    <div class="col-xs-12 col-md-6 col-lg-4">
         <div class="widget widget-tile">
           <div id="spark3" class="chart sparkline"></div>
           <div class="data-info">
@@ -39,28 +39,28 @@
           </div>
         </div>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="widget widget-tile">
-          <div id="clockdiv" class="chart sparkline">
-            <div class="days-wrap">
-              <span class="days">00</span>
-              DAYS
-            </div>
-            <div class="hours-wrap">
-              <span class="hours">00</span>
-              HOURS
-            </div>
-            <div class="minutes-wrap">
-              <span class="minutes">00</span>
-              MINUTES
-            </div>
-            <div class="seconds-wrap">
-              <span class="seconds">00</span>
-              SECONDS
-            </div>
-          </div>
-        </div>
-    </div>
+    <!--<div class="col-xs-12 col-md-6 col-lg-3">-->
+    <!--    <div class="widget widget-tile">-->
+    <!--      <div id="clockdiv" class="chart sparkline">-->
+    <!--        <div class="days-wrap">-->
+    <!--          <span class="days">00</span>-->
+    <!--          DAYS-->
+    <!--        </div>-->
+    <!--        <div class="hours-wrap">-->
+    <!--          <span class="hours">00</span>-->
+    <!--          HOURS-->
+    <!--        </div>-->
+    <!--        <div class="minutes-wrap">-->
+    <!--          <span class="minutes">00</span>-->
+    <!--          MINUTES-->
+    <!--        </div>-->
+    <!--        <div class="seconds-wrap">-->
+    <!--          <span class="seconds">00</span>-->
+    <!--          SECONDS-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--</div>-->
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -98,13 +98,14 @@
                 </td>
                 <td class="actions">
                   @if($link->status == 'waiting')
-                  <a href="{{ url('payment/claim/' . $link->sub_key) }}" class="btn btn-primary">Mark as complete</a>
+                  <a href="'payment/claim/' . $link->sub_key" class="btn btn-primary">Mark as complete</a>
                   @endif
                 </td>
               @endforeach
               @else
                 <!-- <td colspan="5" align="center"><div class="alert alert-warning"><p>You have not selected any package yet</p> <a href="packages/choose" class="btn btn-default">Pick one</a></div></td> -->
-                <td colspan="5" align="center"><div class="alert alert-warning"><p>Please check back again later. </p><p>if you have not selected any package yet kindly <a href="packages/choose" class="btn btn-default">Pick one</a></p></div></td>
+                <!-- Bug alert. This notification should appear only if the user hasnt selected a package. -->
+                <!--<td colspan="5" align="center"><div class="alert alert-warning"><p>Please check back again later. </p><p>if you have not selected any package yet kindly <a href="packages/choose" class="btn btn-default">Pick one</a></p></div></td>-->
                 
               @endif
               </tr>
@@ -114,6 +115,7 @@
         </div>
       </div>
     </div>
+    <!-- Bug Alert. After a confirmation, the request should move to this giving section. As it stands after a confirmation it remains empty -->
     <div class="col-md-6">
       <div class="panel panel-default panel-table">
         <div class="panel-heading">
@@ -141,7 +143,7 @@
                 <td>{{ $ptm->uplineUser()->account_number }}</td>
                 <td class="actions">
                     @if($ptm->status == "incomplete")
-                    <a href="{{ url('packages/subscription/' . $ptm->sub_key) }}" class="btn btn-primary">I Paid</a>@else
+                    <a href="'packages/subscription/' . $ptm->sub_key" class="btn btn-primary">I Paid</a>@else
                     <button class="btn btn-default" disabled="disabled">Cleared</button>
                     @endif
                 </td>

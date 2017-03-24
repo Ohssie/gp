@@ -57,7 +57,7 @@
             <div class="form-group">
               <label class="col-sm-3 control-label">Package Accent Color</label>
               <div class="col-sm-6">
-                {{ Form::select('color', ['primary' => 'Blue', 'warning' => 'Yellow', 'success' => 'Green', 'danger', 'Red'], old('color', 'primary'), ['class' => 'select2 form-control']) }}
+                {{ Form::select('color', ['primary' => 'Blue', 'warning' => 'Yellow', 'success' => 'Green', 'danger' => 'Red'], old('color', 'primary'), ['class' => 'select2 form-control']) }}
               </div>
             </div>
             <div class="form-group">
