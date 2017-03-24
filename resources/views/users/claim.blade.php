@@ -19,9 +19,9 @@
             <p class="xs-mt-10 xs-mb-10 text-center">
               @if($user->username == $upline->username)
                 @if($payment->status != "disputed")
-                <a class="btn btn-rounded btn-space btn-danger" href="'payment/dispute/' . $sub_key">Dispute Payment</a>
+                <a class="btn btn-rounded btn-space btn-danger" href="/payment/dispute/{{$sub_key}}">Dispute Payment</a>
                 @endif
-                <a class="btn btn-rounded btn-space btn-success" href="'payment/complete/' . $sub_key">Mark as Complete</a>
+                <a class="btn btn-rounded btn-space btn-success" href="/payment/complete/{{$sub_key}}">Mark as Complete</a>
                @endif
               </p>
             <form id="my-dropzone" action="payment/upload/{{ $sub_key }}" class="dropzone">

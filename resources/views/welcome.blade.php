@@ -77,7 +77,7 @@
 						<!--	</ul>-->
 
 						<!--</li>-->
-						<li class="hidden-xs"><a href="{{route('login')}}">LOGIN</a></li>
+						<li class="hidden-xs"><a href="/account/login">LOGIN</a></li>
 						<li class="hidden-xs"><a href="/account/signup">REGISTER</a></li>
 					</ul>
 
