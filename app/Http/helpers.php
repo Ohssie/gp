@@ -2,7 +2,7 @@
 
 if( !function_exists('send_sms'))
 {    
-    function send_sms($recipients, $messagetext, $flash = 0, $sendername = "OneKobo" )
+    function send_sms($recipients, $messagetext, $flash = 0, $sendername = "Citisumo" )
     {
 		$gsm = array();
 		$country_code = '234';

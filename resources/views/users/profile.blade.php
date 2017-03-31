@@ -11,7 +11,7 @@
 <div class="main-content container-fluid">
   <div class="user-profile">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-7">
         <div class="user-display">
           <div class="user-display-bg">
              
@@ -49,6 +49,11 @@
                   <td class="item">Phone<span class="icon s7-phone"></span></td>
                   <td>{{ $user->phone }}</td>
                 </tr>
+                <tr>
+                  <td class="icon"><span class="mdi mdi-link"></span></td>
+                  <td class="item">Referral Link<span class="icon s7-phone"></span></td>
+                  <td>{{ url('') . '/referral/' . $user->username }}</td>
+                </tr>
                 <!--<tr>-->
                 <!--  <td class="icon"><span class="mdi mdi-case"></span></td>-->
                 <!--  <td class="item">Packages<span class="icon s7-phone"></span></td>-->
@@ -68,6 +73,18 @@
                 <div class="user-timeline-description">{{ $user->bank_name }}</div>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="col-xs-12 col-md-6 col-lg-8">
+          <div class="widget widget-tile">
+            <!--<div id="spark1" class="chart sparkline"><canvas width="85" height="35" style="display: inline-block; width: 85px; height: 35px; vertical-align: top;"></canvas></div>-->
+            <div class="data-info">
+              <div class="desc">Referral Bonus</div>
+              <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span data-toggle="counter" data-end="{{ $total }}" class="number">{{ $total }} Naira</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
