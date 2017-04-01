@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -20,6 +21,7 @@ Route::get('/login', function ()
     return \Redirect::away('/account/login');
 });
 
+
 Route::get('/about-us', function(){
 	return view('about');
 })->name('about-us');
@@ -27,7 +29,6 @@ Route::get('/about-us', function(){
 Route::get('/account/login', function(){
 	return view('login');
 });
-
 Route::post('/account/login', 'Account@login');
 
 Route::get('/signup', function ()
@@ -73,6 +74,7 @@ Route::get('/admin/packages/create', function ()
 })->middleware('admin', 'auth');
 
 Route::post('/admin/packages/create', 'AdminController@createPackage')->middleware('admin');
+
 
 Route::get('/admin/packages/manage', function ()
 {

@@ -13,7 +13,7 @@ class PackagesSubscriptionsTableSeeder extends Seeder
     {
         DB::table('package_subscription')->insert([
             'package_id' => 1,
-            'username' => 'admin',
+            'username' => 'ifendi17',
             'upline_username' => '',
             'sub_key' => 'GRXBT2fpna', 
             'status' => 'completed',
@@ -21,7 +21,7 @@ class PackagesSubscriptionsTableSeeder extends Seeder
         
         DB::table('package_subscription')->insert([
             'package_id' => 2,
-            'username' => 'admin',
+            'username' => 'ifendi17',
             'upline_username' => '',
             'sub_key' => 'UfHwRF2BSz', 
             'status' => 'completed',
@@ -29,7 +29,7 @@ class PackagesSubscriptionsTableSeeder extends Seeder
         
         DB::table('package_subscription')->insert([
             'package_id' => 3,
-            'username' => 'admin',
+            'username' => 'ifendi17',
             'upline_username' => '',
             'sub_key' => 'D1X89M95Kc', 
             'status' => 'completed',
@@ -37,7 +37,7 @@ class PackagesSubscriptionsTableSeeder extends Seeder
         
         DB::table('package_subscription')->insert([
             'package_id' => 4,
-            'username' => 'admin',
+            'username' => 'ifendi17',
             'upline_username' => '',
             'sub_key' => 'V7G7j0D2Tg', 
             'status' => 'completed',
@@ -45,7 +45,7 @@ class PackagesSubscriptionsTableSeeder extends Seeder
         
         DB::table('package_subscription')->insert([
             'package_id' => 5,
-            'username' => 'admin',
+            'username' => 'ifendi17',
             'upline_username' => '',
             'sub_key' => 'iVXpXpVPCI', 
             'status' => 'completed',

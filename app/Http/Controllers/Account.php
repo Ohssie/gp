@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\User;
+use App\Referral;
+use Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
@@ -18,19 +20,22 @@ class Account extends Controller
     
     public function login(Request $request)
     {
-        $rules = [
+        $validate = $this->validate($request, [
+            'login' => 'required|min:2',
+            'password' => 'required|min:4',
+        ]);
+        
+        /*$rules = array(
             'login' => 'required|min:2',
             'password' => 'required|min:4'
-        ];
-
-        $validator = \Validator::make(Input::all(), $rules);
-
-        if ($validator->fails())
-        {
-            return Redirect::to('login')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
+        );
+        $validator = Validator::make(Input::all(), $rules);
+        if (!$validate) {
+            return back()
+                    ->withErrors($validator)
+                    ->withInput(Input::except('password'));
+        } else {*/
+            
             if (Auth::attempt(['username' => $request->login, 'password' => $request->password]))
             {
                return redirect()->intended(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard');
@@ -41,30 +46,30 @@ class Account extends Controller
                 return redirect()->intended(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard'); 
             }
             
-            
             else {
-                return Redirect::away('/account/login?');
+                return Redirect::to('/account/login')
+                        ->withInput(Input::except('password'))
+                        ->with('login_error', 'Wrong Credentials, Try again.');
             }
-        }
+        // }
     }
     
     public function signup(Request $request)
     {
-        $validator = \Validator::make($request->all(), [
+        $validator = $this->validate($request, [
             'name' => 'required|max:50',
             'phone' => 'required|unique:users|max:11|min:11',
             'bank_name' => 'required',
             'account_name' => 'required',
             'account_number' => 'required|max:14',
-        ]);
+		]);
         
         
-        if($validator->fails())
-        {
-            return redirect('account/signup')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+        // if($validator->fails())
+        // {
+        //     return back()->withInput()
+        //                 ->with('error', 'There was a problem signing up, Try again!');
+        // } 
         
         $username = generate_username($request->get('name'), '.');
         $password = generate_token(6);
@@ -91,20 +96,28 @@ class Account extends Controller
     
     //Signup function for referrals
     public function refSignup(Request $request) {
-        $validator = \Validator::make($request->all(), [
+        
+        $validator = $this->validate($request, [
             'name' => 'required|max:50',
             'phone' => 'required|unique:users|max:11|min:11',
             'bank_name' => 'required',
             'account_name' => 'required',
             'account_number' => 'required|max:14',
-        ]);
+		]);
+        // $validator = \Validator::make($request->all(), [
+        //     'name' => 'required|max:50',
+        //     'phone' => 'required|unique:users|max:11|min:11',
+        //     'bank_name' => 'required',
+        //     'account_name' => 'required',
+        //     'account_number' => 'required|max:14',
+        // ]);
         
-        if($validator->fails())
-        {
-            return redirect('account/signup')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+        // if($validator->fails())
+        // {
+        //     return redirect('account/signup')
+        //                 ->withErrors($validator)
+        //                 ->withInput();
+        // }
         
         $username = generate_username($request->get('name'), '.');
         $password = generate_token(6);

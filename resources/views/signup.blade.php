@@ -7,16 +7,16 @@
   <div class="splash-container">
     <div class="panel panel-default panel-border-color panel-border-color-primary">
       <div class="panel-heading">
-        <img src="/assets/goals.png" alt="{{ config('settings.app_name') }}" width="160" height="70" class="logo-img">
+        <a href="/"><img src="/assets/citisumo.jpg" alt="CitiSumo" width="200" height="160" class="logo-img"></a>
         <span class="splash-description">Please enter your user information.</span>
        
-        @if (count($errors))
-            @foreach($errors as $error) 
+        @if (count($errors) > 0)
+            @foreach($errors->all() as $error) 
             <div role="alert" class="alert alert-contrast alert-danger alert-dismissible">
                 <div class="icon"><span class="mdi mdi-close-circle-o"></span></div>
                 <div class="message"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button>
                     <strong>Error! </strong>
-                    {!! $error !!}
+                    {{ $error }}
                 </div>
             </div>
             @endforeach
@@ -43,6 +43,8 @@
       </div>
       <div class="panel-body">
         {{ Form::open(array('url' => url('/account/signup'), 'class' => 'form', 'method' => 'POST')) }}
+          {!! csrf_field() !!}
+          
           <div class="login-form">
             <div class="form-group">
               {{ Form::text('name', old ('name'), ['placeholder' => 'Full name', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
