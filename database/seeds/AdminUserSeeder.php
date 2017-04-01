@@ -11,6 +11,6 @@ class AdminUserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert(['name' => 'Admin Admin', 'username' => 'admin', 'password' => bcrypt('admin'), 'phone' => '08133225610', 'bank_name' => 'First Bank of Nigeria', 'account_name' => 'Kator James', 'account_number' => '3062027419', 'role' => 'admin']);
+        DB::table('users')->insert(['name' => 'Ayesha Danjuma', 'username' => 'admin', 'password' => bcrypt('admin'), 'phone' => '07062193996', 'bank_name' => 'Guaranty Trust Bank', 'account_name' => 'Ayesha Fred', 'account_number' => '0026058761', 'role' => 'admin']);
     }
 }

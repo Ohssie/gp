@@ -208,8 +208,26 @@ class Front extends Controller
         $user = Auth::user();
         $data['user'] = $user;
         return view('users.profile', $data);
+        
+        $total = 0;
+        
+        $refs = \App\Referral::where('referee', $user->username)->get();
+        $counts = count($refs);
+    
+        foreach($refs as $ref) {
+            $pack = \App\PackageSub::where('username', $ref->referral)->first();
+            
+            $sub = \App\Package::where('package_id', $pack->package_id)->first();
+            $bonus = ($sub->cost) * 0.05;
+            $total += $bonus;
+            
+        }
+        
+        return view('users.profile', $data)->with('total', $total);
 
     }
+    
+    
 
 }
 

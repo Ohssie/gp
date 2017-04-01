@@ -84,6 +84,55 @@ class Account extends Controller
         }
         return Redirect::away('/account/login');
     }
+    
+    public function referrals ($username) {
+        return view('refsignup')->with('username', $username);
+    }
+    
+    //Signup function for referrals
+    public function refSignup(Request $request) {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required|max:50',
+            'phone' => 'required|unique:users|max:11|min:11',
+            'bank_name' => 'required',
+            'account_name' => 'required',
+            'account_number' => 'required|max:14',
+        ]);
+        
+        if($validator->fails())
+        {
+            return redirect('account/signup')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        
+        $username = generate_username($request->get('name'), '.');
+        $password = generate_token(6);
+        $message_text = "Your " . config('settings.app_name') . " user account details are:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details at " . url('');
+        
+        $newRegisteredUser = User::create([
+            'name' => $request->get('name'),
+            'phone' => $request->get('phone'),
+            'password' => bcrypt($password),
+            'username' => $username,
+            'bank_name' => $request->get('bank_name'),
+            'account_name' => $request->get('account_name'),
+            'account_number' => $request->get('account_number')
+        ]);
+        
+        if (!is_null($newRegisteredUser) && send_sms($request->get('phone'), $message_text, $flash = 0, config('settings.app_name')))
+        {
+            \Session::flash('signup_success', 'Account created successfully! We have sent your login details to ' . $request->get('phone'));
+            
+            if($request->referee) {
+                $ref = new Referral;
+                $ref->referee = $request->get('referee');
+                $ref->referral = $newRegisteredUser->username;
+                $ref->save();
+            }
+        }
+        return Redirect::away('/account/login');
+    }
 
     public function logout()
     {
