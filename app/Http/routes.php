@@ -11,19 +11,11 @@
 |
 */
 
-// /maintainance
-Route::get('/', function ()
-{
-    return view('hold');
-});
-
-
-/*Bring this back when its time to launch
 Route::get('/', function ()
 {
     return view('new');
 });
-*/
+
 Route::get('/login', function ()
 {
     return \Redirect::away('/account/login');
