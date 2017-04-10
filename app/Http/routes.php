@@ -176,6 +176,7 @@ Route::get('/payment/dispute/{sub_key}', 'Front@dispute')->middleware('auth');
 
 Route::get('/payment/complete/{sub_key}', 'Front@complete')->middleware('auth');
 
+//Profile
 Route::get('/account/profile', 'Front@profile')->middleware('auth');
 
 Route::get('/admin/packages/subscription/{sub_key}', function($sub_key)
