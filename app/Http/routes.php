@@ -13,8 +13,14 @@
 
 Route::get('/', function ()
 {
-    return view('new');
+	$news = DB::table('news')
+				->orderBy('created_at', 'desc')
+                ->limit(3)
+                ->get();
+    return view('new')->with('news', $news);
 });
+
+Route::get('/all/news', 'NewsController@allNews');
 
 Route::get('/login', function ()
 {
@@ -41,6 +47,10 @@ Route::get('/account/signup', function ()
     return view('signup');
 });
 
+//Password change
+Route::get('/password', 'Account@pwordChange');
+Route::post('/passwordChange', 'Account@changePassword');
+
 //Referrals
 Route::get('/referral/{username}', 'Account@referrals');
 Route::post('/referral/signup', 'Account@refSignup');
@@ -53,6 +63,33 @@ Route::get('/account/forgot-password', function ()
 });
 
 Route::get('/account/logout', 'Account@logout');
+
+//News
+Route::get('/admin/news', function() {
+	$data['user'] = Auth::user();
+	$data['news'] = App\News::all();
+	
+	return view('admin.news', $data);
+})->middleware('admin');
+
+Route::get('/admin/news/create', function() {
+	$data['user'] = Auth::user();
+	
+	return view('admin.create-news', $data);
+})->middleware('admin');
+
+Route::post('/admin/news/store', 'NewsController@create')->middleware('admin');
+
+Route::get('/news/edit/{newsId}', function($newsId) {
+	$data['user'] = Auth::user();
+	
+	$news = App\News::where('id', $newsId)->first();
+	return view('admin.modify-news', $data)->with('news', $news);
+})->middleware('admin', 'auth');
+
+Route::put('/admin/news/update/{id}', 'NewsController@edit')->middleware('admin');
+
+Route::get('/news/delete/{id}', 'NewsController@removeNews')->middleware('admin');
 
 Route::get('/admin/dashboard', 'AdminController@dashboard')->middleware('admin');
 
@@ -82,6 +119,17 @@ Route::get('/admin/packages/manage', function ()
 	$data['packages'] = App\Package::all();
 	return view('admin.manage-packages', $data);
 })->middleware('admin', 'auth');
+
+Route::get('/packages/edit/{packageId}', function($packageId) {
+	$data['user'] = Auth::user();
+	$data['package'] = App\Package::find($packageId);
+	$head = App\PackageSub::where('package_id', $packageId)->first();
+	return view('admin.modify-package', $data)->with('head', $head);
+})->middleware('admin', 'auth');
+
+Route::put('/admin/packages/update/{id}', 'AdminController@updatePackage')->middleware('admin');
+
+Route::get('/packages/delete/{id}', 'AdminController@discardPackage')->middleware('admin');
 
 Route::get('/packages/subscription/{sub_key}', function ($sub_key)
 {

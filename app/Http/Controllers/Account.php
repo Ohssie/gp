@@ -58,7 +58,11 @@ class Account extends Controller
     {
         $validator = $this->validate($request, [
             'name' => 'required|max:50',
+            'username' => 'unique:users,username',
             'phone' => 'required|unique:users|max:11|min:11',
+            'phone2' => 'required|unique:users|max:11|min:11',
+            'email' => 'required',
+            'gender' => 'required',
             'bank_name' => 'required',
             'account_name' => 'required',
             'account_number' => 'required|max:14',
@@ -71,7 +75,7 @@ class Account extends Controller
         //                 ->with('error', 'There was a problem signing up, Try again!');
         // } 
         
-        $username = generate_username($request->get('name'), '.');
+        $username = $request->get('username');
         $password = generate_token(6);
         $message_text = "Your " . config('settings.app_name') . " user account details are:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details at " . url('');
         
@@ -80,6 +84,9 @@ class Account extends Controller
             'phone' => $request->get('phone'),
             'password' => bcrypt($password),
             'username' => $username,
+            'gender' => $request->get('gender'),
+            'email' => $request->get('email'),
+            'phone2' => $request->get('phone2'),
             'bank_name' => $request->get('bank_name'),
             'account_name' => $request->get('account_name'),
             'account_number' => $request->get('account_number')
@@ -99,18 +106,15 @@ class Account extends Controller
         
         $validator = $this->validate($request, [
             'name' => 'required|max:50',
+            'username' => 'unique:users,username',
             'phone' => 'required|unique:users|max:11|min:11',
+            'phone2' => 'required|unique:users|max:11|min:11',
+            'email' => 'required',
+            'gender' => 'required',
             'bank_name' => 'required',
             'account_name' => 'required',
             'account_number' => 'required|max:14',
 		]);
-        // $validator = \Validator::make($request->all(), [
-        //     'name' => 'required|max:50',
-        //     'phone' => 'required|unique:users|max:11|min:11',
-        //     'bank_name' => 'required',
-        //     'account_name' => 'required',
-        //     'account_number' => 'required|max:14',
-        // ]);
         
         // if($validator->fails())
         // {
@@ -119,7 +123,7 @@ class Account extends Controller
         //                 ->withInput();
         // }
         
-        $username = generate_username($request->get('name'), '.');
+        $username = $request->get('username');
         $password = generate_token(6);
         $message_text = "Your " . config('settings.app_name') . " user account details are:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details at " . url('');
         
@@ -128,6 +132,9 @@ class Account extends Controller
             'phone' => $request->get('phone'),
             'password' => bcrypt($password),
             'username' => $username,
+            'gender' => $request->get('gender'),
+            'email' => $request->get('email'),
+            'phone2' => $request->get('phone2'),
             'bank_name' => $request->get('bank_name'),
             'account_name' => $request->get('account_name'),
             'account_number' => $request->get('account_number')
@@ -145,6 +152,24 @@ class Account extends Controller
             }
         }
         return Redirect::away('/account/login');
+    }
+    
+    public function pwordChange() {
+        return view('users.password');
+    }
+    
+    public function changePassword(Request $request) {
+        $user = Auth::user();
+        
+        if ($request->old_password && $request->new_password) {
+            $user->password = bcrypt($request->new_password);
+            $user->save();
+            return back()
+                ->with('message', 'Password successfully changed!');
+        } else {
+            return back()->with('message', 'Incorrect old password');
+        }
+        
     }
 
     public function logout()

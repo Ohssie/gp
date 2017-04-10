@@ -63,6 +63,10 @@
                   <div class="user-timeline-date">{{ $upline->account_name }}</div>
                   <div class="user-timeline-title">{{ $upline->account_number }}</div>
                   <div class="user-timeline-description">{{ $upline->bank_name }}</div>
+                  <br/>
+                  <div class="user-timeline-title">{{ $upline->phone }}</div>
+                  <div class="user-timeline-title">{{ $upline->phone2 }}</div>
+                  <div class="user-timeline-description">Contant Details</div>
                 </li>
               </ul>
           </div>

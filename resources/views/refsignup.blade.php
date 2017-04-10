@@ -46,12 +46,27 @@
           {!! csrf_field() !!}
           
           <div class="login-form">
-              {!! Form::hidden('referee', $username) !!}
             <div class="form-group">
               {{ Form::text('name', old ('name'), ['placeholder' => 'Full name', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
             </div>
             <div class="form-group">
+              {{ Form::text('username', old ('username'), ['placeholder' => 'Username', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
+            </div>
+            <div class="form-group">
+              {{ Form::text('email', old ('email'), ['placeholder' => 'Email Address', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
+            </div>
+            <div class="form-group">
               {{ Form::text('phone', old('phone'), ['placeholder' => 'Phone number', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
+            </div>
+            <div class="form-group">
+              {{ Form::text('phone2', old('phone2'), ['placeholder' => 'Alt. Phone number', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="gender" required>
+                <option>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
             </div>
             <div class="form-group">
               {{ Form::text('bank_name', old('bank_name'), ['placeholder' => 'Bank name', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}

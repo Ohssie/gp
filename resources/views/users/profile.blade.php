@@ -45,9 +45,19 @@
             <table class="no-border no-strip skills">
               <tbody class="no-border-x no-border-y">
                 <tr>
+                  <td class="icon"><span class="mdi mdi-email"></span></td>
+                  <td class="item">Email Address<span class="icon s7-phone"></span></td>
+                  <td>{{ $user->email }}</td>
+                </tr>
+                <tr>
                   <td class="icon"><span class="mdi mdi-smartphone-android"></span></td>
                   <td class="item">Phone<span class="icon s7-phone"></span></td>
                   <td>{{ $user->phone }}</td>
+                </tr>
+                <tr>
+                  <td class="icon"><span class="mdi mdi-smartphone-android"></span></td>
+                  <td class="item">Alt. Phone<span class="icon s7-phone"></span></td>
+                  <td>{{ $user->phone2 }}</td>
                 </tr>
                 <tr>
                   <td class="icon"><span class="mdi mdi-link"></span></td>
@@ -85,6 +95,38 @@
               <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span data-toggle="counter" data-end="{{ $total }}" class="number">{{ $total }} Naira</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-5">
+        <div class="panel panel-default panel-border-color panel-border-color-success">
+          <div class="panel-heading panel-heading-divider">Account Settings<span class="panel-subtitle">Please, always remember your password.</span>
+          	<div class="col-sm-offset-2 col-sm-8">
+          		{!! flash_message() !!}
+          	</div>
+          </div>
+          <div class="panel-body">
+            {{ Form::open(['url' => url('/passwordChange'), 'method' => 'post', 'style' => 'border-radius: 0px;', 'class' => 'form-horizontal group-border-dashed']) }}
+              {{ csrf_field() }}
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Old password</label>
+                <div class="col-sm-6">
+                  {{ Form::password('old_password', ['placeholder' => 'Old Password', 'class' => 'form-control', 'required' => 'required']) }}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">New Password</label>
+                <div class="col-sm-6">
+                  {{ Form::password('new_password', ['placeholder' => 'New Password', 'class' => 'form-control', 'required' => 'required']) }}
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                  <button type="submit" class="btn btn-space btn-success">Change Password</button>
+                </div>
+              </div>
+            {{ Form::close() }}
           </div>
         </div>
       </div>

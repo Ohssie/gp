@@ -7,6 +7,8 @@
           <li class="divider">Menu</li>
           <li class="active"><a href="/admin/dashboard"><i class="icon mdi mdi-home"></i><span>Dashboard</span></a>
           </li>
+          <li class=""><a href="/account/profile"><i class="icon mdi mdi-face"></i><span>Profile</span></a>
+          </li>
           <li class="parent"><a href="/admin/people"><i class="icon mdi mdi-accounts-alt"></i><span>People</span></a>
             <ul class="sub-menu">
               <li><a href="/admin/people/manage">Manage Accounts</a>
@@ -17,23 +19,23 @@
               </li>-->
             </ul>
           </li>
-          <!--<li class="parent"><a href="genealogy"><i class="icon mdi mdi-face"></i><span>Genealogy</span></a>
+          <li class="parent"><a href="/admin/news"><i class="icon mdi mdi-comment-list"></i><span>News</span></a>
             <ul class="sub-menu">
-              <li><a href="genealogy/holes">Manage Holes</a>
+              <li><a href="/admin/news">News</a>
               </li>
-              <li><a href="genealogy/orphans">Manage Ophans</a>
+              <li><a href="/admin/news/create">Add news</a>
               </li>
-              <li><a href="genealogy/placement">Manage Placement</a>
-              </li>
-              <li><a href="genealogy/move">Move Positions</a>
-              </li>
+              <!--<li><a href="genealogy/orphans">Modify News</a>
+              </li>-->
             </ul>
-          </li>-->
+          </li>
           <li class="parent"><a href="/admin/packages/manage"><i class="icon mdi mdi-chart-donut"></i><span>Packages</span></a>
             <ul class="sub-menu">
-              <li><a href="/admin/packages/manage">Manage Packages</a>
+              <li>
+                <a href="/admin/packages/manage">Manage Packages</a>
               </li>
-              <li><a href="/admin/packages/create">Create Package</a>
+              <li>
+                <a href="/admin/packages/create">Create Package</a>
               </li>
               </li>
             </ul>

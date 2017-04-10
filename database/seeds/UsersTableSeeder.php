@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        /*DB::table('users')->insert([
             'name' => 'Favour James', 
             'username' => 'kjames', 
             'password' => bcrypt('user'), 
@@ -27,18 +27,21 @@ class UsersTableSeeder extends Seeder
             'phone' => '08161730129', 
             'bank_name' => 'Diamon Bank Nigeria', 
             'account_name' => 'Daser Retnan', 
-            'account_number' => '3085242156']);
+            'account_number' => '3085242156']);*/
             
         DB::table('users')->insert([
             'name' => 'Demo User', 
             'username' => 'duser', 
             'password' => bcrypt('yahweh'), 
-            'phone' => '08161730128', 
+            'phone' => '08095356756', 
             'bank_name' => 'Demo Bank Nigeria', 
             'account_name' => 'Demo User', 
-            'account_number' => '2868614816']);
+            'account_number' => '2868614816',
+            'email' => 'ugendu04@gmail.com',
+            'phone2' => '08167771692',
+            'gender' => 'Male']);
             
-        DB::table('users')->insert([
+       /* DB::table('users')->insert([
             'name' => 'Demo User2', 
             'username' => 'duser2', 
             'password' => bcrypt('yahweh'), 
@@ -72,6 +75,6 @@ class UsersTableSeeder extends Seeder
             'phone' => '07035039214', 
             'bank_name' => 'Demo5 Bank Nigeria', 
             'account_name' => 'Demo Nani', 
-            'account_number' => '5987256925']);
+            'account_number' => '5987256925']);*/
     }
 }

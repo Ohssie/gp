@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
+use App\Package;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Validator;
@@ -64,6 +65,70 @@ class AdminController extends Controller
                 }
             }
         }
+    }
+    
+    public function updatePackage(Request $request, $id) {
+        $validator = Validator::make($request->all(), [
+            'package_name' => 'required',
+            'cost' => 'required|numeric',
+            'size' => 'required|numeric',
+            'depth' => 'required|numeric',
+            'color' => 'required|in:primary,warning,danger,success',
+            'description' => 'required',
+            'package_head' => 'required|exists:users,username'
+        ]);
+
+        if($validator->fails())
+        {
+            return back()
+                    ->withErrors($validator)
+                    ->withInput();
+        }
+
+        $package = \App\Package::find($id);
+        // dd($package);
+        $package->package_name = $request->get('package_name');
+        $package->cost = $request->get('cost');
+        $package->size = $request->get('size');
+        $package->depth = $request->get('depth');
+        $package->color = $request->get('color');
+        $package->description = $request->get('description');
+        
+        if($package->save())
+        {
+            // dd($package->package_id);
+            $package_id = $package->package_id;
+            $ps = \App\PackageSub::where('package_id', $package_id)->first();
+            
+            // dd($ps);
+
+            $ps->package_id = $package_id;
+            $ps->username = $request->get('package_head');
+            // dd($ps->username);
+            // $ps->upline_username = "";
+            // $ps->sub_key = generate_token(10, true);
+            // $ps->status = "completed";
+
+            if($ps->save())
+            {
+                $rcost = $request->get('cost') * $request->get('size');
+                $message_text = "The package " . $request->get('package_name') ." has been updated. Let " . $request->get('size') . " people pay you N" . $rcost . " by paying someone N" . $request->get('cost') . ". Log on to " . url('') . " now";
+                $all_phone = User::select()->pluck('phone')->toArray();
+                if(send_sms($all_phone, $message_text, 0, config('settings.app_name')))
+                {
+                    \Session::flash('modify_package_success', 'Package updated successfully');
+                    return \Redirect::intended('/admin/packages/manage');
+                }
+            }
+        }
+    }
+    
+    public function discardPackage($id) {
+        
+        $package = Package::find($id);
+        $package->delete();
+        return back();
+        
     }
 
     public function dashboard()

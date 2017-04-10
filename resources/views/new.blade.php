@@ -91,169 +91,147 @@
             <div class="pt80 pb80">
 
                 <div class="container">
-
-                    <div class="row">
-
-                        <h3 class="section-sub">get to know our</h3>
-                        <h2 class="section-title">Packages Overview</h2>
-                        
-                        <div class="row">
-                            <div class="mb40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                                <div class="price-box">
-                                    <div class="price-container">
-    
-                                        <h5>Classic</h5>
-    
-                                        <div class="price-holder">
-                                            <h4>5,000<span class="duration">naira</span></h4>
-                                        </div>
-                                        <p>Five Thousand Naira</p>
-    
-                                    </div>
-                                    <div class="features-list">
-    
-                                        <h6>Package Features</h6>
-    
-                                        <ul>
-                                            <li>2:1 Matrix</li>
-                                            <li>Auto Assign</li>
-                                            <li>Pay Out/In Option</li>
-                                            <li>Referral Wallet</li>
-                                            <li>Cash Out</li>
-                                            <li>WildCard Auto Recycle</li>
-                                            <li>N10,000 Return Investment</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                                <div class="price-box">
-                                    <div class="price-container">
-    
-                                        <h5>Professional</h5>
-    
-                                        <div class="price-holder">
-                                            <h4>10,000<span class="duration">naira</span></h4>
-                                        </div>
-                                        <p>Ten Thousand Naira</p>
-    
-                                    </div>
-                                    <div class="features-list">
-    
-                                        <h6>Package Features</h6>
-    
-                                        <ul>
-                                            <li>2:1 Matrix</li>
-                                            <li>Auto Assign</li>
-                                            <li>Pay Out/In Option</li>
-                                            <li>Referral Wallet</li>
-                                            <li>Cash Out</li>
-                                            <li>WildCard Auto Recycle</li>
-                                            <li>N20,000 Return Investment</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                                <div class="price-box">
-                                    <div class="price-container">
-    
-                                        <h5>Premium</h5>
-    
-                                        <div class="price-holder">
-                                            <h4>20,000<span class="duration">naira</span></h4>
-                                        </div>
-                                        <p>Twenty Thousand Naira</p>
-    
-                                    </div>
-                                    <div class="features-list">
-    
-                                        <h6>Package Features</h6>
-    
-                                        <ul>
-                                            <li>2:1 Matrix</li>
-                                            <li>Auto Assign</li>
-                                            <li>Pay Out/In Option</li>
-                                            <li>Referral Wallet</li>
-                                            <li>Cash Out</li>
-                                            <li>WildCard Auto Recycle</li>
-                                            <li>N40,000 Return Investment</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="mb40 col-md-2 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0"></div>
-                            
-                            <div class="mb40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                                <div class="price-box">
-                                    <div class="price-container">
-    
-                                        <h5>Ultimate</h5>
-    
-                                        <div class="price-holder">
-                                            <h4>50,000<span class="duration">naira</span></h4>
-                                        </div>
-                                        <p>Fifty Thousand Naira</p>
-    
-                                    </div>
-                                    <div class="features-list">
-    
-                                        <h6>Package Features</h6>
-    
-                                        <ul>
-                                            <li>2:1 Matrix</li>
-                                            <li>Auto Assign</li>
-                                            <li>Pay Out/In Option</li>
-                                            <li>Referral Wallet</li>
-                                            <li>Cash Out</li>
-                                            <li>WildCard Auto Recycle</li>
-                                            <li>N100,000 Return Investment</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="mb40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                                <div class="price-box">
-                                    <div class="price-container">
-    
-                                        <h5>Boss</h5>
-    
-                                        <div class="price-holder">
-                                            <h4>100,000<span class="duration">naira</span></h4>
-                                        </div>
-                                        <p>Hundred Thousand Naira</p>
-    
-                                    </div>
-                                    <div class="features-list">
-    
-                                        <h6>Package Features</h6>
-    
-                                        <ul>
-                                            <li>2:1 Matrix</li>
-                                            <li>Auto Assign</li>
-                                            <li>Pay Out/In Option</li>
-                                            <li>Referral Wallet</li>
-                                            <li>Cash Out</li>
-                                            <li>WildCard Auto Recycle</li>
-                                            <li>N200,000 Return Investment</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb40 col-md-2 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0"></div>
-                        </div>
-                        
-
-                    </div><!-- //row -->
                     
-                </div><!-- //container -->
+                    <h3 class="section-sub">get to know our</h3>
+                    <h2 class="section-title">Packages Overview</h2>
+                    
+                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                        <div class="price-box">
+                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
+                            <div class="price-container">
+                                
+                                <h5>Classic</h5>
+                                
+                                <div class="price-holder">
+                                    <h6 class="price"><span class="symbol">N</span>5<span class="duration">thousand</span></h6>
+                                </div>
+                                
+                                <p>Five Thousand Naira</p>
+
+                                <i class="pe-7s-cash"></i>
+                                
+                            </div>
+                            <div class="features-list">
+
+                                <h6>Package Features</h6>
+
+                                <ul>
+                                    <li>2:1 Matrix</li>
+                                    <li>Auto Assign</li>
+                                    <li>Pay Out/In Option</li>
+                                    <li>Referral Wallet</li>
+                                    <li>Cash Out</li>
+                                    <li>WildCard Auto Recycle</li>
+                                    <li>N10,000 Return Investment</li>
+                                </ul>
+                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                        <div class="price-box">
+                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
+                            <div class="price-container">
+                                
+                                <h5>Professional</h5>
+                                
+                                <div class="price-holder">
+                                    <h6 class="price"><span class="symbol">N</span>10<span class="duration">thousand</span></h6>
+                                </div>
+                                
+                                <p>Ten Thousand Naira</p>
+
+                                <i class="pe-7s-cash"></i>
+                                
+                            </div>
+                            <div class="features-list">
+
+                                <h6>Package Features</h6>
+
+                                <ul>
+                                    <li>2:1 Matrix</li>
+                                    <li>Auto Assign</li>
+                                    <li>Pay Out/In Option</li>
+                                    <li>Referral Wallet</li>
+                                    <li>Cash Out</li>
+                                    <li>WildCard Auto Recycle</li>
+                                    <li>N20,000 Return Investment</li>
+                                </ul>
+                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                        <div class="price-box">
+                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
+                            <div class="price-container">
+                                
+                                <h5>Premium</h5>
+                                
+                                <div class="price-holder">
+                                    <h6 class="price"><span class="symbol">N</span>20<span class="duration">thousand</span></h6>
+                                </div>
+                                
+                                <p>Twenty Thousand Naira</p>
+
+                                <i class="pe-7s-cash"></i>
+                                
+                            </div>
+                            <div class="features-list">
+
+                                <h6>Package Features</h6>
+
+                                <ul>
+                                    <li>2:1 Matrix</li>
+                                    <li>Auto Assign</li>
+                                    <li>Pay Out/In Option</li>
+                                    <li>Referral Wallet</li>
+                                    <li>Cash Out</li>
+                                    <li>WildCard Auto Recycle</li>
+                                    <li>N40,000 Return Investment</li>
+                                </ul>
+                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                        <div class="price-box">
+                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
+                            <div class="price-container">
+                                
+                                <h5>Ultimate</h5>
+                                
+                                <div class="price-holder">
+                                    <h6 class="price"><span class="symbol">N</span>50<span class="duration">thousand</span></h6>
+                                </div>
+                                
+                                <p>Fifty Thousand Naira</p>
+
+                                <i class="pe-7s-cash"></i>
+                                
+                            </div>
+                            <div class="features-list">
+
+                                <h6>Package Features</h6>
+
+                                <ul>
+                                    <li>2:1 Matrix</li>
+                                    <li>Auto Assign</li>
+                                    <li>Pay Out/In Option</li>
+                                    <li>Referral Wallet</li>
+                                    <li>Cash Out</li>
+                                    <li>WildCard Auto Recycle</li>
+                                    <li>N100,000 Return Investment</li>
+                                </ul>
+                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
                  
             </div>
             <!-- //Pricing Tables -->
@@ -264,42 +242,41 @@
                 <div class="container">
 
                     <div class="row">
-
+                        @foreach($news as $news)
+                            <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                                <div class="icon-box-1">
+    
+                                    <!--<i class="pe-7s-headphones color-white"></i>-->
+    
+                                    <h4 class="color-white">{{ $news->title }}</h4>
+    
+                                    <p class="color-white opacity-08">{{ $news->description }}</p>
+    
+                                </div>   
+                            </div>
+                        @endforeach
+                    </div>
+                    
+                    <br/>
+                    
+                    <div class="row">
                         <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
                             <div class="icon-box-1">
-
-                                <i class="pe-7s-headphones color-white"></i>
-
-                                <h4 class="color-white">24/7 Customer Support</h4>
-
-                                <p class="color-white opacity-08">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled.</p>
-
-                            </div>   
-                        </div><!-- // Service Block -->
-
-                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                            <div class="icon-box-1">
-
-                                <i class="pe-7s-piggy color-white"></i>
-
-                                <h4 class="color-white">Low Commisions</h4>
-
-                                <p class="color-white opacity-08">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled.</p>
 
                             </div>
-                        </div><!-- // Service Block -->
+                        </div>
+                        
+                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                            <div class="icon-box-1">
+                                <a href="/all/news" class="button button-sm button-primary">Read more...</a>
+                            </div>
+                        </div>
 
                         <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
                             <div class="icon-box-1">
 
-                                <i class="pe-7s-mouse color-white"></i>
-
-                                <h4 class="color-white">Online Banking</h4>
-
-                                <p class="color-white opacity-08">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled.</p>
-
                             </div>
-                        </div><!-- // Service Block -->
+                        </div>
 
                     </div><!-- //row -->
                     

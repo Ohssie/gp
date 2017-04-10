@@ -74,6 +74,7 @@
             <thead>
               <tr>
                 <th>User</th>
+                <th>Phone</th>
                 <th>Amount</th>
                 <th>Date</th>
                 <th>State</th>
@@ -86,6 +87,7 @@
                 @foreach($down_payments as $link) &nbsp; &nbsp;
                 <?php $time = new DateTime($link->created_at); ?>
                 <td>{{ $link->payer_username }}</td>
+                <td>{{ $link->phone }} <br/> {{ $link->phone2 }}</td>
                 <td>&#8358;{{ $link->amount }}</td>
                 <td>{{ date('Y-m-d', $time->getTimestamp()) }}</td>
                 @if($link->status == "completed")
@@ -127,6 +129,7 @@
             <thead>
               <tr>
                 <th>User</th>
+                <th>Phone</th>
                 <th>Bank</th>
                 <th>Account Name</th>
                 <th>Account Number</th>
@@ -138,6 +141,7 @@
                 <?php //$uplink = $this->crud_model->user_details($ptm['uplink_username']); ?>
               <tr>
                 <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ptm->upline_username }}</td>
+                <td>{{ $ptm->uplineUser()->phone }} <br/> {{ $ptm->uplineUser()->phone2 }}</td>
                 <td>{{ $ptm->uplineUser()->bank_name }}</td>
                 <td>{{ $ptm->uplineUser()->account_name }}</td>
                 <td>{{ $ptm->uplineUser()->account_number }}</td>

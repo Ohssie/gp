@@ -103,6 +103,7 @@
             <thead>
               <tr>
                 <th style="width:25%;">Username</th>
+                <th style="number">Phone</th>
                 <th class="number">Amount Paid</th>
                 <th style="width:25%;">Date</th>
                 <th style="width:20%;" class="actions">Action</th>
@@ -112,6 +113,7 @@
               @foreach($pending_payment as $pending)
               <tr>
                 <td>{{ $pending->payer_username }}</td>
+                <td>{{ $user->payer_phone }} <br/> {{ $user->phone2 }}</td>
                 <td class="number">&#8358;{{ $pending->package()->cost }}</td>
                 <td>{{ date('d M, y', strtotime($pending->created_at)) }}</td>
                 <td class="actions"><a href="{{ url('payment/claim/' . $pending->sub_key) }}" class="btn btn-warning">Approve</a></td>
@@ -133,8 +135,9 @@
           <table class="table table-striped table-hover">
             <thead>
               <tr>
-                <th style="width:37%;">User</th>
-                <th style="width:36%;">Amount approved</th>
+                <th style="width:25%;">User</th>
+                <th style="width:25%;">Phone</th>
+                <th style="width:25%;">Amount approved</th>
                 <th>Date</th>
               </tr>
             </thead>
@@ -142,6 +145,7 @@
               @foreach($approved_payments as $approved)              
               <tr>
                 <td>{{ $approved->payer_username }}</td>
+                <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
                 <td>&#8358;{{ $approved->package()->cost }}</td>
                 <td>{{ date('d M, y', strtotime($approved->updated_at)) }}</td>
               </tr>

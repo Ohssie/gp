@@ -43,12 +43,12 @@ class PackagesSubscriptionsTableSeeder extends Seeder
             'status' => 'completed',
         ]);
         
-        DB::table('package_subscription')->insert([
+        /*DB::table('package_subscription')->insert([
             'package_id' => 5,
             'username' => 'ifendi17',
             'upline_username' => '',
             'sub_key' => 'iVXpXpVPCI', 
             'status' => 'completed',
-        ]);
+        ]);*/
     }
 }
