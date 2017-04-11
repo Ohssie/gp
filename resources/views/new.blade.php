@@ -35,6 +35,8 @@
                         <ul id="menu" class="menu">
                             <!-- Menu Item -->
                             <li><a href="#" class="menu-item">Home</a></li>
+                            
+                            <li><a href="/account/signup" class="button button-sm button-primary">Sign Up</a></li>
 
                             <li>
                                 <a href="/account/login" class="button button-sm button-primary">Log In</a>
@@ -80,7 +82,7 @@
                     
                 </div><!-- //container -->
 
-                <a href="#services" class="mouse-box">
+                <a href="#packages" class="mouse-box">
                     <div class="mouse"></div>
                 </a>
                  
@@ -88,7 +90,7 @@
             <!-- //hero section -->
 
             <!-- Pricing Tables -->
-            <div class="pt80 pb80">
+            <div class="pt80 pb80" id="packages">
 
                 <div class="container">
                     
@@ -237,6 +239,7 @@
             <!-- //Pricing Tables -->
 
             <!-- icon boxes -->
+            @if(count($news) > 1)
             <div class="services pt100 pb100 bg-color-1">
 
                 <div class="container">
@@ -283,6 +286,7 @@
                 </div><!-- //container -->
                  
             </div>
+            @endif
             <!-- //icon boxes -->
 
             <!-- text with side image -->
