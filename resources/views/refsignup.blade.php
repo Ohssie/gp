@@ -59,11 +59,11 @@
               {{ Form::text('phone', old('phone'), ['placeholder' => 'Phone number', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
             </div>
             <div class="form-group">
-              {{ Form::text('phone2', old('phone2'), ['placeholder' => 'Alt. Phone number', 'autocomplete' => 'off', 'class' => 'form-control', 'required' => 'required']) }}
+              {{ Form::text('phone2', old('phone2'), ['placeholder' => 'Alt. Phone number', 'autocomplete' => 'off', 'class' => 'form-control']) }}
             </div>
             <div class="form-group">
               <select class="form-control" name="gender" required>
-                <option>Gender</option>
+                <label>Gender</label>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>

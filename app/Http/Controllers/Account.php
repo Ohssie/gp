@@ -60,13 +60,14 @@ class Account extends Controller
             'name' => 'required|max:50',
             'username' => 'unique:users,username',
             'phone' => 'required|unique:users|max:11|min:11',
-            'phone2' => 'required|unique:users|max:11|min:11',
             'email' => 'required',
             'gender' => 'required',
             'bank_name' => 'required',
             'account_name' => 'required',
             'account_number' => 'required|max:14',
 		]);
+		
+// 		dd($request);
         
         
         // if($validator->fails())
@@ -108,7 +109,6 @@ class Account extends Controller
             'name' => 'required|max:50',
             'username' => 'unique:users,username',
             'phone' => 'required|unique:users|max:11|min:11',
-            'phone2' => 'required|unique:users|max:11|min:11',
             'email' => 'required',
             'gender' => 'required',
             'bank_name' => 'required',

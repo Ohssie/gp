@@ -17,7 +17,10 @@ Route::get('/', function ()
 				->orderBy('created_at', 'desc')
                 ->limit(3)
                 ->get();
-    return view('new')->with('news', $news);
+                
+    $packages = App\Package::all();
+    
+    return view('new')->with('news', $news)->with('packages', $packages);
 });
 
 Route::get('/all/news', 'NewsController@allNews');

@@ -97,18 +97,26 @@
                     <h3 class="section-sub">get to know our</h3>
                     <h2 class="section-title">Packages Overview</h2>
                     
+                    @foreach($packages as $package)
                     <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
                         <div class="price-box">
                             <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
                             <div class="price-container">
                                 
-                                <h5>Classic</h5>
+                                <h5>{{ $package->package_name }}</h5>
                                 
                                 <div class="price-holder">
-                                    <h6 class="price"><span class="symbol">N</span>5<span class="duration">thousand</span></h6>
+                                	@if( strlen(substr($package->cost, 0, -3)) == 4 )
+                                    	<h6 class="price"><span class="symbol">N</span>{{ $package->cost[0] }}<span class="duration">thousand</span></h6>
+                                    @elseif( strlen(substr($package->cost, 0, -3)) == 5 )
+                                    	<h6 class="price"><span class="symbol">N</span>{{ substr($package->cost, 0, 2) }}<span class="duration">thousand</span></h6>
+                                    @elseif( strlen(substr($package->cost, 0, -3)) == 6 )	
+                                    	<h6 class="price"><span class="symbol">N</span>{{ substr($package->cost, 0, 3) }}<span class="duration">thousand</span></h6>
+                                    @endif
+                                    <!--substr(string,start,length)-->
                                 </div>
                                 
-                                <p>Five Thousand Naira</p>
+                                <p>{{ $package->description }}</p>
 
                                 <i class="pe-7s-cash"></i>
                                 
@@ -118,120 +126,26 @@
                                 <h6>Package Features</h6>
 
                                 <ul>
-                                    <li>2:1 Matrix</li>
+                                    <li>{{ $package->size }}:1 Matrix</li>
                                     <li>Auto Assign</li>
                                     <li>Pay Out/In Option</li>
                                     <li>Referral Wallet</li>
                                     <li>Cash Out</li>
                                     <li>WildCard Auto Recycle</li>
-                                    <li>N10,000 Return Investment</li>
+                                    
+                                    @if( strlen(substr($package->cost, 0, -3)) == 4 )
+                                    	<li>N{{$package->cost[0] * 2 }},000 Return Investment</li>
+                                    @elseif( strlen(substr($package->cost, 0, -3)) == 5 )
+                                    	<li>N{{ substr($package->cost, 0, 2) * 2 }},000 Return Investment</li>
+                                    @elseif( strlen(substr($package->cost, 0, -3)) == 6 )
+                                    	<li>N{{ substr($package->cost, 0, 3) * 2 }},000 Return Investment</li>
+                                    @endif
                                 </ul>
                                 <!--<p class="features-footer">Your credit card will not be charged</p>-->
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                        <div class="price-box">
-                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
-                            <div class="price-container">
-                                
-                                <h5>Professional</h5>
-                                
-                                <div class="price-holder">
-                                    <h6 class="price"><span class="symbol">N</span>10<span class="duration">thousand</span></h6>
-                                </div>
-                                
-                                <p>Ten Thousand Naira</p>
-
-                                <i class="pe-7s-cash"></i>
-                                
-                            </div>
-                            <div class="features-list">
-
-                                <h6>Package Features</h6>
-
-                                <ul>
-                                    <li>2:1 Matrix</li>
-                                    <li>Auto Assign</li>
-                                    <li>Pay Out/In Option</li>
-                                    <li>Referral Wallet</li>
-                                    <li>Cash Out</li>
-                                    <li>WildCard Auto Recycle</li>
-                                    <li>N20,000 Return Investment</li>
-                                </ul>
-                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                        <div class="price-box">
-                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
-                            <div class="price-container">
-                                
-                                <h5>Premium</h5>
-                                
-                                <div class="price-holder">
-                                    <h6 class="price"><span class="symbol">N</span>20<span class="duration">thousand</span></h6>
-                                </div>
-                                
-                                <p>Twenty Thousand Naira</p>
-
-                                <i class="pe-7s-cash"></i>
-                                
-                            </div>
-                            <div class="features-list">
-
-                                <h6>Package Features</h6>
-
-                                <ul>
-                                    <li>2:1 Matrix</li>
-                                    <li>Auto Assign</li>
-                                    <li>Pay Out/In Option</li>
-                                    <li>Referral Wallet</li>
-                                    <li>Cash Out</li>
-                                    <li>WildCard Auto Recycle</li>
-                                    <li>N40,000 Return Investment</li>
-                                </ul>
-                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb40 col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                        <div class="price-box">
-                            <a href="/account/signup" class="button button-md button-secondary">Sign Up</a>
-                            <div class="price-container">
-                                
-                                <h5>Ultimate</h5>
-                                
-                                <div class="price-holder">
-                                    <h6 class="price"><span class="symbol">N</span>50<span class="duration">thousand</span></h6>
-                                </div>
-                                
-                                <p>Fifty Thousand Naira</p>
-
-                                <i class="pe-7s-cash"></i>
-                                
-                            </div>
-                            <div class="features-list">
-
-                                <h6>Package Features</h6>
-
-                                <ul>
-                                    <li>2:1 Matrix</li>
-                                    <li>Auto Assign</li>
-                                    <li>Pay Out/In Option</li>
-                                    <li>Referral Wallet</li>
-                                    <li>Cash Out</li>
-                                    <li>WildCard Auto Recycle</li>
-                                    <li>N100,000 Return Investment</li>
-                                </ul>
-                                <!--<p class="features-footer">Your credit card will not be charged</p>-->
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     
                 </div>
                  
@@ -328,14 +242,15 @@
                     <div class="row">
                         <div class="col-xs-12 sub-footer">
                             <p>Copyright &copy; <?php echo date('Y') ?> All Rights Reserved, CitiSumo.</p>
-                            <!--<ul class="list-cc">
-                                <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/visa-48.png" title="Visa" alt="credit"></li>
-                                <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/discover-48.png" title="Visa" alt="credit"></li>
+                            <ul class="list-cc">
+                                <li><a href="https://www.facebook.com/Citisumo"><p>Contact us on Facebook</p></a></li>
+                                <li><a href="https://www.facebook.com/Citisumo"><img class="icon icons8-Facebook" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABoklEQVRoQ2NkGOKAcYi7n2HUAwMdg6MxMOhjwDZgWwATw798BkZGB7o69v//A/8YmCYe3uC1AZ+9eJOQfcDW+cBsnkBXh6NZ9v8/Q+OhDd4NuNyA0wPgkGf8v34gHQ+z++//f45HNvgewOYWnB6wC9x6AChpPxg88J+B4eCh9d5YkzBOD9gHbgXqGzzg4HpvrG4d9QC94mjQxICHowyDu6M0g6GOMIbfHYK24QyPQeGBlgpjBhszcZyOHNQeAIV8Ra4e3hQ3qD0wodmCwUBbaOh64MA6LwzH13ScZThy6iVR5cCA5wFsHsCXZNB9NeoBouIZj6IhGQPYHI3Lj1++/WHwidk1uOoBUjxw4eo7hoLaE0PXA2u2PGCYMu/a0PXAgpW3GUAYFxgthUZkKYTs6SFZjI56ACkERjPxaCbG0pwebY0CkwXdhlVGi9GBHtgajQFSY2DID+4O+eF1UMVlF7BlASMjYzyllRgl+sme4IBZahOw2YGJkamB3nMFoDmBf///NeCa2IC5b3SWkpLkQQ29ozFAjVCkxIzRGKAk9KihFwDVMwpA7Un58gAAAABJRU5ErkJggg=="></a></li>
+                                <!--<li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/discover-48.png" title="Visa" alt="credit"></li>
                                 <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/paypal-48.png" title="Visa" alt="credit"></li>
                                 <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/am_ex-48.png" title="Visa" alt="credit"></li>
                                 <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/google_wallet-48.png" title="Visa" alt="credit"></li>
-                                <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/bitcoin-48.png" title="Visa" alt="credit"></li>
-                            </ul>-->
+                                <li><img src="https://maxcdn.icons8.com/Color/PNG/48/Finance/bitcoin-48.png" title="Visa" alt="credit"></li>-->
+                            </ul>
                         </div>
 
                     </div><!-- //row -->

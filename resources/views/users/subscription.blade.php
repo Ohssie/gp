@@ -66,7 +66,7 @@
                   <br/>
                   <div class="user-timeline-title">{{ $upline->phone }}</div>
                   <div class="user-timeline-title">{{ $upline->phone2 }}</div>
-                  <div class="user-timeline-description">Contant Details</div>
+                  <div class="user-timeline-description">Contact Details</div>
                 </li>
               </ul>
           </div>
@@ -88,9 +88,9 @@
           <div class="panel-body">
               <p class="text-uppercase">Use your username as payer's name. In your case, use <b>{{ $user->username }}</b></p>
               <p class="text-uppercase">Make payment before two working days after you receive this notice. That is before the timer clock elapses. Payments made <b>aftewards</b> will be regarded as <b>void!</b></p>
-              <p class="text-uppercase">Payments are not considered made untill you claim it is made by clicking the button below. After then, your payee will have two more working days to dispute your claimed payment. If neither your payee nor the admin disputes your payment on or before two days, your payment will be considered valid and you will be placed in the chain to receive payment.</p>
+              <p class="text-uppercase">Payments are not considered made untill you claim it is made by clicking the button above. After then, your payee will have two more working days to dispute your claimed payment. If neither your payee nor the admin disputes your payment on or before two days, your payment will be considered valid and you will be placed in the chain to receive payment.</p>
               <p class="text-uppercase">Payments not up to the stated amount, that is &#8358;{{ $package->cost }} will be considered invalid</p>
-              <p class="text-uppercase">Please upload a proof of payment for every transaction. There will be not refundor whatsoever for payments deemed invalid.</p>
+              <p class="text-uppercase">Please upload a proof of payment for every transaction. There will be not refund or whatsoever for payments deemed invalid.</p>
           </div>
         </div>
       </div>
