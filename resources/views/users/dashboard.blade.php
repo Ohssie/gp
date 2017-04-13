@@ -100,7 +100,7 @@
                 </td>
                 <td class="actions">
                   @if($link->status == 'waiting')
-                  <a href="'payment/claim/' . $link->sub_key" class="btn btn-primary">Mark as complete</a>
+                  <a href="{{ url('payment/claim/' . $link->sub_key) }}" class="btn btn-primary">Mark as complete</a>
                   @endif
                 </td>
               @endforeach

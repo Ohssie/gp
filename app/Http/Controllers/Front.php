@@ -142,7 +142,7 @@ class Front extends Controller
 
             $ps->save();
 
-            $message = $user->username . "claimed he deposited N{$package->cost} into your {$ps->uplineUser()->bank_name} account. Please dispute this payment before " . config('settings.delete_records_after') . " working days! Logon to " . url('');
+            $message = $user->username . " claimed he deposited N{$package->cost} into your {$ps->uplineUser()->bank_name} account. Please dispute this payment before " . config('settings.delete_records_after') . " working days! Logon to " . url('');
             if(!send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name')))
             {
                if(!send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name')))
