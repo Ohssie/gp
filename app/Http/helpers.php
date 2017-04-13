@@ -187,14 +187,22 @@ if( !function_exists('end_time'))
         $time = new DateTime($date);
         $date = $time->getTimestamp();
         // Sunday
-        if( week_day($date) == 7) return date('Y-m-d H:i:s', strtotime("+" . $interval + 1 . " day", $date));
+        // if( week_day($date) == 7) return date('Y-m-d H:i:s', strtotime("+" . $interval + 1 . " day", $date));
+        if( week_day($date) == 7) return date('Y-m-d H:i:s', strtotime("+" . 2 . " day", $date));
+        
         // Saturday
-        if( week_day($date) == 6) return date('Y-m-d H:i:s', strtotime("+" . $interval + 2 . " day", $date));
+        // if( week_day($date) == 6) return date('Y-m-d H:i:s', strtotime("+" . $interval + 2 . " day", $date));
+        if( week_day($date) == 6) return date('Y-m-d H:i:s', strtotime("+" . 3 . " day", $date));
+        
         // Friday
-        if( week_day($date) == 5) return date('Y-m-d H:i:s', strtotime("+" . $interval + 3 . " day", $date));
+        // if( week_day($date) == 5) return date('Y-m-d H:i:s', strtotime("+" . $interval + 3 . " day", $date));
+        if( week_day($date) == 5) return date('Y-m-d H:i:s', strtotime("+" . 4 . " day", $date));
+        
         // Thursday
-        if( week_day($date) == 4) return date('Y-m-d H:i:s', strtotime("+" . $interval + 4 . " day", $date));
+        // if( week_day($date) == 4) return date('Y-m-d H:i:s', strtotime("+" . $interval . " day", $date));
+        
         // Otherdays
-        else return date('Y-m-d H:i:s', strtotime("+" . $interval . " day", $date));
+        // else return date('Y-m-d H:i:s', strtotime("+" . $interval . " day", $date));
+        else return date('Y-m-d H:i:s', strtotime("+" . 1 . " day", $date));
     }
 }
