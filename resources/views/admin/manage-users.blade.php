@@ -88,8 +88,8 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Phone</th>
-                <!--<th>Package(s)</th>
-                <th>Action</th>-->
+                <!--<th>Package(s)</th>-->
+                <!--<th>Action</th>-->
               </tr>
             </thead>
             <tbody>

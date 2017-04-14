@@ -20,7 +20,11 @@ Route::get('/', function ()
                 
     $packages = App\Package::all();
     
-    return view('new')->with('news', $news)->with('packages', $packages);
+    $updates = App\News::all();
+    
+    return view('new')->with('news', $news)
+    					->with('packages', $packages)
+    						->with('updates', $updates);
 });
 
 Route::get('/all/news', 'NewsController@allNews');

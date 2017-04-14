@@ -104,6 +104,11 @@ class Front extends Controller
                 , {$have_admin}, {$package->size}
             ) ORDER BY sub_id LIMIT 1"))->first();
         }
+        
+        $number1 = Auth::user()->phone;
+        $number2 = Auth::user()->phone2;
+        
+        
         $ps = new \App\PackageSub();
         $token = generate_token(10, true);
         $ps->package_id = $request->get('package_id');
@@ -112,9 +117,21 @@ class Front extends Controller
         $ps->sub_key = $token;
         $ps->up_sub_key = $upline->sub_key;
         $ps->status = $user->isAdmin() ? "completed" : "incomplete";
-
+        
         if($ps->save())
         {
+            
+            $message = $upline->username . ", you have been paired with {$ps->username} who is to pay the sum of N{$package->cost} into your {$ps->uplineUser()->bank_name} account. You can reach him/her on {$number1}/{$number2}. ";
+            if(!send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name')))
+            {
+               if(!send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name')))
+                {
+                    \Session::flash('message', '');
+                }
+            }
+            // dd($message);
+            // send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name'));
+            
             if($user->isAdmin())
                 return redirect('admin/packages/subscription/' . $token)->with('message', 'You have been successfully paired up. The system will pair you up with priority!');
             return redirect('packages/subscription/' . $token)->with('message', 'You have successfully subscribed to ' . $package->name . ' package.');

@@ -153,7 +153,7 @@
             <!-- //Pricing Tables -->
 
             <!-- icon boxes -->
-            @if(count($news) > 1)
+            @if($news)
             <div class="services pt100 pb100 bg-color-1">
 
                 <div class="container">
@@ -176,26 +176,28 @@
                     
                     <br/>
                     
-                    <div class="row">
-                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                            <div class="icon-box-1">
-
+                    @if( count($updates) > 3 )
+                        <div class="row">
+                            <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                                <div class="icon-box-1">
+    
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                            <div class="icon-box-1">
-                                <a href="/all/news" class="button button-sm button-primary">Read more...</a>
+                            
+                            <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                                <div class="icon-box-1">
+                                    <a href="/all/news" class="button button-sm button-primary">Read more...</a>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                            <div class="icon-box-1">
-
+    
+                            <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                                <div class="icon-box-1">
+    
+                                </div>
                             </div>
+    
                         </div>
-
-                    </div><!-- //row -->
+                    @endif
                     
                 </div><!-- //container -->
                  
