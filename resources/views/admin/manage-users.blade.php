@@ -88,10 +88,9 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Phone</th>
-                
-                <!--<th>Package(s)</th>
+                <th>Package(s)</th>
                 <th>Joined</th>
-                <th>Action</th>-->
+                <!--<th>Action</th>-->
               </tr>
             </thead>
             <tbody>
@@ -102,9 +101,9 @@
                 <td>{{ $person->name }}</td>
                 <td>{{ $person->username }}</td>
                 <td>{{ $person->phone }}</td>
-                <!--<td>{{ $packageName->package_name }}</td>
+                <td>{{ $packageName->package_name }}</td>
                 <td>{{ $person->created_at }}</td>
-                <td class="center">
+                <!--<td class="center">
                   <div class="btn-group btn-hspace">
                     <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
                     <ul role="menu" class="dropdown-menu">
