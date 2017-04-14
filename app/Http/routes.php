@@ -170,7 +170,21 @@ Route::post('admin/settings', 'AdminController@settings')->middleware('admin');
 
 Route::get('admin/people/manage', function()
 {
-	return view('admin.manage-users', ['user' => Auth::user(), 'people' => App\User::all()]);
+	$people = App\User::all();
+	$packageName=null;
+	foreach($people as $person) {
+		$sub = App\PackageSub::where('username', $person->username)->first();
+		// dd($sub);
+		$packageName  = App\Package::where('package_id', $sub->package_id)->first();
+		// dd($packageName);
+		break;
+		// return $packageName;
+		
+	}
+	// dd($packageName);
+	return view('admin.manage-users', ['user' => Auth::user(), 'package' => App\Package::all()])
+				->with('people', $people)
+					->with('packageName', $packageName);
 });
 
 Route::post('/admin/create-user', 'AdminController@createUser')->middleware('admin');

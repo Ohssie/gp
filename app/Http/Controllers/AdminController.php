@@ -133,11 +133,13 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        $users = \App\User::all();
     	$data['user'] = Auth::user();
     	$data['num_users'] = User::all()->count();
     	$data['pending_payment'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', '!=', 'completed')->limit(10)->get();
     	$data['approved_payments'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', 'completed')->limit(10)->get();
-    	return view('admin.dashboard', $data);
+    	
+    	return view('admin.dashboard', $data)->with('users',$users);
     }
 
     public function settings(Request $request, \Illuminate\Contracts\Cache\Factory $cache)

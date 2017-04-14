@@ -113,7 +113,11 @@
               @foreach($pending_payment as $pending)
               <tr>
                 <td>{{ $pending->payer_username }}</td>
-                <td>{{ $pending->payer_phone }} <br/> {{ $pending->phone2 }}</td>
+                @foreach($users as $user)
+                  @if($user->username === $pending->payer_username)
+                       <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                  @endif
+                @endforeach
                 <td class="number">&#8358;{{ $pending->package()->cost }}</td>
                 <td>{{ date('d M, y', strtotime($pending->created_at)) }}</td>
                 <td class="actions"><a href="{{ url('payment/claim/' . $pending->sub_key) }}" class="btn btn-warning">Approve</a></td>
@@ -145,7 +149,11 @@
               @foreach($approved_payments as $approved)              
               <tr>
                 <td>{{ $approved->payer_username }}</td>
-                <td>{{ $approved->phone }} <br/> {{ $approved->phone2 }}</td>
+                @foreach($users as $user)
+                  @if($user->username === $approved->payer_username)
+                       <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                  @endif
+                @endforeach
                 <td>&#8358;{{ $approved->package()->cost }}</td>
                 <td>{{ date('d M, y', strtotime($approved->updated_at)) }}</td>
               </tr>

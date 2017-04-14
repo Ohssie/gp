@@ -121,16 +121,14 @@ class Front extends Controller
         if($ps->save())
         {
             
-            $message = $upline->username . ", you have been paired with {$ps->username} who is to pay the sum of N{$package->cost} into your {$ps->uplineUser()->bank_name} account. You can reach him/her on {$number1}/{$number2}. ";
+            /*$message = $upline->username . ", you have been paired with {$ps->username} who is to pay the sum of N{$package->cost} into your {$ps->uplineUser()->bank_name} account. You can reach him/her on {$number1}/{$number2}. ";
             if(!send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name')))
             {
                if(!send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name')))
                 {
                     \Session::flash('message', '');
                 }
-            }
-            // dd($message);
-            // send_sms($ps->uplineUser()->phone, $message, 0, config('settings.app_name'));
+            }*/
             
             if($user->isAdmin())
                 return redirect('admin/packages/subscription/' . $token)->with('message', 'You have been successfully paired up. The system will pair you up with priority!');
