@@ -13,6 +13,14 @@
         <div class="panel-heading panel-heading-divider">Add News</div>
         <div class="panel-body">
           {{ Form::open(['url' => url('/admin/news/update/' . $news->id), 'method' => 'put', 'style' => 'border-radius: 0px;', 'class' => 'form-horizontal group-border-dashed']) }}
+            <div class="form-group">
+              <select class="form-control" name="type" required>
+                <label>News Type</label>
+                <option value="">Select audience...</option>
+                <option value="general">General</option>
+                <option value="users">Users</option>
+              </select>
+            </div>
             <div class="form-group xs-pt-10">
               <label>Title</label>
               <input type="text" value="{{ $news->title }}" name="title" placeholder="Enter title" class="form-control" required>

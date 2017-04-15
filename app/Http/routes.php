@@ -14,13 +14,14 @@
 Route::get('/', function ()
 {
 	$news = DB::table('news')
+				->where('type', 'general')
 				->orderBy('created_at', 'desc')
                 ->limit(3)
                 ->get();
                 
     $packages = App\Package::all();
     
-    $updates = App\News::all();
+    $updates = DB::table('news')->where('type', 'general')->get();
     
     return view('new')->with('news', $news)
     					->with('packages', $packages)

@@ -15,7 +15,7 @@
     	    @foreach($news as $news)
                 <div class="col-sm-10">
                   <div class="panel panel-default panel-border-color panel-border-color-primary">
-                    <div class="panel-heading panel-heading-divider">{{ $news->title}}</div>
+                    <div class="panel-heading panel-heading-divider">{{ $news->title}} - [{{ $news->type }}]</div>
                     <div class="panel-body">
                       {{ $news->description }}
                     </div>

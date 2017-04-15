@@ -83,7 +83,7 @@
                                 <div class="service-box">
     
                                     <div class="info">
-                                        <h4>{{ $news->title }}</h4>
+                                        <h4>{{ $news->type }}</h4>
                                         <a href="#"></a>
                                         <p>{{ $news->description }}</p>
                                         

@@ -35,6 +35,13 @@ class Front extends Controller
             $data['up_payments'] = \App\PackageSub::where('username', $user->username)->where('status', 'incomplete')->get();
 
             $data['user'] = $user;
+            
+            $data['news'] = \DB::table('news')
+                ->where('type','users')
+				->orderBy('created_at', 'desc')
+                ->limit(3)
+                ->get();
+                
             return \View::make('users.dashboard', $data);
         }
     }
