@@ -88,7 +88,7 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Phone</th>
-                <th>Package(s)</th>
+                <!--<th>Package(s)</th>-->
                 <th>Joined</th>
                 <!--<th>Action</th>-->
               </tr>
@@ -101,7 +101,6 @@
                 <td>{{ $person->name }}</td>
                 <td>{{ $person->username }}</td>
                 <td>{{ $person->phone }}</td>
-                <td>{{ $packageName->package_name }}</td>
                 <td>{{ $person->created_at }}</td>
                 <!--<td class="center">
                   <div class="btn-group btn-hspace">
