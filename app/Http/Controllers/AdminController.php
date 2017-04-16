@@ -139,6 +139,20 @@ class AdminController extends Controller
     	$data['pending_payment'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', '!=', 'completed')->limit(10)->get();
     	$data['approved_payments'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', 'completed')->limit(10)->get();
     	
+    	$user = Auth::user();
+    	
+    	$data['in'] = \DB::table('package_subscription')
+                        ->where('upline_username', $user->username)
+                        ->where('status', 'incomplete')
+                        ->get();
+    	
+    	$data['out'] = \DB::table('package_subscription')
+                        ->where('username', $user->username)
+                        ->where('status', 'incomplete')
+                        ->get();
+                        
+        $data['packages'] = \App\Package::all();
+    	
     	return view('admin.dashboard', $data)->with('users',$users);
     }
 

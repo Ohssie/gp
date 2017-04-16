@@ -204,6 +204,98 @@
             </div>
             @endif
             <!-- //icon boxes -->
+            
+            <!--<div class="bg-gray pt80">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <h2 class="section-title">How To Make Payment Easily</h2>
+                        <h3 class="section-sub">Can't go to the Bank?. Make Payments anywhere with the following Bank Shortcodes.</h3>
+                        
+                        <br/><br/>
+                        
+                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+
+                            <!--<div class="post-snippet">
+
+                                <div class="meta">
+
+                                    <h4>Guarantee Trust Bank (GTB)</h4>
+                                    <ul>
+                                        <li>*737*1*Amount*Acct. No.# for GT to GT bank Transfer <br/> e.g *737*1*50000*01234567890#</li>
+                                        <li>*737*2*Amount*Acct. No.# for GT bank to other Banks <br/> e.g *737*2*50000*01234567890#</li>
+                                    </ul>
+                                </div><!-- //meta -->
+
+                            <!--</div>
+
+                        </div>
+
+                        <div class="mb-sm-40 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+
+                            <div class="post-snippet">
+                                
+                                <div class="img-box">
+                                    <img src="assets/images/blog-imgs/blog-img-5.jpg" alt="blog-img">
+                                </div>
+
+                                <div class="meta">
+
+                                    <a href="blogs-post-sidebar.html"><h4>How to leverage your credit score to get great deal with lenders.</h4></a>                                    
+                                    <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled.</p>
+
+                                    <div class="post-info">
+                                        <i class="pe-7s-clock"></i> <p>3 days ago</p>
+                                        <div class="pull-right">
+                                            <a href="#"><i class="pe-7s-share"></i></a>
+                                            <a href="#"><i class="pe-7s-like"></i></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+
+                            <div class="post-snippet">
+                                
+                                <div class="img-box">
+                                    <img src="assets/images/blog-imgs/blog-img-4.jpg" alt="blog-img">
+                                </div>
+
+                                <div class="meta">
+
+                                    <a href="blogs-post-sidebar.html"><h4>Increasing productivity to get tasks done faster and easier.</h4></a>                                    
+                                    <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammeled.</p>
+
+                                    <div class="post-info">
+                                        <i class="pe-7s-clock"></i> <p>3 days ago</p>
+                                        <div class="pull-right">
+                                            <a href="#"><i class="pe-7s-share"></i></a>
+                                            <a href="#"><i class="pe-7s-like"></i></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row more">
+                        <p>For more awesome blog posts and investing tips</p><a href="blogs-3col.html" class="button button-sm button-primary">Click Here</a>
+                    </div>
+                    
+                </div>
+                 
+            </div>-->
 
             <!-- text with side image -->
             <div class="bg-white pt80 pb80">

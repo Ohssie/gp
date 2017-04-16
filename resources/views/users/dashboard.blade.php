@@ -24,6 +24,95 @@
       </div>
     </div>
   </div>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+          <!--<div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>-->
+          <div class="title">Inbound Payments</div>
+        </div>
+        <div class="panel-body table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th style="width:25%;">User</th>
+                <th style="width:20%;">Phone</th>
+                <th style="width:10%;">Cost</th>
+                <th style="width:20%;">Package</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($in as $ref)
+                <tr>
+                  <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ref->username }}</td>
+                  
+                  @foreach($users as $user)
+                    @if($ref->upline_username === $user->username)
+                      <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                    @endif
+                  @endforeach
+                  
+                  @foreach($packages as $pack)
+                    @if($pack->package_id === $ref->package_id)
+                      <td>{{ $pack->cost }}</td>
+                      <td>{{ $pack->package_name }}</td>
+                    @endif
+                  @endforeach  
+                  
+                  <td> <?php echo date('d-m-Y', strtotime($ref->created_at)); ?> </td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+          <!--<div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>-->
+          <div class="title">Outbound Payments</div>
+        </div>
+        <div class="panel-body table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th style="width:25%;">User</th>
+                <th style="width:20%;">Phone</th>
+                <th style="width:10%;">Cost</th>
+                <th style="width:20%;">Package</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($out as $ref)
+                <tr>
+                  <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ref->upline_username }}</td>
+                  
+                  @foreach($users as $user)
+                    @if($ref->upline_username === $user->username)
+                      <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                    @endif
+                  @endforeach
+                  
+                  @foreach($packages as $pack)
+                    @if($pack->package_id === $ref->package_id)
+                      <td>{{ $pack->cost }}</td>
+                      <td>{{ $pack->package_name }}</td>
+                    @endif
+                  @endforeach  
+                  
+                  <td> <?php echo date('d-m-Y', strtotime($ref->created_at)); ?> </td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
             
   <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-6">

@@ -42,6 +42,20 @@ class Front extends Controller
                 ->limit(3)
                 ->get();
                 
+            $data['in'] = \DB::table('package_subscription')
+                        ->where('upline_username', $user->username)
+                        ->where('status', 'incomplete')
+                        ->get();
+                
+            $data['out'] = \DB::table('package_subscription')
+                        ->where('username', $user->username)
+                        ->where('status', 'incomplete')
+                        ->get();
+                        
+            $data['packages'] = \App\Package::all();
+            
+            $data['users'] = \App\User::all();
+                        
             return \View::make('users.dashboard', $data);
         }
     }
