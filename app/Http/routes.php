@@ -13,6 +13,12 @@
 
 Route::get('/', function ()
 {
+    
+    return view('hold');
+});
+
+/*Route::get('/', function ()
+{
 	$news = DB::table('news')
 				->where('type', 'general')
 				->orderBy('created_at', 'desc')
@@ -26,7 +32,7 @@ Route::get('/', function ()
     return view('new')->with('news', $news)
     					->with('packages', $packages)
     						->with('updates', $updates);
-});
+});*/
 
 Route::get('/all/news', 'NewsController@allNews');
 
@@ -206,3 +212,7 @@ Route::get('/admin/packages/subscription/{sub_key}', function($sub_key)
 	$data['sub'] = $sub;
 	return view('admin.subscription', $data);
 })->middleware('admin');
+
+Route::get('/admin/delete-user/{username}', 'AdminController@deleteUser')->middleware('admin');
+
+Route::get('/admin/payment/delete/{sub_key}', 'AdminController@deletePayment')->middleware('admin');

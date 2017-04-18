@@ -102,17 +102,17 @@
                 <td>{{ $person->username }}</td>
                 <td>{{ $person->phone }}</td>
                 <td>{{ $person->created_at }}</td>
-                <!--<td class="center">
+                <td class="center">
                   <div class="btn-group btn-hspace">
                     <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
                     <ul role="menu" class="dropdown-menu">
-                      <li><a href="people/edit/{{ $user->username }}">Edit user</a></li>
+                      <!--<li><a href="people/edit/{{ $user->username }}">Edit user</a></li>
                       <li><a href="people/profile/{{ $person->username }}">View user</a></li>
-                      <li class="divider"></li>
-                      <li><a href="people/delete/{{ $person->username }}" class="delete">Delete user</a></li>
+                      <li class="divider"></li>-->
+                      <li><a href="{{ url('admin/delete-user/' . $person->username) }}" class="delete" onclick="javascript: return confirm('Do you want to delete this account?');">Delete user</a></li>
                     </ul>
                   </div>
-                </td>-->
+                </td>
               </tr>
               @endforeach
               

@@ -12,7 +12,7 @@
 <article>
     <h1>We&rsquo;ll be back soon!</h1>
     <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always contact us, otherwise we&rsquo;ll be back online shortly!</p>
-        <p>&mdash; The Team - Citisumo</p>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always contact us on <a href="https://www.facebook.com/Citisumo"> Facebook</a>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>&mdash; The Team &mdash; Citisumo</p>
     </div>
 </article>

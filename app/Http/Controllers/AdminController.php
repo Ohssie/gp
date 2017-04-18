@@ -306,4 +306,28 @@ class AdminController extends Controller
     	return $dates;
     }
     
+    public function deletePayment($sub_key)
+    {
+        $p = \App\Payment::where('sub_key', $sub_key)->where('payee_username', Auth::user()->username);
+        $ps = \App\PackageSub::where('sub_key', $sub_key);
+        if(!$p->exists() || !$ps->exists())
+        {
+            return \Redirect::away('account/login');
+        }
+        $ps->delete();
+        $p->delete();
+        return redirect(url('dashboard'));
+    }
+    
+    public function deleteUser($username)
+    {
+        $user = User::where('username', $username);
+        if($user->exists())
+        {
+            $user->delete();
+        }
+        return redirect(url('admin/people/manage'));
+    }
+    
+    
 }
