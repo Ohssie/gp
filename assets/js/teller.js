@@ -53,13 +53,19 @@ Dropzone.options.myDropzone = {
           // (string | mandatory) the text inside the notification
           text: message,
           sticky: false,
-          
       });
     });
     
     myDropzone.on("thumbnail", function(file, dataUrl) {
-        $('.dz-image').last().find('img').attr({width: '100%', height: '100%'});
+      $('.dz-image').last().find('img').attr({width: '100%', height: '100%'});
+    });
+    
+    myDropzone.on("addedfile", function(file) {
+      file.previewElement.addEventListener("click", function() {
+        console.log('Opening: ' + file.url);
+        var win = window.open(file.url, '_blank');
+        win.focus();
+      });
     });
   }
 };
-

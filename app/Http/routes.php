@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function ()
+/*Route::get('/', function ()
 {
     
     return view('hold');
-});
+});*/
 
-/*Route::get('/', function ()
+Route::get('/', function ()
 {
 	$news = DB::table('news')
 				->where('type', 'general')
@@ -32,7 +32,7 @@ Route::get('/', function ()
     return view('new')->with('news', $news)
     					->with('packages', $packages)
     						->with('updates', $updates);
-});*/
+});
 
 Route::get('/all/news', 'NewsController@allNews');
 
@@ -190,6 +190,12 @@ Route::get('admin/people/manage', function()
 					->with('packageName', $packageName);
 });
 
+Route::get('admin/people/blocked', 'AdminController@blocked')->middleware('admin');
+
+Route::get('/admin/people/unblock/{username}', 'AdminController@unblock');
+
+Route::get('/admin/user-profile/{username}', 'AdminController@userDetails')->middleware('admin');
+
 Route::post('/admin/create-user', 'AdminController@createUser')->middleware('admin');
 
 Route::get('/stats/user-growth', 'AdminController@userGrowth')->middleware('admin');
@@ -199,6 +205,8 @@ Route::get('/stats/plan-growth', 'AdminController@planStats')->middleware('admin
 Route::get('/payment/dispute/{sub_key}', 'Front@dispute')->middleware('auth');
 
 Route::get('/payment/complete/{sub_key}', 'Front@complete')->middleware('auth');
+
+Route::post('/payment/upload/{sub_key}', 'Front@uploadTeller')->middleware('auth');
 
 //Profile
 Route::get('/account/profile', 'Front@profile')->middleware('auth');
@@ -216,3 +224,7 @@ Route::get('/admin/packages/subscription/{sub_key}', function($sub_key)
 Route::get('/admin/delete-user/{username}', 'AdminController@deleteUser')->middleware('admin');
 
 Route::get('/admin/payment/delete/{sub_key}', 'AdminController@deletePayment')->middleware('admin');
+
+Route::get('/admin/payments', 'AdminController@payments')->middleware('admin');
+
+Route::get('/admin/package_sub', 'AdminController@packageSubs')->middleware('admin');

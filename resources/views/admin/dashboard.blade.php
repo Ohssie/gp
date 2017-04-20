@@ -73,7 +73,7 @@
             <tbody>
               @foreach($in as $ref)
                 <tr>
-                  <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ref->username }}</td>
+                  <td>{{ $ref->username }}</td>
                   
                   @foreach($users as $user)
                     @if($ref->username === $user->username)
@@ -116,7 +116,7 @@
             <tbody>
               @foreach($out as $ref)
                 <tr>
-                  <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ref->upline_username }}</td>
+                  <td>{{ $ref->upline_username }}</td>
                   
                   @foreach($users as $user)
                     @if($ref->upline_username === $user->username)
@@ -140,6 +140,9 @@
       </div>
     </div>
   </div>
+  
+  
+  
   
   <!--<div class="row">
     <div class="col-md-12">

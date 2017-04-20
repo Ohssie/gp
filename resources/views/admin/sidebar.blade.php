@@ -9,14 +9,22 @@
           </li>
           <li class=""><a href="/account/profile"><i class="icon mdi mdi-face"></i><span>Profile</span></a>
           </li>
-          <li class="parent"><a href="/admin/people"><i class="icon mdi mdi-accounts-alt"></i><span>People</span></a>
+          <li class="parent"><a href="/admin/people/manage"><i class="icon mdi mdi-accounts-alt"></i><span>People</span></a>
             <ul class="sub-menu">
               <li><a href="/admin/people/manage">Manage Accounts</a>
               </li>
-              <!--<li><a href="{{ url('admin/people/import') }}">Account Import</a>
-              </li>-->
+              <li><a href="/admin/people/blocked">Blocked Accounts</a>
+              </li>
               <!--<li><a href="{{ url('admin/people/log') }}">Activity Log</a>
               </li>-->
+            </ul>
+          </li>
+          <li class="parent"><a href="/admin/payment"><i class="icon mdi mdi-money"></i><span>Transactions</span></a>
+            <ul class="sub-menu">
+              <li><a href="/admin/payments">Payments</a>
+              </li>
+              <li><a href="/admin/package_sub">Subscriptions</a>
+              </li>
             </ul>
           </li>
           <li class="parent"><a href="/admin/news"><i class="icon mdi mdi-comment-list"></i><span>News</span></a>

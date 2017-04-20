@@ -133,7 +133,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $users = \App\User::all();
+        $data['users'] = \App\User::all();
     	$data['user'] = Auth::user();
     	$data['num_users'] = User::all()->count();
     	$data['pending_payment'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', '!=', 'completed')->limit(10)->get();
@@ -143,17 +143,17 @@ class AdminController extends Controller
     	
     	$data['in'] = \DB::table('package_subscription')
                         ->where('upline_username', $user->username)
-                        ->where('status', 'incomplete')
+                        ->where('status', '!=', 'completed')
                         ->get();
     	
     	$data['out'] = \DB::table('package_subscription')
                         ->where('username', $user->username)
-                        ->where('status', 'incomplete')
+                        ->where('status', '!=', 'completed')
                         ->get();
                         
         $data['packages'] = \App\Package::all();
     	
-    	return view('admin.dashboard', $data)->with('users',$users);
+    	return view('admin.dashboard', $data);
     }
 
     public function settings(Request $request, \Illuminate\Contracts\Cache\Factory $cache)
@@ -319,6 +319,40 @@ class AdminController extends Controller
         return redirect(url('dashboard'));
     }
     
+    public function userDetails($username) {
+        $user = Auth::user();
+        $packagesub = \App\PackageSub::where('username', $username)->get();
+        $packages = \App\Package::all();
+        $details = \App\User::where('username', $username)->first();
+        if($details->exists()) {
+            return view('admin.user-details')
+                        ->with('details', $details)
+                        ->with('user', $user)
+                        ->with('packages', $packages)
+                        ->with('packagesub', $packagesub);
+        }
+    }
+    
+    public function payments() {
+        $data['user'] = Auth::user();
+        $data['users'] = \App\User::all();
+        $data['payments'] = \App\Payment::all();
+        $data['packages'] = \App\Package::all();
+        $data['subs'] = \App\PackageSub::all();
+        
+        return view('admin.transactions', $data);
+    }
+    
+    public function packageSubs() {
+        $data['user'] = Auth::user();
+        $data['users'] = \App\User::all();
+        $data['payments'] = \App\Payment::all();
+        $data['packages'] = \App\Package::all();
+        $data['subs'] = \App\PackageSub::all();
+        
+        return view('admin.subscriptions', $data);
+    }
+    
     public function deleteUser($username)
     {
         $user = User::where('username', $username);
@@ -327,6 +361,34 @@ class AdminController extends Controller
             $user->delete();
         }
         return redirect(url('admin/people/manage'));
+    }
+    
+    public function blocked(){
+        $data['user'] = Auth::user();
+        $data['users'] = \App\User::where('status', 'blocked')->get();
+        
+        return view('admin.blocked', $data);
+    }
+    
+    public function unblock($username) {
+        $data['user'] = Auth::user();
+        
+        $old = \App\BlockedPayment::where('payer_username', $username)->first();
+        $pay = new \App\Payment();
+        $pay->sub_key = $old->sub_key;
+        $pay->payee_username = $old->payee_username;
+        $pay->payer_username = $old->payer_username;
+        $pay->status = 'waiting';
+        $pay->amount = $old->amount;
+        $pay->save();
+        
+        $del = \App\BlockedPayment::where('payer_username', $username)->delete();
+        
+        $unblock = \App\User::where('username', $username)->where('status', 'blocked')->first();
+        $unblock->status = 'allowed';
+        $unblock->save();
+        
+        return redirect('/admin/people/blocked');
     }
     
     

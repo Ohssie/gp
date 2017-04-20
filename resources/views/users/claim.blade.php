@@ -17,19 +17,22 @@
     <div class="row">
         <div class="col-sm-6">
             <p class="xs-mt-10 xs-mb-10 text-center">
-              @if($user->username == $upline->username)
-                @if($payment->status != "disputed")
-                <a class="btn btn-rounded btn-space btn-danger" href="/payment/dispute/{{$sub_key}}">Dispute Payment</a>
+              @if($user->isAdmin())
+              <a class="btn btn-rounded btn-space btn-warning" href="{{ url('/payment/dispute/' . $sub_key ) }}" onclick="javascript: return confirm('Do you really want to dispute this payment? Confirm the transaction from your payer first')">Dispute Payment</a>
+              @endif
+              @if($user->username == $upline->username || $user->isAdmin())
+                @if($payment->status != "waiting")
+                <a class="btn btn-rounded btn-space btn-danger" href="{{ url('/payment/dispute/' . $sub_key) }}" onclick="javascript: return confirm('Do you really want to dispute this payment? Confirm the transaction from your payer first')">Dispute Payment</a>
                 @endif
-                <a class="btn btn-rounded btn-space btn-success" href="/payment/complete/{{$sub_key}}">Mark as Complete</a>
+                <a class="btn btn-rounded btn-space btn-success" href="{{ url('/payment/complete/' . $sub_key) }}">Mark as Complete</a>
                @endif
               </p>
-            <form id="my-dropzone" action="payment/upload/{{ $sub_key }}" class="dropzone">
-            <div class="dz-message">
-              <div class="icon"><span class="mdi mdi-cloud-upload"></span></div>
-              <h2>Drag and Drop files here</h2>
-            </div>
-          </form>
+            {!! Form::open(['url' => url('payment/upload/' . $sub_key), 'class' => 'dropzone', 'files'=>true, 'id'=>'my-dropzone', 'method' => 'post']) !!}
+                <div class="dz-message">
+                    <div class="icon"><span class="mdi mdi-cloud-upload"></span></div>
+                    <h2>Drag and Drop files here</h2>
+                </div>
+            {{ Form::close() }}
         </div>
         <div class="col-sm-4">
           <div class="panel panel-default">
@@ -146,9 +149,10 @@
   var now = "{{ date('Y-m-d H:i:s', time()) }}";
   
   var files = false;
-  <?php //if($payment_docs && !empty($payment_docs)): ?>
-  files = '';<?php //echo json_encode($payment_docs); ?>
-  <?php //endif; ?>
+  @if(count($payment_docs))
+  files = {!! json_encode($payment_docs) !!};
+  @endif
 </script>
 {{ HTML::script(url('assets/js/countdown.js')) }}
+{{ HTML::script(url('assets/js/teller.js')) }}
 @endsection

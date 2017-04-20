@@ -35,18 +35,31 @@ class Account extends Controller
                     ->withErrors($validator)
                     ->withInput(Input::except('password'));
         } else {*/
-            
-            if (Auth::attempt(['username' => $request->login, 'password' => $request->password]))
-            {
-               return redirect()->intended(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard');
-            } 
-            
-            elseif (Auth::attempt(['phone'=> $request->login, 'password' => $request->password]))
-            {
-                return redirect()->intended(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard'); 
+           if (Auth::attempt(['username' => $request->login, 'password' => $request->password, 'status' => 'blocked'])) {
+                
+                return Redirect::to('/account/login')
+                        ->withInput(Input::except('password'))
+                        ->with('login_error', 'Your account has been suspended. Contact the admin on (citisumo@gmail.com) to clarify the issue.');
+                        
             }
             
-            else {
+            if (Auth::attempt(['phone'=> $request->login, 'password' => $request->password, 'status' => 'blocked'])) {
+                
+                return Redirect::to('/account/login')
+                        ->withInput(Input::except('password'))
+                        ->with('login_error', 'Your account has been suspended. Contact the admin on (citisumo@gmail.com) to clarify the issue.');
+                        
+            }
+            
+            if (Auth::attempt(['username' => $request->login, 'password' => $request->password])) {
+                
+              return redirect()->intended(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard');
+               
+            } elseif (Auth::attempt(['phone'=> $request->login, 'password' => $request->password])) {
+                
+                return redirect()->intended(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard'); 
+                
+            } else {
                 return Redirect::to('/account/login')
                         ->withInput(Input::except('password'))
                         ->with('login_error', 'Wrong Credentials, Try again.');
@@ -170,6 +183,31 @@ class Account extends Controller
             return back()->with('message', 'Incorrect old password');
         }
         
+    }
+    
+    public function forgotPass(Request $request)
+    {
+        $validator = \Validator::make(Input::all(), [
+            'phone' => 'required|min:11|max:11'
+        ]);
+        if($validator->fails()) {
+            return Redirect::to(url('account/login?ca=validation_error'))
+                ->withErrors($validator)
+                ->withInput();
+        }
+        
+        $user = User::where('phone', $request->get('phone'));
+        if($user->exists())
+        {
+            $password = generate_token(6);
+            $message_text = "Your " . config('settings.app_name') . " user account details are:\nUsername: " . $user->first()->username . "\nPassword: {$password}\nPlease login to your account with this details at " . url('');
+            if(send_sms($request->get('phone'), $message_text, $flash = 0, config('settings.app_name')))
+            {
+                $user->update(['password' => bcrypt($password)]);
+                return Redirect::away(url('account/login'))->with('message', 'Your new login details have been sent to ' . $request->get('phone'));
+            }
+        }
+        return Redirect::away(url('account/login'));
     }
 
     public function logout()

@@ -18,15 +18,23 @@ class Front extends Controller
     public function dashboard()
     {
         $user = Auth::user();
+        
+        // dd($user->status);
+        if($user->role == 'admin'){
+            return redirect('/admin/dashboard');
+        }
+        
+        if($user->status == 'blocked')
+        {
+            return redirect('account/logout');
+        }
+        
         if(!(\App\PackageSub::where('username', $user->username)->exists()))
         {
             return Redirect::intended('packages/choose');
         } else {
             $user = Auth::user();
-            $data['sub_plans_num'] = \App\PackageSub::where([
-                ['username', '=',  $user->username],
-                ['status', '=', 'ongoing']
-            ])->get()->count();
+            $data['sub_plans_num'] = \App\PackageSub::where('username', $user->username)->where('status', 'ongoing')->get()->count();
             //$data['pending_payment_amt'] = \DB::select('SUM(')
             $data['downlines_paired'] = collect(\DB::select("SELECT COUNT(username) AS downlines_paired from package_subscription WHERE upline_username = '{$user->username}'"))->first()->downlines_paired;
 
@@ -71,6 +79,10 @@ class Front extends Controller
         {
             return redirect('account/logout');
         }
+        
+        if($user->status == 'blocked') {
+            return redirect('account/logout');
+        }
 
         if(\App\PackageSub::where('username', $user->username)
             ->where('package_id', $request->get('package_id'))
@@ -81,7 +93,7 @@ class Front extends Controller
                 })
             ->exists())
         {
-            return redirect($user->isAdmin() ? 'admin/packages/manage' : 'packages/choose')->with('subscribe_error', 'You have already subscribed to this package and are yet to circle out.');
+            return redirect(url($user->isAdmin() ? 'admin/packages/manage' : 'packages/choose'))->with('subscribe_error', 'You have already subscribed to this package and are yet to circle out.');
         }
 
         $package = \App\Package::find($request->get('package_id'));
@@ -196,6 +208,7 @@ class Front extends Controller
         $data['sub_key'] = $sub_key;
         $data['messages'] = [];
         $data['payment'] = $payment;
+        $data['payment_docs'] = \App\PaymentUpload::where('reference', $sub_key)->get();
         $data['upline'] = $data['sub']->uplineUser();
 
         return view('users.claim', $data);
@@ -209,15 +222,36 @@ class Front extends Controller
         {
             return \Redirect::away('account/login');
         }
+        
+        $block = $p->first();
 
-        $p->update(['status' => 'waiting']);
+        $blocked = new \App\BlockedPayment();
+        $blocked->sub_key = $block->sub_key;
+        $blocked->payee_username = $block->payee_username;
+        $blocked->payer_username = $block->payer_username;
+        $blocked->amount = $block->amount;
+        $blocked->save();
+        
+        $user = \App\User::where('username', $block->payer_username)->first();
+        $user->status = 'blocked';
+        $user->save();
+        
+        // $p->update(['status' => 'waiting']);
         $ps->update(['status' => 'waiting']);
-
-        $payment = $p->first();
+    
+        $blocked = \App\BlockedPayment::where('sub_key', $sub_key)->where('payee_username', Auth::user()->username);
+        $payment = $blocked->first();
         $at = new DateTime($payment->created_at);
         $message = "{$payment->payee_username} disputed the payment you made on {$at->format('d, M')}. Please log on to " . url('/') . " to clarify this if it's a misunderstanding";
         send_sms(\App\User::where('username', $payment->payer_username)->first()->phone, $message, 0, config('settings.app_name'));
-        return redirect('payment/claim/' . $sub_key);
+        
+        $del = \App\Payment::where('payment_id', $block->payment_id)->delete();
+        
+        if (Auth::user()->role == 'admin'){
+            return redirect('/admin/dashboard');
+        } else {
+            return redirect('/dashboard');
+        }
     }
 
 
@@ -236,7 +270,7 @@ class Front extends Controller
         $at = new DateTime($payment->created_at);
         $message = "{$payment->payee_username} confirmed the payment you made on {$at->format('d, M')} and you've been put out for pairing. Keep your phone close!";
         send_sms(\App\User::where('username', $payment->payer_username)->first()->phone, $message, 0, config('settings.app_name'));
-        return redirect(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard');
+        return redirect(url(Auth::user()->isAdmin() ? 'admin/dashboard' : 'dashboard'));
     }
 
     public function profile()
@@ -262,6 +296,41 @@ class Front extends Controller
         // return $total;
         
         return view('users.profile', $data)->with('total', $total);
+    }
+    
+    public function uploadTeller($sub_key)
+    {
+        $files = Input::file('file');
+        //$uploadcount = 0;
+        foreach($files as $file)
+        {
+            $rules = array('file' => 'required|mimes:png,gif,jpeg,bmp'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+            $validator = \Validator::make(array('file'=> $file), $rules);
+            if($validator->passes())
+            {
+                $tg_filename = md5($file . time()) . md5($file->getClientOriginalName()) . "." . $file->getClientOriginalExtension();
+                $destinationPath = base_path() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'uploads';
+                if($file->move($destinationPath, $tg_filename))
+                {
+                    $upload_url = url('public/uploads/' . $tg_filename);
+                    $upload = new \App\PaymentUpload();
+                    $upload->filename = $file->getClientOriginalName();
+                    $upload->upload_url = $upload_url;
+                    $upload->reference = $sub_key;
+                    if($upload->save())
+                    {
+                        return Response::json([
+                            'error' => false,
+                            'code'  => 200
+                        ], 200);
+                    }
+                }
+                return Response::json([
+                    'error' => true,
+                    'code'  => 400
+                ], 400);
+            }
+        }
     }
     
 

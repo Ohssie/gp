@@ -120,21 +120,11 @@
           <div id="spark1" class="chart sparkline"></div>
           <div class="data-info">
             <div class="desc">Plans subsrcibed to</div>
-            <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span data-toggle="counter" data-end="<?php echo $sub_plans_num; ?>" class="number"><?php echo $sub_plans_num; ?></span>
+            <div class="value"><span class="indicator indicator-equal mdi mdi-chevron-right"></span><span data-toggle="counter" data-end="{{ $sub_plans_num }}" class="number">{{ $sub_plans_num }}</span>
             </div>
           </div>
         </div>
     </div>
-    <!--<div class="col-xs-12 col-md-6 col-lg-4">
-      <div class="widget widget-tile">
-        <div id="spark2" class="chart sparkline"></div>
-        <div class="data-info">
-          <div class="desc">Pending pay</div>
-          <div class="value"><span class="indicator indicator-positive mdi mdi-chevron-up"></span><span data-toggle="counter" data-end="<?php //echo $pending_payment_amt;?>" data-prefix="&#8358;" class="number"><?php //echo $pending_payment_amt;?></span>
-          </div>
-        </div>
-      </div>
-    </div>-->
     <div class="col-xs-12 col-md-6 col-lg-6">
         <div class="widget widget-tile">
           <div id="spark3" class="chart sparkline"></div>
@@ -254,7 +244,8 @@
                 <td class="actions">
                     @if($ptm->status == "incomplete")
                     <a href="packages/subscription/{{$ptm->sub_key}}" class="btn btn-primary">I Paid</a>@else
-                    <button class="btn btn-default" disabled="disabled">Cleared</button>
+                    <a href="{{ url('payment/claim/' . $ptm->sub_key) }}" class="btn btn-default">View Status</a>
+                    <!--<button class="btn btn-default" disabled="disabled">Cleared</button>-->
                     @endif
                 </td>
               </tr>

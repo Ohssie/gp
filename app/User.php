@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'phone', 'password', 'role', 'bank_name', 'account_number', 'account_name', 'email', 'phone2', 'gender'
+        'name', 'username', 'phone', 'password', 'role', 'bank_name', 'account_number', 'account_name', 'email', 'phone2', 'gender', 'status'
     ];
 
     /**
@@ -21,12 +21,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'status',
     ];
 
     public function isAdmin()
     {
         if($this->role == "admin")
+            return true;
+        return false;
+    }
+    
+    public function isAllowed()
+    {
+        if($this->role == "allowed")
             return true;
         return false;
     }

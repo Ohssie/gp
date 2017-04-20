@@ -90,7 +90,7 @@
                 <th>Phone</th>
                 <!--<th>Package(s)</th>-->
                 <th>Joined</th>
-                <!--<th>Action</th>-->
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -106,9 +106,9 @@
                   <div class="btn-group btn-hspace">
                     <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="icon-dropdown mdi mdi-chevron-down"></span></button>
                     <ul role="menu" class="dropdown-menu">
-                      <!--<li><a href="people/edit/{{ $user->username }}">Edit user</a></li>
-                      <li><a href="people/profile/{{ $person->username }}">View user</a></li>
-                      <li class="divider"></li>-->
+                      <!--<li><a href="people/edit/{{ $user->username }}">Edit user</a></li>-->
+                      <li><a href="{{ url('admin/user-profile/' . $person->username) }}">View user</a></li>
+                      <li class="divider"></li>
                       <li><a href="{{ url('admin/delete-user/' . $person->username) }}" class="delete" onclick="javascript: return confirm('Do you want to delete this account?');">Delete user</a></li>
                     </ul>
                   </div>
