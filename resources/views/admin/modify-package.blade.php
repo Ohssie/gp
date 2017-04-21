@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'Modify Package')
+@section('title', 'Modify Package - ' . $user->name )
 
 @section('sidebar')
 @include('admin.sidebar')

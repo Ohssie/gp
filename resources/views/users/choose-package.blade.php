@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'Choose Package')
+@section('title', 'Choose Package - ' . $user->name )
 
 @section('content')
 <div class="main-content container-fluid">

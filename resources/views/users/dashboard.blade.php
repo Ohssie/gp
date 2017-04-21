@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'User Dashboard')
+@section('title', 'User Dashboard - ' . $user->name )
 
 @section('sidebar')
 @include('users.sidebar');
@@ -48,9 +48,9 @@
                 <tr>
                   <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ref->username }}</td>
                   
-                  @foreach($users as $user)
-                    @if($ref->username === $user->username)
-                      <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                  @foreach($users as $person)
+                    @if($ref->username === $person->username)
+                      <td>{{ $person->phone }} <br/> {{ $person->phone2 }}</td>
                     @endif
                   @endforeach
                   
@@ -91,9 +91,9 @@
                 <tr>
                   <td class="user-avatar"> <img src="assets/img/avatar6.png" alt="Avatar">{{ $ref->upline_username }}</td>
                   
-                  @foreach($users as $user)
-                    @if($ref->upline_username === $user->username)
-                      <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                  @foreach($users as $person)
+                    @if($ref->upline_username === $person->username)
+                      <td>{{ $person->phone }} <br/> {{ $person->phone2 }}</td>
                     @endif
                   @endforeach
                   

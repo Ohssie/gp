@@ -1,6 +1,10 @@
 @extends('primary')
 
-@section('title', 'Payment Dispute Area')
+@section('title', 'Payment Dispute Area - ' . $user->name )
+
+@section('sidebar')
+@include($user->isAdmin() ? 'admin.sidebar' : 'users.sidebar')
+@endsection
 
 @section('content')
 <div class="main-content container-fluid">

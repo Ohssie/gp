@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'Subscribed')
+@section('title', 'Subscribed - ' . $user->name )
 
 @section('sidebar')
 @include('users.sidebar')

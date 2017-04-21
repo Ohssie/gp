@@ -140,7 +140,6 @@ class AdminController extends Controller
     	$data['approved_payments'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', 'completed')->limit(10)->get();
     	
     	$user = Auth::user();
-    	
     	$data['in'] = \DB::table('package_subscription')
                         ->where('upline_username', $user->username)
                         ->where('status', '!=', 'completed')
@@ -153,7 +152,7 @@ class AdminController extends Controller
                         
         $data['packages'] = \App\Package::all();
     	
-    	return view('admin.dashboard', $data);
+    	return view('admin.dashboard', $data)->with('user', $user);
     }
 
     public function settings(Request $request, \Illuminate\Contracts\Cache\Factory $cache)
@@ -338,7 +337,7 @@ class AdminController extends Controller
         $data['users'] = \App\User::all();
         $data['payments'] = \App\Payment::all();
         $data['packages'] = \App\Package::all();
-        $data['subs'] = \App\PackageSub::all();
+        $data['subs'] = \App\PackageSub::where('upline_username', '!=', 'null')->get();
         
         return view('admin.transactions', $data);
     }
@@ -348,7 +347,7 @@ class AdminController extends Controller
         $data['users'] = \App\User::all();
         $data['payments'] = \App\Payment::all();
         $data['packages'] = \App\Package::all();
-        $data['subs'] = \App\PackageSub::all();
+        $data['subs'] = \App\PackageSub::where('upline_username', '!=', '')->get();
         
         return view('admin.subscriptions', $data);
     }

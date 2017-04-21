@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'Blocked Accounts')
+@section('title', 'Blocked Accounts - ' . $user->name )
 
 @section('sidebar')
 @include('admin.sidebar')

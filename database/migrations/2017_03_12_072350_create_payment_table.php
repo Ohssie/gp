@@ -14,7 +14,7 @@ class CreatePaymentTable extends Migration
     {
         Schema::create('payments', function(Blueprint $table)
         {
-            $table->increments('payment_id');
+            $table->increments('payment_id')->nullable();
             $table->string('sub_key');
             $table->string('payee_username');
             $table->string('payer_username');

@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'Package Subscriptions')
+@section('title', 'Package Subscriptions - ' . $user->name )
 
 @section('sidebar')
 @include('admin.sidebar')
@@ -32,7 +32,7 @@
                                         @foreach($subs as $sub)
                                           <tr class="">
                                             @foreach($packages as $package)
-                                                @if($sub->package_id == $package->package_id)
+                                                @if($sub->package_id === $package->package_id)
                                                     <td>{{ $package->package_name }}</td>
                                                 @endif
                                             @endforeach

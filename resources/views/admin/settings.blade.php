@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'App Settings')
+@section('title', 'App Settings - ' . $user->name )
 
 @section('sidebar')
 @include('admin.sidebar')

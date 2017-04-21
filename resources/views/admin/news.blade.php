@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'News')
+@section('title', 'News - ' . $user->name )
 
 @section('sidebar')
 @include('admin.sidebar')

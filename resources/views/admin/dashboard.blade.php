@@ -1,6 +1,6 @@
 @extends('primary')
 
-@section('title', 'Admin Dashboard')
+@section('title', 'Admin Dashboard - ' . $user->name )
 
 @section('sidebar')
 @include('admin.sidebar')
@@ -75,9 +75,9 @@
                 <tr>
                   <td>{{ $ref->username }}</td>
                   
-                  @foreach($users as $user)
-                    @if($ref->username === $user->username)
-                      <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                  @foreach($users as $person)
+                    @if($ref->username === $person->username)
+                      <td>{{ $person->phone }} <br/> {{ $person->phone2 }}</td>
                     @endif
                   @endforeach
                   
@@ -118,9 +118,9 @@
                 <tr>
                   <td>{{ $ref->upline_username }}</td>
                   
-                  @foreach($users as $user)
-                    @if($ref->upline_username === $user->username)
-                      <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                  @foreach($users as $person)
+                    @if($ref->upline_username === $person->username)
+                      <td>{{ $person->phone }} <br/> {{ $person->phone2 }}</td>
                     @endif
                   @endforeach
                   
@@ -207,9 +207,9 @@
               @foreach($pending_payment as $pending)
               <tr>
                 <td>{{ $pending->payer_username }}</td>
-                @foreach($users as $user)
-                  @if($user->username === $pending->payer_username)
-                       <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                @foreach($users as $person)
+                  @if($person->username === $pending->payer_username)
+                       <td>{{ $person->phone }} <br/> {{ $person->phone2 }}</td>
                   @endif
                 @endforeach
                 <td class="number">&#8358;{{ $pending->package()->cost }}</td>
@@ -243,12 +243,12 @@
               @foreach($approved_payments as $approved)              
               <tr>
                 <td>{{ $approved->payer_username }}</td>
-                @foreach($users as $user)
-                  @if($user->username === $approved->payer_username)
-                       <td>{{ $user->phone }} <br/> {{ $user->phone2 }}</td>
+                @foreach($users as $person)
+                  @if($person->username === $approved->payer_username)
+                       <td>{{ $person->phone }} <br/> {{ $person->phone2 }}</td>
                   @endif
                 @endforeach
-                <td>&#8358;{{ $approved->package()->cost }}</td>
+                <td>&#8358;{{ $approved->amount }}</td>
                 <td>{{ date('d M, y', strtotime($approved->updated_at)) }}</td>
               </tr>
               @endforeach              
