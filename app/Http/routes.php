@@ -11,13 +11,13 @@
 |
 */
 
-/*Route::get('/', function ()
+Route::get('/', function ()
 {
     
     return view('hold');
-});*/
+});
 
-Route::get('/', function ()
+/*Route::get('/', function ()
 {
 	$news = DB::table('news')
 				->where('type', 'general')
@@ -33,7 +33,7 @@ Route::get('/', function ()
     					->with('packages', $packages)
     						->with('updates', $updates);
 });
-
+*/
 Route::get('/all/news', 'NewsController@allNews');
 
 Route::get('/login', function ()
@@ -76,6 +76,8 @@ Route::get('/account/forgot-password', function ()
     return view('forgotpass');
 });
 
+Route::post('/account/forgotpass', 'Account@forgotPass')->name('forgot_password');
+
 Route::get('/account/logout', 'Account@logout');
 
 //News
@@ -113,6 +115,12 @@ Route::get('/packages/choose', function ()
 {
 	$data['user'] = Auth::user();
     $data['packages'] = App\Package::all();
+    $data['news'] = \DB::table('news')
+                ->where('type','users')
+				->orderBy('created_at', 'desc')
+                ->limit(3)
+                ->get();
+                
 	return view('users.choose-package', $data);
 })->middleware('auth');
 

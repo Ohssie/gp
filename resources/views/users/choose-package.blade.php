@@ -4,6 +4,24 @@
 
 @section('content')
 <div class="main-content container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-12">
+	    <div class="panel panel-default">
+	      <div class="panel-heading">Latest News</div>
+	      <div class="panel-body">
+	        <ul class="user-timeline user-timeline-compact">
+	          @foreach($news as $news)
+	            <li class="latest">
+	              <div class="user-timeline-date"> <?php echo date('d-m-Y', strtotime($news->created_at)); ?></div>
+	              <div class="user-timeline-title">{{ $news->title }}</div>
+	              <div class="user-timeline-description">{{ $news->description }}</div>
+	            </li>
+	          @endforeach
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
   <div class="row">
       <h1 class="display-heading text-center">Packages</h1>
       <p class="display-description text-center">Select a packages here.</p>

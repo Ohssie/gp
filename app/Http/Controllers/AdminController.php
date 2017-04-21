@@ -141,7 +141,7 @@ class AdminController extends Controller
     	
     	$user = Auth::user();
     	
-    	/*$data['in'] = \DB::table('package_subscription')
+    	$data['in'] = \DB::table('package_subscription')
                         ->where('upline_username', $user->username)
                         ->where('status', '!=', 'completed')
                         ->get();
@@ -149,7 +149,7 @@ class AdminController extends Controller
     	$data['out'] = \DB::table('package_subscription')
                         ->where('username', $user->username)
                         ->where('status', '!=', 'completed')
-                        ->get();*/
+                        ->get();
                         
         $data['packages'] = \App\Package::all();
     	

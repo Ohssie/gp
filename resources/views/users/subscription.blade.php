@@ -73,14 +73,6 @@
         </div>
       </div>
       <div class="col-md-8">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            Upload tellers
-          </div>
-          <div class="panel-body">
-            <p class="xs-mt-30 xs-mb-20 text-center"><a href="{{ url('payment/claim/' . $sub->sub_key) }}" class="btn btn-space btn-primary btn-lg btn-rounded">I have paid</a></p>
-          </div>
-        </div>
         <div class="panel panel-full-color panel-full-danger">
           <div class="panel-heading panel-heading-contrast">Instructions
             <div class="tools"><span class="icon mdi mdi-close"></span></div><span class="panel-subtitle">Please read these instructions carefully!</span>
@@ -91,6 +83,14 @@
               <p class="text-uppercase">Payments are not considered made untill you claim it is made by clicking the button above. After then, your payee will have two more working days to dispute your claimed payment. If neither your payee nor the admin disputes your payment on or before two days, your payment will be considered valid and you will be placed in the chain to receive payment.</p>
               <p class="text-uppercase">Payments not up to the stated amount, that is &#8358;{{ $package->cost }} will be considered invalid</p>
               <p class="text-uppercase">Please upload a proof of payment for every transaction. There will be not refund or whatsoever for payments deemed invalid.</p>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Upload tellers
+          </div>
+          <div class="panel-body">
+            <p class="xs-mt-30 xs-mb-20 text-center"><a href="{{ url('payment/claim/' . $sub->sub_key) }}" class="btn btn-space btn-primary btn-lg btn-rounded">I have paid</a></p>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@
         <div class="panel-heading">
           <a href="/"><img src="/assets/citisumo.jpg" alt="CitiSumo" width="200" height="160" class="logo-img"></a>
           <span class="splash-description">Please enter your user information.</span>
-          
+           
             @if ($errors)
               @foreach($errors as $error) 
               <div role="alert" class="alert alert-contrast alert-danger alert-dismissible">
@@ -31,6 +31,17 @@
               </div>
             </div>
           @endif
+          
+          @if (Session::has('password_change'))
+          <div role="alert" class="alert alert-contrast alert-success alert-dismissible">
+              <div class="icon"><span class="mdi mdi-check"></span></div>
+              <div class="message">
+                <button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><strong>Good! </strong>
+                {!! session('password_change') !!}
+              </div>
+            </div>
+          @endif
+          
           @if (Session::has('login_error'))
           <div role="alert" class="alert alert-contrast alert-danger alert-dismissible">
               <div class="icon"><span class="mdi mdi-check"></span></div>

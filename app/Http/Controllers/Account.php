@@ -187,14 +187,15 @@ class Account extends Controller
     
     public function forgotPass(Request $request)
     {
-        $validator = \Validator::make(Input::all(), [
+        $validate = $this->validate($request, [
             'phone' => 'required|min:11|max:11'
         ]);
-        if($validator->fails()) {
+        
+        /*if($validator->fails()) {
             return Redirect::to(url('account/login?ca=validation_error'))
                 ->withErrors($validator)
                 ->withInput();
-        }
+        }*/
         
         $user = User::where('phone', $request->get('phone'));
         if($user->exists())
@@ -204,7 +205,10 @@ class Account extends Controller
             if(send_sms($request->get('phone'), $message_text, $flash = 0, config('settings.app_name')))
             {
                 $user->update(['password' => bcrypt($password)]);
-                return Redirect::away(url('account/login'))->with('message', 'Your new login details have been sent to ' . $request->get('phone'));
+                \Session::flash('password_change', 'Your new login details have been sent to ' . $request->get('phone'));
+                
+                return Redirect::away(url('account/login'));
+                // ->with('password_change', 'Your new login details have been sent to ' . $request->get('phone'));
             }
         }
         return Redirect::away(url('account/login'));
