@@ -109,7 +109,7 @@
                       <!--<li><a href="people/edit/{{ $user->username }}">Edit user</a></li>-->
                       <li><a href="{{ url('admin/user-profile/' . $person->username) }}">View user</a></li>
                       <li class="divider"></li>
-                      <li><a href="{{ url('admin/delete-user/' . $person->username) }}" class="delete" onclick="javascript: return confirm('Do you want to delete this account?');">Delete user</a></li>
+                      <li><a href="/admin/delete-user/{{$person->phone}}" class="delete" onclick="javascript: return confirm('Do you want to delete this account?');">Delete user</a></li>
                     </ul>
                   </div>
                 </td>

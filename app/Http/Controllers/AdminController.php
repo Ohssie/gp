@@ -169,41 +169,45 @@ class AdminController extends Controller
 
     public function createUser(Request $request)
     {
-    	$validator = Validator::make($request->all(), [
-    		'name' => 'required',
-    		'phone' => 'required|unique:users|max:11|min:11',
-    		'bank_name' => 'required',
-    		'account_name' => 'required',
-    		'account_number' => 'required',
-    		'role' => 'required'
-    	]);
-
-    	if($validator->fails())
-    	{
-    		return redirect('admin/people/manage')
-                        ->withErrors($validator)
-                        ->withInput();
-    	}
-
-    	$username = generate_username($request->get('name'), '.');
-    	$password = generate_token(6);
-    	//$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . url();
-    	$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . $request->url();
-    	
-    	if (User::create([
-            'name' => $request->get('name'),
-            'phone' => $request->get('phone'),
-            'password' => bcrypt($password),
-            'username' => $username,
-            'bank_name' => $request->get('bank_name'),
-            'account_name' => $request->get('account_name'),
-            'account_number' => $request->get('account_number'),
-            'role' => $request->get('role')
-        ]) && send_sms($request->get('phone'), $message_text, $flash = 0, config('settings.app_name')))
-        {
-            \Session::flash('message', 'Account created successfully! We have sent your login details to ' . $request->get('phone'));
+        try {
+        	$validator = Validator::make($request->all(), [
+        		'name' => 'required',
+        		'phone' => 'required|unique:users|max:11|min:11',
+        		'bank_name' => 'required',
+        		'account_name' => 'required',
+        		'account_number' => 'required',
+        		'role' => 'required'
+        	]);
+    
+        	if($validator->fails())
+        	{
+        		return redirect('admin/people/manage')
+                            ->withErrors($validator)
+                            ->withInput();
+        	}
+    
+        	$username = generate_username($request->get('name'), '.');
+        	$password = generate_token(6);
+        	//$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . url();
+        	$message_text = "An account has been created for you with details as:\nUsername: {$username}\nPassword: {$password}\nPlease login to your account with this details as " . $request->url();
+        	
+        	if (User::create([
+                'name' => $request->get('name'),
+                'phone' => $request->get('phone'),
+                'password' => bcrypt($password),
+                'username' => $username,
+                'bank_name' => $request->get('bank_name'),
+                'account_name' => $request->get('account_name'),
+                'account_number' => $request->get('account_number'),
+                'role' => $request->get('role')
+            ]) && send_sms($request->get('phone'), $message_text, $flash = 0, config('settings.app_name')))
+            {
+                \Session::flash('message', 'Account created successfully! We have sent your login details to ' . $request->get('phone'));
+            }
+            return Redirect::intended('admin/people/manage');
+        } catch (\Exception $e) {
+            return Redirect::intended('admin/people/manage');
         }
-        return Redirect::intended('admin/people/manage');
     }
 
     public function userGrowth()
@@ -354,12 +358,17 @@ class AdminController extends Controller
     
     public function deleteUser($username)
     {
-        $user = User::where('username', $username);
-        if($user->exists())
-        {
-            $user->delete();
+        try {
+            $user = User::where('phone', $username);
+            if($user->exists())
+            {
+                $user->delete();
+            }
+            return redirect(url('admin/people/manage'));
+        } catch (\Exception $e) {
+            return redirect(url('admin/people/manage'));
         }
-        return redirect(url('admin/people/manage'));
+        
     }
     
     public function blocked(){
@@ -388,6 +397,23 @@ class AdminController extends Controller
         $unblock->save();
         
         return redirect('/admin/people/blocked');
+    }
+    
+    public function manageUsers() {
+        try {
+            $people = \App\User::all();
+        	$packageName=null;
+        	foreach($people as $person) {
+        		$sub = \App\PackageSub::where('username', $person->username)->first();
+        		$packageName  = \App\Package::where('package_id', $sub->package_id)->first();
+        		break;
+        		
+        	}
+        } catch (\Exception $e) {
+            return view('admin.manage-users', ['user' => \Auth::user(), 'package' => \App\Package::all()])
+				->with('people', $people)
+					->with('packageName', $packageName);
+        }
     }
     
     

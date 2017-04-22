@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function ()
+/*Route::get('/', function ()
 {
     
     return view('hold');
-});
+});*/
 
-/*Route::get('/', function ()
+Route::get('/', function ()
 {
 	$news = DB::table('news')
 				->where('type', 'general')
@@ -33,7 +33,7 @@ Route::get('/', function ()
     					->with('packages', $packages)
     						->with('updates', $updates);
 });
-*/
+
 Route::get('/all/news', 'NewsController@allNews');
 
 Route::get('/login', function ()
@@ -183,20 +183,7 @@ Route::get('admin/settings', function()
 
 Route::post('admin/settings', 'AdminController@settings')->middleware('admin');
 
-Route::get('admin/people/manage', function()
-{
-	$people = App\User::all();
-	$packageName=null;
-	foreach($people as $person) {
-		$sub = App\PackageSub::where('username', $person->username)->first();
-		$packageName  = App\Package::where('package_id', $sub->package_id)->first();
-		break;
-		
-	}
-	return view('admin.manage-users', ['user' => Auth::user(), 'package' => App\Package::all()])
-				->with('people', $people)
-					->with('packageName', $packageName);
-});
+Route::get('admin/people/manage', 'AdminController@manageUsers')->middleware('admin');
 
 Route::get('admin/people/blocked', 'AdminController@blocked')->middleware('admin');
 
