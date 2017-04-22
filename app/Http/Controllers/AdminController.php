@@ -157,6 +157,7 @@ class AdminController extends Controller
                             ->get();
                             
             $data['packages'] = \App\Package::all();
+            return view('admin.dashboard', $data)->with('user', $user);
         } catch (\Exception $e) {
     	
     	    return view('admin.dashboard', $data)->with('user', $user);
