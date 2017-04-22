@@ -411,10 +411,12 @@ class AdminController extends Controller
     public function manageUsers() {
         $people = \App\User::all();
     	$packageName=null;
+    	
     	foreach($people as $person) {
     		$sub = \App\PackageSub::where('username', $person->username)->first();
     		$packageName  = \App\Package::where('package_id', $sub->package_id)->first();
     		break;
+    	}	
     		
         return view('admin.manage-users', ['user' => \Auth::user(), 'package' => \App\Package::all()])
 			->with('people', $people)

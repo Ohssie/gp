@@ -34,6 +34,10 @@ Route::get('/', function ()
     						->with('updates', $updates);
 });
 
+Route::get('/how_it_works', function() {
+	return view('works');
+});
+
 Route::get('/all/news', 'NewsController@allNews');
 
 Route::get('/login', function ()

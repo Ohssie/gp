@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -8,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="" />
-    <meta name="author" content="Baljit Singh" /> 
+    <meta name="author" content="" /> 
     <link rel="shortcut icon" href="/assets/citisumo.jpg"> 
     <link rel="stylesheet" href="/home/css/styles.css" />
 </head> 
@@ -49,8 +48,6 @@
                             <li>
                                 <a href="/account/login" class="button button-sm button-primary">Log In</a>
                             </li>
-                            
-                            <li><a href="/how_it_works" class="button button-sm button-primary">How It Works</a></li>
 
                         </ul>
 
@@ -59,54 +56,49 @@
                 </div>
                 
             </nav>
+            <br/><br/><br/>
             <!--// Navigation Bar -->
-
-            <!-- Page title -->
-            <header class="page-title">
+            <div class="blog-post pt80 pb80">
 
                 <div class="container">
-
+            
                     <div class="row">
+            
+                        <div class="post-single nosidebar col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+            
+                            <div class="post">
+                                <h2>How it works.</h2>
+            
+                                <p>After Registration, you will need to choose a package from the list of packages and you'll be paired with a member who you will have to pay the designated amount for that package and the user then confirms your donation and then the system will automatically assign 2 other registered people under you who will also pay you the joining amount each, into your bank account, making 200% (i.e. 200% of N10,000 is N20,000).
 
-                        <h1>Latest News</h1>
-
-                    </div><!-- //row -->
-                    
-                </div><!-- //container -->
-                
-            </header>
-            <!-- //page title -->
-
-            <!-- Services -->
-            <div id="services" class="pt80 pb40 services">
-
-                <div class="container">
-
-                    <div class="row">
-                        @foreach($news as $news)
-                            <div class="mb40 col-md-8 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-                                
-                                <div class="service-box">
-    
-                                    <div class="info">
-                                        <h4>{{ $news->type }}</h4>
-                                        <a href="#"></a>
-                                        <p>{{ $news->description }}</p>
-                                        
-                                    </div><!-- //info -->
+                                    Citisumo will also assign referrals to pay you. After you have received payment from 2 people under you, the system will automatically EXIT you from that package and let's you rechoose that package if you wish (Your account still remains on Citisumo)
                                     
-                                </div><!-- //service box -->
-    
+                                    All donations are made directly to member bank account. Share Citisumo to people and make the world a better place. 
+                                    Please note that your return on Investment will be on before 21 days (15 Working Days). Please be Patient. As you wait, you can use your referral link to make money.</p>
+            
+                                <p><strong>Important things to note.</strong></p>
+                                <p>• There are different platforms of donation i.e., N5,000, N10,000, N20,000 and N50,000. <br/>
+                                    • The system is easy to sign up and mobile responsive.<br/>
+                                    • Donation is paid to individual account as assigned by the system. <br/>
+                                    • Payee, on receiving payment from a payer, is required to approve the payers payment to enable the payer to be paired with a newly registered user within the specified amount of time.<br/>
+                                    • On successful registration, donor is expected to pay to the assigned payee within 24 hours, otherwise will be archived. <br/>
+                                    • Activation is made within 24 hours of receiving payment from a payer, otherwise your account will be removed from the group. <br/>
+                                    • No refund of payment. <br/>
+                                    • Communication about the donation, rejection and approval is between you and the payee only. <br/>
+                                    • For your generosity, you’ll be rewarded with 200%. <br/>
+                                    • The payment method involves are through bank payment and transfer. <br/>
+            
                             </div>
-                        @endforeach
-                    </div><!-- //row -->
-
-                </div><!-- //container -->
-                 
+            
+            
+                        </div><!-- // col -->
+                        
+                    </div>
+                    
+                </div>
+            
             </div>
-            <!-- //Services -->
-
-            <!-- footer -->
+        <!-- footer -->
             <footer class="footer">
 
                 <div class="container">

@@ -41,6 +41,8 @@
                             <li>
                                 <a href="/account/login" class="button button-sm button-primary">Log In</a>
                             </li>
+                            
+                            <li><a href="/how_it_works" class="button button-sm button-primary">How It Works</a></li>
 
                         </ul>
 

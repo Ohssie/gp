@@ -57,7 +57,7 @@
       <div class="panel panel-default panel-table">
         <div class="panel-heading">
           <!--<div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>-->
-          <div class="title">Inbound Payments</div>
+          <div class="title">Inbound Payments ( People who will pay you)</div>
         </div>
         <div class="panel-body table-responsive">
           <table class="table table-striped table-hover">
@@ -100,7 +100,7 @@
       <div class="panel panel-default panel-table">
         <div class="panel-heading">
           <!--<div class="tools"><span class="icon mdi mdi-download"></span><span class="icon mdi mdi-more-vert"></span></div>-->
-          <div class="title">Outbound Payments</div>
+          <div class="title">Outbound Payments ( People you have to pay)</div>
         </div>
         <div class="panel-body table-responsive">
           <table class="table table-striped table-hover">
