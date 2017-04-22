@@ -138,26 +138,29 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $data['users'] = \App\User::all();
-    	$data['user'] = Auth::user();
-    	$data['num_users'] = User::all()->count();
-    	$data['pending_payment'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', '!=', 'completed')->limit(10)->get();
-    	$data['approved_payments'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', 'completed')->limit(10)->get();
+        try {
+            $data['users'] = \App\User::all();
+        	$data['user'] = Auth::user();
+        	$data['num_users'] = User::all()->count();
+        	$data['pending_payment'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', '!=', 'completed')->limit(10)->get();
+        	$data['approved_payments'] = \App\Payment::where('payee_username', Auth::user()->username)->where('status', 'completed')->limit(10)->get();
+        	
+        	$user = Auth::user();
+        	$data['in'] = \DB::table('package_subscription')
+                            ->where('upline_username', $user->username)
+                            ->where('status', '!=', 'completed')
+                            ->get();
+        	
+        	$data['out'] = \DB::table('package_subscription')
+                            ->where('username', $user->username)
+                            ->where('status', '!=', 'completed')
+                            ->get();
+                            
+            $data['packages'] = \App\Package::all();
+        } catch (\Exception $e) {
     	
-    	$user = Auth::user();
-    	$data['in'] = \DB::table('package_subscription')
-                        ->where('upline_username', $user->username)
-                        ->where('status', '!=', 'completed')
-                        ->get();
-    	
-    	$data['out'] = \DB::table('package_subscription')
-                        ->where('username', $user->username)
-                        ->where('status', '!=', 'completed')
-                        ->get();
-                        
-        $data['packages'] = \App\Package::all();
-    	
-    	return view('admin.dashboard', $data)->with('user', $user);
+    	    return view('admin.dashboard', $data)->with('user', $user);
+        }
     }
 
     public function settings(Request $request, \Illuminate\Contracts\Cache\Factory $cache)
